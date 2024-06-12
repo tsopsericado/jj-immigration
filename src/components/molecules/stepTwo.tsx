@@ -24,7 +24,7 @@ export default function StepTwo({}: Props) {
         <select
           className="border mt-1 mb-7 px-1 py-2 w-[95%] md:w-[500px] text-sm bg-transparent outline-none focus:border-[#25a9e3] shadow-sm rounded-md"
           name="niveau-étude"
-          value={schoolLevel}
+          // value={schoolLevel}
           onChange={(event) => handleChange(event)}
         >
           <option selected disabled>

@@ -1,5 +1,6 @@
 
 export type FormData = {
+  name: any
   nom: string,
   prenom: string,
   etatCivil: string,

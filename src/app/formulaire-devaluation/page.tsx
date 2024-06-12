@@ -7,8 +7,10 @@ import Steps from "@/components/molecules/steps";
 import StepOne from "@/components/molecules/stepOne";
 import StepTwo from "@/components/molecules/stepTwo";
 import StepThree from "@/components/molecules/stepThree";
-import { uploadCv } from "@/utiles/uploadCvFile";
 import { useEdgeStore } from "@/lib/edgestore";
+import { sendEmail } from "@/utiles/sendEmail";
+import { FormData } from "@/domain/formData";
+import useFileStore from "../stores/fileStore";
 
 type Props = {};
 
@@ -21,29 +23,66 @@ export const salutaionOptions = [
 ];
 
 export default function FormulaireEvaluation({}: Props) {
+  const { file, setFile } = useFileStore();
   const curStep = +(localStorage.getItem("currentStep") as string);
   const [currentStep, setCurrentStep] = useState<number>(curStep);
-  const [errorMessage, setErrorMessage] = useState<string>("")
+  const [errorMessage, setErrorMessage] = useState<string>("");
   const { edgestore } = useEdgeStore();
 
-  const handleSubmit = async () => {
-    console.log("handlesubit fxn");
-    const formData = JSON.parse(
+  const handleSubmit = async (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
+    e.preventDefault();
+    let uploadedCv;
+    const formData: FormData = JSON.parse(
       (localStorage.getItem("formData") as string) || "{}"
     );
-    const salutation = (localStorage.getItem("salutation") as string) || "";
-    const profession = (localStorage.getItem("profession") as string) || "";
-    const niveauetude = (localStorage.getItem("niveauEtude") as string) || "";
-    const file = (localStorage.getItem("cvFile") as string) || "";
-    console.log("file", file);
+    const salutation =
+      JSON.parse(localStorage.getItem("salutation") as string) || "{}";
+    const profession: string =
+      (localStorage.getItem("profession") as string) || "";
+    const niveauetude: string =
+      (localStorage.getItem("niveauEtude") as string) || "";
 
     if (!file) {
-      setErrorMessage("Veillez renseigner tout les champs svp")
-      return
+      setErrorMessage("Veillez renseigner tout les champs svp");
+      return;
     }
-    const cloudinaryResponse = await uploadCv(file)
-    if (cloudinaryResponse) {
-      console.log('response => ', cloudinaryResponse)
+
+    uploadedCv = await edgestore.publicFiles.upload({
+      file: file,
+      onProgressChange: (progress) => {
+        // you can use this to show a progress bar
+        console.log(progress);
+      },
+    });
+    console.log(uploadedCv);
+
+    // send mail
+    if (uploadedCv) {
+      sendEmail({
+        name: formData.nom,
+        prenom: formData.prenom,
+        etatcivil: formData.etatCivil,
+        country: formData.country,
+        currentCountry: formData.currentCountry,
+        telephone: formData.telephone,
+        programme: formData.telephone,
+        profession: profession,
+        etude: niveauetude,
+        details: formData.detail,
+        dateDeNaissance: formData.dateDeNaissance,
+        salutation: salutation.value,
+        email: formData.email,
+        file: uploadedCv.url,
+      })
+        .then((res) => {
+          console.log("response from email sent", res);
+        })
+        .catch((err) => {
+          console.log("this is error", err);
+        });
+      localStorage.setItem('currentStep', '1')
     }
   };
 
@@ -65,7 +104,7 @@ export default function FormulaireEvaluation({}: Props) {
         ) : currentStep == 2 ? (
           <StepTwo />
         ) : (
-          <StepThree />
+          <StepThree/>
         )}
         <div className="flex justify-between mt-6">
           <Button
@@ -85,18 +124,11 @@ export default function FormulaireEvaluation({}: Props) {
           {currentStep === 3 ? (
             <button
               className="bg-[#25a9e3] text-white py-1 px-3 active:translate-y-1 hover:cursor-pointer rounded"
-              onClick={handleSubmit}
+              onClick={(e) => handleSubmit(e)}
             >
               Submit
             </button>
           ) : (
-            // <Button
-            //   className={""}
-            //   content={"Submit"}
-            //   bgColor={"#25a9e3"}
-            //   textColor={"#fff"}
-            //   onClick={() => handleSubmit}
-            // />
             <Button
               className={""}
               content={"Suivant"}

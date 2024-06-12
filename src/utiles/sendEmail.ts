@@ -1,6 +1,7 @@
 
 export async function sendEmail(data: any) {
   const apiEndpoint = '/api/email';
+  console.log("from utils")
 
   return fetch(apiEndpoint, {
     method: 'POST',
