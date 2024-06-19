@@ -1,5 +1,6 @@
 "use client"
 import Header from "@/components/molecules/header";
+import Layout from "@/components/templates/layout";
 import { useRouter } from "next/navigation";
 import React from "react";
 import { FaUserEdit } from "react-icons/fa";
@@ -15,8 +16,9 @@ export default function Home() {
         <FaUserEdit size={25} />
         FORMULAIRE D'EVALUATION
       </button> */}
-
-      <Header/>
+      <Layout>
+        <p className="bg-green-300">Banna section</p>
+      </Layout>
     </main>
   );
 }
