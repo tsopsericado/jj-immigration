@@ -85,8 +85,8 @@ export default function Header({}: Props) {
         </div>
         {/* Header lower */}
         <div>
-          <div className="flex px-5">
-            <div className=" flex-1">
+          <div className="flex justify-between px-5">
+            <div className="">
               <figure>
                 <Image
                   src="/assets/images/logoo-jj.png"
@@ -96,8 +96,8 @@ export default function Header({}: Props) {
                 />
               </figure>
             </div>
-            <div className="hidden md:flex my-auto">
-              <nav className="my-auto  flex justify-center">
+            <div className="hidden w-[60%] md:flex ">
+              <nav className="my-auto w-full flex">
                 <Menu />
               </nav>
             </div>

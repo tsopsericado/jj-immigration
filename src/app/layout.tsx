@@ -3,6 +3,8 @@ import { Inter as FontSans } from "next/font/google";
 import "./globals.css";
 import { EdgeStoreProvider } from "@/lib/edgestore";
 import { cn } from "@/lib/utils";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.min.css";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -28,6 +30,7 @@ export default function RootLayout({
         )}
         // className={inter.className}
       >
+        <ToastContainer />
         <EdgeStoreProvider>{children}</EdgeStoreProvider>
       </body>
     </html>

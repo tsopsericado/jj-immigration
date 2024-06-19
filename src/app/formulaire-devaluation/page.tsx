@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import logo from "../../../public/logo.jpg";
 import Button from "@/components/atoms/button";
 import Steps from "@/components/molecules/steps";
@@ -9,8 +9,11 @@ import StepTwo from "@/components/molecules/stepTwo";
 import StepThree from "@/components/molecules/stepThree";
 import { useEdgeStore } from "@/lib/edgestore";
 import { sendEmail } from "@/utiles/sendEmail";
-import { FormData } from "@/domain/formData";
+import { FormData, Salutation } from "@/domain/formData";
 import useFileStore from "../stores/fileStore";
+import { useRouter } from "next/navigation";
+import { toast } from "react-toastify";
+import Loader from "@/components/atoms/loader";
 
 type Props = {};
 
@@ -27,22 +30,54 @@ export default function FormulaireEvaluation({}: Props) {
   const curStep = +(localStorage.getItem("currentStep") as string);
   const [currentStep, setCurrentStep] = useState<number>(curStep);
   const [errorMessage, setErrorMessage] = useState<string>("");
+  const [isLoading, setIsLoading] = useState<Boolean>(false);
   const { edgestore } = useEdgeStore();
+  const router = useRouter();
+
+  let uploadedCv;
+  let formData: FormData = {
+    name: undefined,
+    nom: "",
+    prenom: "",
+    etatCivil: "",
+    dateDeNaissance: "",
+    country: "",
+    currentCountry: "",
+    email: "",
+    telephone: "",
+    detail: "",
+    programme: "",
+  };
+  let salutation: Salutation = {
+    value: "",
+    label: "",
+  };
+  let profession: string = "";
+  let niveauetude: string = "";
+
+  useEffect(() => {
+    formData = JSON.parse((localStorage.getItem("formData") as string) || "{}");
+    salutation =
+      JSON.parse(localStorage.getItem("salutation") as string) || "{}";
+    profession = (localStorage.getItem("profession") as string) || "";
+    niveauetude = (localStorage.getItem("niveauEtude") as string) || "";
+  }, []);
 
   const handleSubmit = async (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
     e.preventDefault();
-    let uploadedCv;
-    const formData: FormData = JSON.parse(
-      (localStorage.getItem("formData") as string) || "{}"
-    );
-    const salutation =
-      JSON.parse(localStorage.getItem("salutation") as string) || "{}";
-    const profession: string =
-      (localStorage.getItem("profession") as string) || "";
-    const niveauetude: string =
-      (localStorage.getItem("niveauEtude") as string) || "";
+    setIsLoading((prev) => !prev);
+
+    if (typeof window !== "undefined") {
+      formData = JSON.parse(
+        (localStorage.getItem("formData") as string) || "{}"
+      );
+      salutation =
+        JSON.parse(localStorage.getItem("salutation") as string) || "{}";
+      profession = (localStorage.getItem("profession") as string) || "";
+      niveauetude = (localStorage.getItem("niveauEtude") as string) || "";
+    }
 
     if (!file) {
       setErrorMessage("Veillez renseigner tout les champs svp");
@@ -56,7 +91,6 @@ export default function FormulaireEvaluation({}: Props) {
         console.log(progress);
       },
     });
-    console.log(uploadedCv);
 
     // send mail
     if (uploadedCv) {
@@ -78,11 +112,26 @@ export default function FormulaireEvaluation({}: Props) {
       })
         .then((res) => {
           console.log("response from email sent", res);
+          toast.success("Formulaire envoyé", {
+            position: "top-right",
+            theme: "dark",
+            hideProgressBar: true,
+            autoClose: 2000,
+          });
         })
         .catch((err) => {
           console.log("this is error", err);
         });
-      localStorage.setItem('currentStep', '1')
+      if (typeof window !== "undefined") {
+        localStorage.setItem("currentStep", "1");
+        localStorage.removeItem("formData");
+        localStorage.removeItem("currentStep");
+        localStorage.removeItem("profession");
+        localStorage.removeItem("cvFile");
+        localStorage.removeItem("niveauEtude");
+        localStorage.removeItem("salutation");
+      }
+      router.push("/");
     }
   };
 
@@ -104,14 +153,10 @@ export default function FormulaireEvaluation({}: Props) {
         ) : currentStep == 2 ? (
           <StepTwo />
         ) : (
-          <StepThree/>
+          <StepThree />
         )}
         <div className="flex justify-between mt-6">
-          <Button
-            className={currentStep === 1 ? "hidden" : "block"}
-            content={"Précédent"}
-            bgColor={"#f61626"}
-            textColor={"#fff"}
+          <button
             onClick={() => {
               if (currentStep > 1) {
                 const curStep = currentStep - 1;
@@ -119,21 +164,28 @@ export default function FormulaireEvaluation({}: Props) {
                 setCurrentStep(curStep);
               }
             }}
-          />
+            className={
+              currentStep === 1
+                ? `py-1 px-3 active:translate-y-1 hover:cursor-pointer bg-primary-color text-text-color rounded hidden`
+                : `py-1 px-3 active:translate-y-1 hover:cursor-pointer bg-primary-color text-text-color rounded block`
+            }
+          >
+            Précédent
+          </button>
           <p className="flex-1"></p>
           {currentStep === 3 ? (
             <button
-              className="bg-[#25a9e3] text-white py-1 px-3 active:translate-y-1 hover:cursor-pointer rounded"
+              className={
+                isLoading
+                  ? "hover:cursor-not-allowed px-10 bg-[#25aae386] rounded text-text-color"
+                  : "bg-[#25a9e3] text-text-color py-1 px-3 active:translate-y-1 hover:cursor-pointer rounded"
+              }
               onClick={(e) => handleSubmit(e)}
             >
-              Submit
+              {isLoading ? <Loader /> : <span>Submit</span>}
             </button>
           ) : (
-            <Button
-              className={""}
-              content={"Suivant"}
-              bgColor={"#25a9e3"}
-              textColor={"#fff"}
+            <button
               onClick={() => {
                 if (currentStep < 3) {
                   let curStep = currentStep + 1;
@@ -141,7 +193,10 @@ export default function FormulaireEvaluation({}: Props) {
                   setCurrentStep(curStep);
                 }
               }}
-            />
+              className={`py-1 px-3 active:translate-y-1 hover:cursor-pointer bg-[#25a9e3] text-text-color rounded`}
+            >
+              Suivant
+            </button>
           )}
         </div>
         {currentStep === 3 ? (

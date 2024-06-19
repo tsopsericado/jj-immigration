@@ -90,11 +90,11 @@ export default () => {
             <label className="block pt-4 pb-2">Stay up to date</label>
             <div className="max-w-sm flex items-center gap-2 border rounded-md p-1">
               <input
-                type="email"
+                type="text"
                 placeholder="Enter your email"
                 className="w-full rounded p-2.5 outline-none"
               />
-              <button className="p-2.5 rounded-md text-white bg-indigo-600 outline-none shadow-md focus:shadow-none sm:px-5">
+              <button className="p-2.5 rounded-md text-text-color bg-primary-color outline-none shadow-md focus:shadow-none sm:px-5">
                 Subscribe
               </button>
             </div>

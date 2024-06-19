@@ -67,19 +67,55 @@
   }
 }
 
-.content:before {
-  content: '';
-  width: 0;
-  height: 5px;
-  background-color: #e73131;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  transition: .5s;
+.nav-link, .dropdown li {
+  list-style: none;
+  height: 100%;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  /* color: #000;
+  background-color: #e73131; */
 }
 
-.dropdown-list  .list:hover .content:before  {
+.dropdown {
+  position: absolute;
+  padding: 0.25rem 0;
+  /* margin: 5rem, -1.5rem; */
+  margin: 10px -1.5rem;
+  background-color: #f1f1f1;
+  box-shadow: 0 4px 12px #0000001a;
+  border-radius: 0.5rem;
+  display: none;
+}
+
+.nav-link:hover {
   background-color: #e73131;
+  color: #f1f1f1;
+  /* padding: 4px 8px; */
+
+}
+
+.content:hover .dropdown {
+  display: block;
+
+}
+
+.dropdown-icon {
+  margin: auto 0;
+  position: relative;
+  right: -5px;
+  transform: rotate(0deg);
+  transition: 0.5s ease-in-out all;
+}
+
+.dropdown-icon:hover {
+  transform: rotate(180deg);
+}
+
+.text-arrow {
+  display: flex;
+  gap: 0.5rem;
+  margin: auto 0;
 }
 
 .typing-indicator {
@@ -189,5 +225,91 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+/* Spining loader */
+.spinner {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+}
+
+.spinner div {
+  position: absolute;
+  width: 35%;
+  height: 100%;
+  background: #fff;
+  transform: rotate(calc(var(--rotation) * 1deg)) translate(0, calc(var(--translation) * 1%));
+  animation: spinner-fzua35 1s calc(var(--delay) * 1s) infinite ease;
+}
+
+.spinner div:nth-child(1) {
+  --delay: 0.1;
+  --rotation: 36;
+  --translation: 150;
+}
+
+.spinner div:nth-child(2) {
+  --delay: 0.2;
+  --rotation: 72;
+  --translation: 150;
+}
+
+.spinner div:nth-child(3) {
+  --delay: 0.3;
+  --rotation: 108;
+  --translation: 150;
+}
+
+.spinner div:nth-child(4) {
+  --delay: 0.4;
+  --rotation: 144;
+  --translation: 150;
+}
+
+.spinner div:nth-child(5) {
+  --delay: 0.5;
+  --rotation: 180;
+  --translation: 150;
+}
+
+.spinner div:nth-child(6) {
+  --delay: 0.6;
+  --rotation: 216;
+  --translation: 150;
+}
+
+.spinner div:nth-child(7) {
+  --delay: 0.7;
+  --rotation: 252;
+  --translation: 150;
+}
+
+.spinner div:nth-child(8) {
+  --delay: 0.8;
+  --rotation: 288;
+  --translation: 150;
+}
+
+.spinner div:nth-child(9) {
+  --delay: 0.9;
+  --rotation: 324;
+  --translation: 150;
+}
+
+.spinner div:nth-child(10) {
+  --delay: 1;
+  --rotation: 360;
+  --translation: 150;
+}
+
+@keyframes spinner-fzua35 {
+  0%, 10%, 20%, 30%, 50%, 60%, 70%, 80%, 90%, 100% {
+    transform: rotate(calc(var(--rotation) * 1deg)) translate(0, calc(var(--translation) * 1%));
+  }
+
+  50% {
+    transform: rotate(calc(var(--rotation) * 1deg)) translate(0, calc(var(--translation) * 1.5%));
   }
 }
