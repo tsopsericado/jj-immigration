@@ -1,15 +1,23 @@
 import Link from "next/link";
 import React from "react";
 import { IoMdArrowDropdown } from "react-icons/io";
+import { usePathname } from "next/navigation";
 
 type Props = {};
 
 export default function Menu({}: Props) {
+  const pathname = usePathname();
   return (
     <>
       <ul className="nav-links flex justify-between w-full my-auto">
-        <li className="nav-link">
-          <Link href="/">A propos</Link>
+        <li
+          className={
+            pathname === "/a-propos"
+              ? "text-text-color bg-primary-color nav-link"
+              : "nav-link"
+          }
+        >
+          <Link href="/a-propos">A propos</Link>
         </li>
         <li className="nav-link content">
           <Link className="text-arrow" href="/">
@@ -56,7 +64,7 @@ export default function Menu({}: Props) {
             Nos services
             <IoMdArrowDropdown className="dropdown-icon" />
           </Link>
-          <ul className='dropdown'>
+          <ul className="dropdown">
             <li className=" py-1 px-1 hover:bg-primary-color text-black hover:text-text-color ">
               <Link href="">Services d'immigration</Link>
             </li>
@@ -68,16 +76,14 @@ export default function Menu({}: Props) {
             <IoMdArrowDropdown className="dropdown-icon" />
           </Link>
 
-          <ul className='dropdown'>
-              <li className=" py-1 px-1 hover:bg-primary-color text-black hover:text-text-color">
-                <Link href="/">Visa visiteur au Canada</Link>
-              </li>
-              <li className=" py-1 px-1 hover:bg-primary-color text-black hover:text-text-color">
-                <Link href="/">
-                  Super visa pour les parents ou grand parents
-                </Link>
-              </li>
-            </ul>
+          <ul className="dropdown">
+            <li className=" py-1 px-1 hover:bg-primary-color text-black hover:text-text-color">
+              <Link href="/">Visa visiteur au Canada</Link>
+            </li>
+            <li className=" py-1 px-1 hover:bg-primary-color text-black hover:text-text-color">
+              <Link href="/">Super visa pour les parents ou grand parents</Link>
+            </li>
+          </ul>
         </li>
         <li className="nav-link content">
           <Link className="text-arrow" href="/">
@@ -85,7 +91,7 @@ export default function Menu({}: Props) {
             <IoMdArrowDropdown className="dropdown-icon" size={15} />
           </Link>
 
-          <ul className='dropdown'>
+          <ul className="dropdown">
             <li className=" py-1 px-1 hover:bg-primary-color text-black hover:text-text-color">
               <Link href="/">Permis d'étude</Link>
             </li>
@@ -94,7 +100,11 @@ export default function Menu({}: Props) {
             </li>
           </ul>
         </li>
-        <li className="nav-link">
+        <li className={
+            pathname === "/citoyenneté"
+              ? "text-text-color bg-primary-color nav-link"
+              : "nav-link"
+          }>
           <Link href="/">Citoyenneté</Link>
         </li>
       </ul>

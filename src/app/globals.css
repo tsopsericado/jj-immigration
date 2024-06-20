@@ -67,6 +67,11 @@
   }
 }
 
+.main-header {
+  z-index: 9;
+}
+
+
 .nav-link, .dropdown li {
   list-style: none;
   height: 100%;

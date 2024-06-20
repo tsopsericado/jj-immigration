@@ -7,16 +7,16 @@ export default () => {
       label: "Company",
       items: [
         {
-          href: "javascript:void()",
-          name: "Partners",
+          href: "/our-partners",
+          name: "Nos partenaires",
         },
         {
-          href: "javascript:void()",
+          href: "/blog",
           name: "Blog",
         },
         {
-          href: "javascript:void()",
-          name: "Team",
+          href: "/our-team",
+          name: "Notre équipe",
         },
         {
           href: "javascript:void()",
@@ -28,8 +28,8 @@ export default () => {
       label: "Resources",
       items: [
         {
-          href: "javascript:void()",
-          name: "contact",
+          href: "/contact-us",
+          name: "Nous contacter",
         },
         {
           href: "javascript:void()",
@@ -46,7 +46,7 @@ export default () => {
       ],
     },
     {
-      label: "About",
+      label: "A propos",
       items: [
         {
           href: "javascript:void()",
@@ -61,8 +61,8 @@ export default () => {
           name: "Privacy",
         },
         {
-          href: "javascript:void()",
-          name: "About US",
+          href: "/a-propos",
+          name: "A propos",
         },
       ],
     },
@@ -82,12 +82,11 @@ export default () => {
               loading="lazy"
             />
             <p className="leading-relaxed mt-2 text-[15px]">
-              Lorem Ipsum has been the industry's standard dummy text ever since
-              the 1500s.
+              Faites d vos rêves une réalité !.
             </p>
           </div>
           <form onSubmit={(e) => e.preventDefault()}>
-            <label className="block pt-4 pb-2">Stay up to date</label>
+            <label className="block pt-4 pb-2">Restez en contact</label>
             <div className="max-w-sm flex items-center gap-2 border rounded-md p-1">
               <input
                 type="text"

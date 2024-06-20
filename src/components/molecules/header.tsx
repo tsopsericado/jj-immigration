@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import React from "react";
 import { FaMapMarkerAlt, FaTwitter } from "react-icons/fa";
@@ -12,9 +13,11 @@ import Menu from "./menu";
 type Props = {};
 
 export default function Header({}: Props) {
+  
+
   return (
     <>
-      <header>
+      <header className="z-50">
         <div className="bg-primary-color text-text-color  flex justify-center">
           <div className="w-full">
             <ul className="md:flex block  w-[70%] justify-between mx-auto text-xs">
@@ -84,7 +87,7 @@ export default function Header({}: Props) {
           </div>
         </div>
         {/* Header lower */}
-        <div>
+        <div className="main-header">
           <div className="flex justify-between px-5">
             <div className="">
               <figure>
