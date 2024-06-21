@@ -318,3 +318,97 @@
     transform: rotate(calc(var(--rotation) * 1deg)) translate(0, calc(var(--translation) * 1.5%));
   }
 }
+
+.button {
+  padding: 1em;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  /* letter-spacing: 5px; */
+  /* text-transform: uppercase; */
+  cursor: pointer;
+  color: #fff;
+  transition: all 1000ms;
+  font-size: 15px;
+  position: relative;
+  overflow: hidden;
+  outline: 2px solid #e73131;
+}
+
+button:hover {
+  color: #ffffff;
+  transform: scale(1.1);
+  outline: 2px solid #e73131;
+  box-shadow: 4px 5px 17px -4px #e73e3eb9;
+}
+
+button::before {
+  content: "";
+  position: absolute;
+  left: -50px;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background-color: #e73131;
+  transform: skewX(45deg);
+  z-index: -1;
+  transition: width 1000ms;
+}
+
+button:hover::before {
+  width: 250%;
+}
+
+.small-cart {
+  background-image: linear-gradient(115deg, #28282ccc, #ad4251b3), url(../../public/assets/images/visaCananda.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.small-contactUs-cart {
+  background-image:  url(../../public/assets/images/conact-us-resize.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* ushduvs */
+
+.contact-us-btn {
+  padding: 15px 25px;
+  border: unset;
+  border-radius: 15px;
+  color: #212121;
+  z-index: 1;
+  background: #e8e8e8;
+  position: relative;
+  font-weight: 1000;
+  font-size: 17px;
+  -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+  box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+  transition: all 250ms;
+  overflow: hidden;
+ }
+ 
+ .contact-us-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  border-radius: 15px;
+  background-color: #212121;
+  z-index: -1;
+  -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+  box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+  transition: all 250ms
+ }
+ 
+ .contact-us-btn:hover {
+  color: #e8e8e8;
+  border: none;
+ }
+ 
+ .contact-us-btn:hover::before {
+  width: 100%;
+ }

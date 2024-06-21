@@ -62,7 +62,7 @@ export default function Header({}: Props) {
                   </Link>
                 </li>
               </ul>
-              <div className=" md:border-l-2 my-auto  px-6 md:border-text-color">
+              <div className=" md:border-l-2 my-auto hidden md:flex px-6 md:border-text-color">
                 <form action="/" method="post">
                   <div className="input flex text-[#3a3737] bg-text-color w-[60%] mx-auto md:w-[95%] items-center py-1 px-2 gap-2 rounded-full">
                     <FaSearch size={20} />
@@ -86,7 +86,7 @@ export default function Header({}: Props) {
             </div>
           </div>
         </div>
-        {/* Header lower */}
+        {/* lower header */}
         <div className="main-header">
           <div className="flex justify-between px-5">
             <div className="">
