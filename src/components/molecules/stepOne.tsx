@@ -33,6 +33,8 @@ export default function StepOne({}: Props) {
     currentCountry: localData?.currentCountry || "",
     email: localData?.email || "",
     detail: localData?.detail || "",
+    name: undefined,
+    programme: localData?.programme || ""
   });
   const [coutries, setCountries] = useState([]);
 

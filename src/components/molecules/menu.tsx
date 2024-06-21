@@ -9,7 +9,7 @@ export default function Menu({}: Props) {
   const pathname = usePathname();
   return (
     <>
-      <ul className="nav-links flex justify-between w-full my-auto">
+      <ul className="nav-links flex justify-end gap-1 w-full my-auto">
         <li
           className={
             pathname === "/a-propos"
@@ -100,12 +100,23 @@ export default function Menu({}: Props) {
             </li>
           </ul>
         </li>
-        <li className={
+        <li
+          className={
             pathname === "/citoyenneté"
               ? "text-text-color bg-primary-color nav-link"
               : "nav-link"
-          }>
+          }
+        >
           <Link href="/">Citoyenneté</Link>
+        </li>
+        <li
+          className={
+            pathname === "/contact-us"
+              ? "text-text-color bg-primary-color nav-link"
+              : "nav-link"
+          }
+        >
+          <Link href="/contact-us">Nous joindre</Link>
         </li>
       </ul>
     </>

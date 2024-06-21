@@ -5,15 +5,16 @@ import { FaAngleDoubleRight } from "react-icons/fa";
 type Props = {
   content: string;
   bgImage: string;
+  linearGradient?: string
 };
 
-export default function HeroSection({ content, bgImage }: Props) {
+export default function HeroSection({ content, bgImage, linearGradient }: Props) {
 
   return (
     <div>
       <div
         style={{
-          backgroundImage: `url(${bgImage})`,
+          backgroundImage: `${linearGradient}, url(${bgImage})`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
           zIndex: "-1"
@@ -22,7 +23,7 @@ export default function HeroSection({ content, bgImage }: Props) {
       >
         <div className="h-[400px]">
           <h1 className="font-bold uppercase flex gap-4 text-5xl absolute top-[50%] left-20 text-text-color">
-            <FaAngleDoubleRight className="my-auto" size={35} />
+            <FaAngleDoubleRight className={content === "" ? "hidden" : "my-auto"} size={35} />
             {content}
           </h1>
         </div>
