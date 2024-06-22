@@ -7,7 +7,7 @@ type Props = {};
 export default function Prtq({}: Props) {
   return (
     <>
-      <div className="px-10 border-gray-400 p-3 w-[95%] md:w-1/2 mx-auto my-6 border-2">
+      <div className="px-10 border-gray-400 pb-3 p-3 w-[95%] md:w-1/2 mx-auto my-6 border-2">
         <h1 className="uppercase font-bold text-3xl text-primary-color text-center md:w-[75%] w-full mx-auto">
           Immigrer au canada Programme régulier des travailleurs qualifiés du québec - (PRTQ)
         </h1>
@@ -19,7 +19,7 @@ export default function Prtq({}: Props) {
             <FaCheckCircle className="text-primary-color my-auto" size={15} />
           </div>
           <p className="text-[#666666]">
-          Programme Régulier des Travailleurs Qualifiés du Québec s’adresse aux personnes qui souhaitent immigrer au Québec comme travailleur qualifié, à partir du Québec ou depuis l’étranger pour l’obtention du certificat de sélection du Québec (CSQ) dans le but de s’établir au Québec de façon permanente.
+          Programme Régulier des Travailleurs Qualifiés du Québec s'adresse aux personnes qui souhaitent immigrer au Québec comme travailleur qualifié, à partir du Québec ou depuis l'étranger pour l'obtention du certificat de sélection du Québec (CSQ) dans le but de s'établir au Québec de façon permanente.
           </p>
         </div>
         <div className="flex text-sm gap-3">
@@ -48,13 +48,13 @@ export default function Prtq({}: Props) {
               une formation et des compétences professionnelles qui faciliteront
               votre insertion en emploi au Québec.
               <br></br>
-              D’autres facteurs sont pris en compte, comme :
+              D'autres facteurs sont pris en compte, comme :
               <ul className="list-disc ml-6 font-semibold text-[#666666]">
                 <li>Vos connaissances linguistiques</li>
                 <li>Vos études et votre domaine de formation</li>
                 <li>Votre âge</li>
                 <li>Les caractéristiques de votre conjoint</li>
-                <li>La présence d’enfants</li>
+                <li>La présence d'enfants</li>
               </ul>
             </p>
           </div>

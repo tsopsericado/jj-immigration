@@ -7,7 +7,7 @@ type Props = {};
 export default function Tqf({}: Props) {
   return (
     <>
-      <div className="px-10 border-gray-400 p-3 w-[95%] md:w-1/2 mx-auto my-6 border-2">
+      <div className="px-10 border-gray-400 pb-3 p-3 w-[95%] md:w-1/2 mx-auto my-6 border-2">
         <h1 className="uppercase font-bold text-3xl text-primary-color text-center md:w-[75%] w-full mx-auto">
           Immigrer au canada travailleurs qualifiés fédéral (TQF)
         </h1>

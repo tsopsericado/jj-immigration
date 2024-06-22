@@ -42,7 +42,7 @@ export default function Menu({}: Props) {
           <Link href="/a-propos">A propos</Link>
         </li>
         <li className="nav-link content">
-          <Link className="text-arrow" href="/">
+          <Link className="text-arrow" href="">
             Immigrer
             <IoMdArrowDropdown className="dropdown-icon" />
           </Link>
@@ -63,7 +63,7 @@ export default function Menu({}: Props) {
           </ul>
         </li>
         <li className="nav-link content">
-          <Link className="text-arrow" href="/">
+          <Link className="text-arrow" href="">
             Nos services
             <IoMdArrowDropdown className="dropdown-icon" />
           </Link>
@@ -92,7 +92,7 @@ export default function Menu({}: Props) {
           </ul>
         </li>
         <li className="nav-link content">
-          <Link className="text-arrow" href="/">
+          <Link className="text-arrow" href="">
             Etudier
             <IoMdArrowDropdown className="dropdown-icon" size={15} />
           </Link>
@@ -115,7 +115,7 @@ export default function Menu({}: Props) {
               : "nav-link"
           }
         >
-          <Link href="/">Citoyenneté</Link>
+          <Link href="/citoyennete">Citoyenneté</Link>
         </li>
         <li
           className={
