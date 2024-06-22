@@ -1,5 +1,4 @@
 "use client";
-import InputField from "@/components/atoms/inputField";
 import HeroSection from "@/components/molecules/heroSection";
 import Layout from "@/components/templates/layout";
 import { Button } from "@/components/ui/button";

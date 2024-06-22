@@ -22,7 +22,7 @@ export default function HeroSection({ content, bgImage, linearGradient }: Props)
         className="relative"
       >
         <div className="h-[400px]">
-          <h1 className="font-bold uppercase flex gap-4 text-5xl absolute top-[50%] left-20 text-text-color">
+          <h1 className="font-bold uppercase flex gap-4 text-5xl absolute top-[50%] md:left-20 left-5 text-text-color">
             <FaAngleDoubleRight className={content === "" ? "hidden" : "my-auto"} size={35} />
             {content}
           </h1>

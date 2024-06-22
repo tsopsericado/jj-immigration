@@ -101,7 +101,7 @@ export default function FormulaireEvaluation({}: Props) {
         country: formData.country,
         currentCountry: formData.currentCountry,
         telephone: formData.telephone,
-        programme: formData.telephone,
+        programme: formData.programme,
         profession: profession,
         etude: niveauetude,
         details: formData.detail,

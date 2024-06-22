@@ -1,9 +1,7 @@
 "use client"
-import Header from "@/components/molecules/header";
 import Layout from "@/components/templates/layout";
 import { useRouter } from "next/navigation";
 import React from "react";
-import { FaUserEdit } from "react-icons/fa";
 
 export default function Home() {
   const router = useRouter();

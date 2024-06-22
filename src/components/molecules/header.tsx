@@ -21,7 +21,7 @@ export default function Header({}: Props) {
         <div className="bg-primary-color text-text-color  flex justify-center">
           <div className="w-full">
             <ul className="md:flex block  w-[70%] justify-between mx-auto text-xs">
-              <li className="flex pt-2 gap-2">
+              <li className="flex pt-2 gap-2 justify-center">
                 <FaRegEnvelope size={20} />
                 <Link
                   className="my-auto hover:underline"
@@ -30,13 +30,13 @@ export default function Header({}: Props) {
                   jjinternationalservcice@gmail.com
                 </Link>
               </li>
-              <li className="flex pl-6 pt-4 gap-2">
+              <li className="flex pl-12 pt-4 justify-center gap-2">
                 <FaMapMarkerAlt size={20} />
                 <p className="my-auto">
                   152 rue Vallières Val-d'Or (Qc) J9P 4L3
                 </p>
               </li>
-              <li className="flex pl-12 pt-4 gap-2">
+              <li className="flex pl-10 pt-4 justify-center gap-2">
                 <FaRegClock size={20} />
                 <p className="my-auto">Mon - Sat: 9.00 to 18.00</p>
               </li>

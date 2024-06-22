@@ -82,7 +82,7 @@ export default () => {
               loading="lazy"
             />
             <p className="leading-relaxed mt-2 text-[15px]">
-              Faites d vos rêves une réalité !.
+              Faites de vos rêves une réalité !.
             </p>
           </div>
           <form onSubmit={(e) => e.preventDefault()}>

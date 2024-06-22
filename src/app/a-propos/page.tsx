@@ -3,8 +3,6 @@ import ContactUsCart from "@/components/molecules/contactUsCart";
 import HeroSection from "@/components/molecules/heroSection";
 import ImmigrationService from "@/components/molecules/immigrationService";
 import Layout from "@/components/templates/layout";
-import Image from "next/image";
-import Link from "next/link";
 import React from "react";
 
 type Props = {};
@@ -18,7 +16,7 @@ export default function About({}: Props) {
           content={"à propos"}
           bgImage={"https://harmonyvisas.com/images/why_choose_us_img.jpg"}
         />
-        <div className="py-6 flex justify-between gap-2 w-[90%] md:w-[70%] mx-auto ">
+        <div className="py-6 block md:flex justify-between gap-2 w-[90%] md:w-[70%] mx-auto ">
           <div className="w-fit">
             <h1 className="font-semibold text-3xl py-3">Qui sommes nous.</h1>
             <p>
@@ -68,7 +66,7 @@ export default function About({}: Props) {
               </li>
             </ul>
           </div>
-          <div className="w-[500px] py-4 hidden md:block gap-2">
+          <div className="w-[500px] py-4 md:block gap-2">
             <ImmigrationService />
             <ContactUsCart />
           </div>

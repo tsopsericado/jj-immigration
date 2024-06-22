@@ -4,15 +4,16 @@ import React from "react";
 
 type Props = {};
 
-export default function mmigrationService({}: Props) {
+export default function ImmigrationService({}: Props) {
   return (
     <>
       <div
-        className="small-cart h-[300px] w-full mb-6 py-3"
+        className="small-cart h-[300px] w-[350px] mb-6 py-3"
       >
         <h1 className="font-semibold w-[200px] text-text-color pl-5 text-3xl">
           Services d'immigration règlementé
         </h1>
+        <p className="pl-5 text-text-color absolute mt-14">Faites évaluer votre dossier, cliquer ici</p>
         <button className="buttonn flex justify-center mx-auto bottom-[-100px]">
           <Link href="/formulaire-devaluation">Formulaire d'évaluation</Link>
         </button>
