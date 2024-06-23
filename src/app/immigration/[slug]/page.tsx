@@ -1,5 +1,6 @@
 "use client";
 import Cec from "@/components/molecules/cec";
+import Citoyenneté from "@/components/molecules/citoyenneter";
 import HeroSection from "@/components/molecules/heroSection";
 import ParrainageConjoint from "@/components/molecules/parrainageConjoint";
 import ParrainageParent from "@/components/molecules/parrainageParent";
@@ -34,16 +35,23 @@ export default function Home({}: Props) {
           <Cec />
         ) : pathname === "/immigration/programme-du-quebec-peq" ? (
           <Peq />
-        ) : pathname === "/immigration/programme-regulier-des-travailleurs-du-quebec-prtq" ? (
-          <Prtq/>
-        ) : pathname === "/immigration/programme-des-candidats-des-provinces-pcp" ? (
-          <Pcp/>
-        ) : pathname === "/immigration/parrainer-votre-epoux-conjoint-de-fait-ou-enfant-a-charge" ? (
-          <ParrainageConjoint/>
-        ) : pathname === "/immigration/parrainer-vos-parents-ou-vos-grand-parents" ? (
-          <ParrainageParent/>
-        ) : ""
-        }
+        ) : pathname ===
+          "/immigration/programme-regulier-des-travailleurs-du-quebec-prtq" ? (
+          <Prtq />
+        ) : pathname ===
+          "/immigration/programme-des-candidats-des-provinces-pcp" ? (
+          <Pcp />
+        ) : pathname ===
+          "/immigration/parrainer-votre-epoux-conjoint-de-fait-ou-enfant-a-charge" ? (
+          <ParrainageConjoint />
+        ) : pathname ===
+          "/immigration/parrainer-vos-parents-ou-vos-grand-parents" ? (
+          <ParrainageParent />
+        ) : pathname === "/immigration/citoyennete" ? (
+          <Citoyenneté />
+        ) : (
+          ""
+        )}
       </Layout>
     </>
   );

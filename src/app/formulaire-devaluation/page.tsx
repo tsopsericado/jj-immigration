@@ -17,14 +17,6 @@ import Loader from "@/components/atoms/loader";
 
 type Props = {};
 
-export const salutaionOptions = [
-  { value: "Mr", label: "Mr" },
-  { value: "Ms", label: "Ms" },
-  { value: "Mrs", label: "Mrs" },
-  { value: "Miss", label: "Miss" },
-  { value: "Dr", label: "Dr" },
-];
-
 export default function FormulaireEvaluation({}: Props) {
   const { file, setFile } = useFileStore();
   const curStep = +(localStorage.getItem("currentStep") as string);
@@ -177,7 +169,7 @@ export default function FormulaireEvaluation({}: Props) {
             <button
               className={
                 isLoading
-                  ? "hover:cursor-not-allowed px-10 bg-[#25aae386] rounded text-text-color"
+                  ? "hover:cursor-wait px-10 bg-[#25aae386] rounded text-text-color"
                   : "bg-[#25a9e3] text-text-color py-1 px-3 active:translate-y-1 hover:cursor-pointer rounded"
               }
               onClick={(e) => handleSubmit(e)}

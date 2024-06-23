@@ -14,7 +14,7 @@ export async function sendEmail(data: any) {
     .then((res) => res.json())
     .then((response) => {
       console.log('from utils', response)
-      alert(response.message);
+      // alert(response.message);
     })
     .catch((err) => {
       console.log('from utils', err)

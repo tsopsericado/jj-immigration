@@ -13,8 +13,6 @@ import Menu from "./menu";
 type Props = {};
 
 export default function Header({}: Props) {
-  
-
   return (
     <>
       <header className="z-50">
@@ -91,12 +89,14 @@ export default function Header({}: Props) {
           <div className="flex justify-between px-5 ">
             <div className="">
               <figure>
-                <Image
-                  src="/assets/images/logoo-jj.png"
-                  alt="logo jj-immigration"
-                  width={100}
-                  height={100}
-                />
+                <Link href="/">
+                  <Image
+                    src="/assets/images/logoo-jj.png"
+                    alt="logo jj-immigration"
+                    width={100}
+                    height={100}
+                  />
+                </Link>
               </figure>
             </div>
             <div className="hidden w-[75%] md:flex">
