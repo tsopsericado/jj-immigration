@@ -18,8 +18,11 @@ import Loader from "@/components/atoms/loader";
 type Props = {};
 
 export default function FormulaireEvaluation({}: Props) {
+  let curStep: number = 1
   const { file, setFile } = useFileStore();
-  const curStep = +(localStorage.getItem("currentStep") as string);
+  if (typeof localStorage !== "undefined") {
+    curStep = +(localStorage.getItem("currentStep") as string);
+  }
   const [currentStep, setCurrentStep] = useState<number>(curStep);
   const [errorMessage, setErrorMessage] = useState<string>("");
   const [isLoading, setIsLoading] = useState<Boolean>(false);
