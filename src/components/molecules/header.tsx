@@ -6,6 +6,7 @@ import { FaRegEnvelope, FaRegClock } from "react-icons/fa6";
 import { IoMdMenu } from "react-icons/io";
 import { FaFacebookF, FaSearch } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
+import { FaXTwitter } from "react-icons/fa6";
 import { Button } from "../ui/button";
 import Image from "next/image";
 import Menu from "./menu";
@@ -36,12 +37,12 @@ export default function Header({}: Props) {
               </li>
               <li className="flex pl-10 pt-4 justify-center gap-2">
                 <FaRegClock size={20} />
-                <p className="my-auto">Mon - Sat: 9.00 to 18.00</p>
+                <p className="my-auto">Lun - Sam: 9:00 à 18:00</p>
               </li>
             </ul>
             <div className="block md:flex my-3 justify-center">
               <ul className="flex justify-center py-3 my-auto gap-6 pr-6">
-                <li>
+                <li className="active:translate-x-1">
                   <Link
                     target="_blank"
                     href="https://www.facebook.com/profile.php?id=61557544078696&mibextid=ZbWKwL&_rdc=2&_rdr"
@@ -49,13 +50,13 @@ export default function Header({}: Props) {
                     <FaFacebookF size={20} />
                   </Link>
                 </li>
-                <li>
-                  <Link href="/">
-                    <FaTwitter size={20} />
+                <li className="active:translate-x-1">
+                  <Link href="https://www.x.com">
+                    <FaXTwitter size={20} />
                   </Link>
                 </li>
-                <li>
-                  <Link href="/">
+                <li className="active:translate-x-1">
+                  <Link href="https://www.instagram.com">
                     <AiFillInstagram size={20} />
                   </Link>
                 </li>

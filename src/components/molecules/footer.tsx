@@ -7,7 +7,7 @@ import { FaXTwitter } from "react-icons/fa6";
 export default () => {
   const footerNavs = [
     {
-      label: "Company",
+      label: "Entreprise",
       items: [
         {
           href: "/ourServices",
@@ -40,12 +40,12 @@ export default () => {
           name: "Support",
         },
         {
-          href: "javascript:void()",
-          name: "Docs",
+          href: "/formulaire-devaluation",
+          name: "Formulaire d'évaluation",
         },
         {
-          href: "javascript:void()",
-          name: "Pricing",
+          href: "/visiter",
+          name: "Visiter le Canada",
         },
       ],
     },
@@ -62,7 +62,7 @@ export default () => {
         },
         {
           href: "javascript:void()",
-          name: "Privacy",
+          name: "Confidentialité",
         },
         {
           href: "/a-propos",
@@ -73,7 +73,7 @@ export default () => {
   ];
 
   return (
-    <footer className="text-text-color bg-black px-4 py-5 max-w-screen-xl mx-auto md:px-8">
+    <footer className="text-text-color bg-black px-4 py-5 max-w-full mx-auto md:px-8">
       <div className="gap-6 justify-between md:flex">
         <div className="flex-1">
           <div className="max-w-xs">

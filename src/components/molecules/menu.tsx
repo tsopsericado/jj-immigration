@@ -76,13 +76,13 @@ export default function Menu({}: Props) {
           </Link>
           <ul className="dropdown">
             <li className=" py-1 px-1 hover:bg-primary-color text-black hover:text-text-color ">
-              <Link href={`/ourSevices`}>Services d'immigration</Link>
+              <Link href={`/ourServices`}>Services d'immigration</Link>
             </li>
           </ul>
         </li>
 
         <li className="nav-link content">
-          <Link className="text-arrow" href="/">
+          <Link className="text-arrow" href="/visiter">
             Visiter
             <IoMdArrowDropdown className="dropdown-icon" />
           </Link>
@@ -99,7 +99,7 @@ export default function Menu({}: Props) {
           </ul>
         </li>
         <li className="nav-link content">
-          <Link className="text-arrow" href="">
+          <Link className="text-arrow" href="/etude">
             Etudier
             <IoMdArrowDropdown className="dropdown-icon" size={15} />
           </Link>

@@ -1,7 +1,6 @@
 "use client";
 import HeroSection from "@/components/molecules/heroSection";
 import Layout from "@/components/templates/layout";
-import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { FaAngleDoubleRight } from "react-icons/fa";
@@ -87,8 +86,8 @@ export default function OurServices({}: Props) {
           <h1 className="text-3xl font-bold text-center py-6 text-[#666666]">
             Nos Services
           </h1>
-          <div className="">
-            <div className="w-[96%] md:w-[60%] mx-auto">
+          <div className="pb-6">
+            <div className="w-[96%] md:w-[60%] mx-auto ">
               <h1 className="text-primary-color font-bold text-2xl ">
                 Immigration Canadinne
               </h1>
