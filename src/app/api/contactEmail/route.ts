@@ -4,7 +4,7 @@ import nodemailer from 'nodemailer'
 import Mail from 'nodemailer/lib/mailer';
 
 export async function POST(request: NextRequest) {
-  const { email, name, file, etude, details, profession, salutation, programme, telephone, prenom, etatcivil, currentCountry, dateDeNaissance, country } = await request.json();
+  const { email, name, surname, message, tel, ville, entreprise } = await request.json();
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
@@ -19,24 +19,18 @@ export async function POST(request: NextRequest) {
   const mailOptions: Mail.Options = {
     from: email,
     to: "jjinternationalservcice@gmail.com",
-    subject: `Formulaire d evaluation de ${salutation} ${name} ${prenom}`,
+    subject: `Mr/Mme ${name} souhaite entrer en contact`,
     html: `
     <div>
       <h1>Voici les informations relatives</h1>
       <br>
-      <h2>Nom et prenom: <b>${name} ${prenom}</b></h2>
-      <p>Etat civil: <b>${etatcivil}</b></p>
-      <p>Date de naissance: <b>${dateDeNaissance}</b></p>
-      <p>Pays de citoyenneté: <b>${country}</b></p>
-      <p>Pays de résidence actuel: <b>${currentCountry}</b></p>
-      <p>Email: <b>${email}</b></p>
-      <p>Telephone: <b>${telephone}</b></p>
-      <p>Programme: <b>${programme}</b></p>
-      <p>Détails: <b>${details}</b></p>
-      <p>Niveau d'étude: <b>${etude}</b></p>
-      <p>Profession: <b>${profession}</b></p>
-      <p>Cv: ${file}</p>
-      <h2>${salutation} ${name} viens d'envoyer un formulaire pour l'évaluation de son dossier</h2>
+      <h2>Nom et prenom: <b>${name} ${surname}</b></h2>
+      <p>Ville: <b>${ville}</b></p>
+      <p>Telephone: <b>${tel}</b></p>
+      <p>Nom de l'entreprise: <b>${entreprise}</b></p>
+      <p>Voici le message: ${message}</p>
+      <h2>Mr/Mme ${name} souhaite entrer en contact avec JJ-immigration international</h2>
+      <p>Repondre: <b><a href ="mailto:${email}">${email}</a></b></p>
     </div>
     `,
   };

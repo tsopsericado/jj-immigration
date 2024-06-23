@@ -43,6 +43,7 @@ export default function StepOne({}: Props) {
     name: undefined,
     programme: localData?.programme || ""
   });
+
   const [coutries, setCountries] = useState([]);
 
   const OptionsForCheckox = [
@@ -53,14 +54,13 @@ export default function StepOne({}: Props) {
     "Je ne suis pas sûr",
   ];
 
-  // function to handle the unChange event
+  // function to handle the input Change event
   const handleInputChange = (
     event: React.ChangeEvent<
       HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
     >
   ) => {
     let data = { ...formData, [event.target.name]: event.target.value };
-    console.log("data => ", data);
     localStorage.setItem("formData", JSON.stringify(data));
     localStorage.setItem("salutation", JSON.stringify(salutation));
     setFormData(data);
