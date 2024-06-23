@@ -61,7 +61,7 @@ export default function FormulaireEvaluation({}: Props) {
     e.preventDefault();
     setIsLoading((prev) => !prev);
 
-    if (typeof window !== "undefined") {
+    if (typeof localStorage !== "undefined") {
       formData = JSON.parse(
         (localStorage.getItem("formData") as string) || "{}"
       );
