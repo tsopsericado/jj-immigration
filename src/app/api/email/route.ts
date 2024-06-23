@@ -8,8 +8,8 @@ export async function POST(request: NextRequest) {
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: process.env.EMAIL,
-      pass: process.env.MEXT_PUBLIC_APP_PASSWORD,
+      user: process.env.NEXT_PUBLIC_EMAIL,
+      pass: process.env.NEXT_PUBLIC_APP_PASSWORD,
     },
     tls: {
       rejectUnauthorized: false
