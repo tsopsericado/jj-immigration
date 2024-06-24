@@ -49,7 +49,7 @@ export default function Prtq({}: Props) {
               votre insertion en emploi au Québec.
               <br></br>
               D'autres facteurs sont pris en compte, comme :
-              <ul className="list-disc ml-6 font-semibold text-[#666666]">
+              <ul className="list-disc leading-loose ml-6 font-semibold text-[#666666]">
                 <li>Vos connaissances linguistiques</li>
                 <li>Vos études et votre domaine de formation</li>
                 <li>Votre âge</li>

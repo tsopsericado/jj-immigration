@@ -79,7 +79,7 @@ export default function Pcp({}: Props) {
               <br></br>
               Explorez les différentes options disponibles selon la province ou
               le territoire
-              <ol className="list-decimal ml-6 font-semibold text-[#666666]">
+              <ol className="list-decimal leading-loose ml-6 font-semibold text-[#666666]">
                 <li>
                   Ontario : Programme Ontarien des Candidats à l'Immigration
                   (POCI)

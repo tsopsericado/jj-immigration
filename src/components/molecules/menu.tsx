@@ -17,6 +17,7 @@ export default function Menu({}: Props) {
     "Programme des candidats des provinces (PCP)",
     "Parrainer votre époux, conjoint de fait ou enfant à charge",
     "Parrainer vos parents ou vos grand-parents",
+    "Citoyenneté",
   ];
 
   const visiterOptions: string[] = [
@@ -42,8 +43,8 @@ export default function Menu({}: Props) {
           <Link href="/a-propos">A propos</Link>
         </li>
         <li className="nav-link content">
-          <Link className="text-arrow" href="">
-            Immigrer
+          <Link className="text-arrow" href="/immigration">
+            Immigration
             <IoMdArrowDropdown className="dropdown-icon" />
           </Link>
 
@@ -62,20 +63,26 @@ export default function Menu({}: Props) {
             ))}
           </ul>
         </li>
-        <li className="nav-link content">
-          <Link className="text-arrow" href="">
+        <li
+          className={
+            pathname === "/ourServices"
+              ? "nav-link content !text-text-color !bg-primary-color"
+              : "nav-link content"
+          }
+        >
+          <Link className="text-arrow" href="/ourServices">
             Nos services
             <IoMdArrowDropdown className="dropdown-icon" />
           </Link>
           <ul className="dropdown">
             <li className=" py-1 px-1 hover:bg-primary-color text-black hover:text-text-color ">
-              <Link href="/ourSevices">Services d'immigration</Link>
+              <Link href={`/ourServices`}>Services d'immigration</Link>
             </li>
           </ul>
         </li>
 
         <li className="nav-link content">
-          <Link className="text-arrow" href="/">
+          <Link className="text-arrow" href="/visiter">
             Visiter
             <IoMdArrowDropdown className="dropdown-icon" />
           </Link>
@@ -92,7 +99,7 @@ export default function Menu({}: Props) {
           </ul>
         </li>
         <li className="nav-link content">
-          <Link className="text-arrow" href="">
+          <Link className="text-arrow" href="/etude">
             Etudier
             <IoMdArrowDropdown className="dropdown-icon" size={15} />
           </Link>
@@ -110,12 +117,12 @@ export default function Menu({}: Props) {
         </li>
         <li
           className={
-            pathname === "/citoyenneté"
+            pathname === "/blogue"
               ? "text-text-color bg-primary-color nav-link"
               : "nav-link"
           }
         >
-          <Link href="/citoyennete">Citoyenneté</Link>
+          <Link href="/blogue">Blogue</Link>
         </li>
         <li
           className={

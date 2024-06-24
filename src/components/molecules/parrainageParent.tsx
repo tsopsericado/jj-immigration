@@ -43,7 +43,7 @@ export default function ParrainageParent({}: Props) {
           </h1>
           <div>
             <div className="text-sm pb-4 text-[#666666] ">
-              <ul>
+              <ul className="list-decimal leading-loose ml-6 font-semibold text-[#666666]">
                 <li>Etes âgé de 18 ans ou plus;</li>
                 <li>
                   Etes citoyen candien, indien inscrit ou résident permanent;
@@ -68,7 +68,7 @@ export default function ParrainageParent({}: Props) {
                 </li>
               </ul>
               <br></br>
-              <p className="font-semibold italic pt-3 text-primary-color">
+              <p className="font-semibold italic py-3 text-primary-color">
                 Important: Vous ne pouvez pas parrainer une personne qui
                 interdite de territoire au Canada, car elle n'est pas authorisé
                 a entrer au Canada
