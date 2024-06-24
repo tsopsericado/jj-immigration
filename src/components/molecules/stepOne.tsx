@@ -1,5 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
-import { salutaionOptions } from "@/app/formulaire-devaluation/page";
+import React, { useEffect, useState } from "react";
 import Select from "react-select";
 import InputField from "../atoms/inputField";
 import InputCheckBox from "../atoms/checkBox";
@@ -23,6 +22,14 @@ export default function StepOne({}: Props) {
     } else return null;
   });
 
+  const salutaionOptions = [
+    { value: "Mr", label: "Mr" },
+    { value: "Ms", label: "Ms" },
+    { value: "Mrs", label: "Mrs" },
+    { value: "Miss", label: "Miss" },
+    { value: "Dr", label: "Dr" },
+  ];
+
   const [formData, setFormData] = useState<FormData>({
     nom: localData?.nom || "",
     telephone: localData?.telephone || "",
@@ -36,6 +43,7 @@ export default function StepOne({}: Props) {
     name: undefined,
     programme: localData?.programme || ""
   });
+
   const [coutries, setCountries] = useState([]);
 
   const OptionsForCheckox = [
@@ -46,14 +54,13 @@ export default function StepOne({}: Props) {
     "Je ne suis pas sûr",
   ];
 
-  // function to handle the unChange event
+  // function to handle the input Change event
   const handleInputChange = (
     event: React.ChangeEvent<
       HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
     >
   ) => {
     let data = { ...formData, [event.target.name]: event.target.value };
-    console.log("data => ", data);
     localStorage.setItem("formData", JSON.stringify(data));
     localStorage.setItem("salutation", JSON.stringify(salutation));
     setFormData(data);
@@ -87,7 +94,7 @@ export default function StepOne({}: Props) {
       <div className="border mt-4 text-[#5c6873] border-[#25a9e3] rounded-md">
         <h3 className="pl-5 text-white bg-[#25a9e3] py-6"></h3>
         <div className="p-3 text-base flex flex-col">
-          <label htmlFor="salutation">Salutation</label>
+          <label className="font-semibold " htmlFor="salutation">Salutation</label>
           <Select
             className="w-[95%] mb-7 md:w-[500px] py-1"
             options={salutaionOptions}
@@ -109,7 +116,7 @@ export default function StepOne({}: Props) {
             type="text"
             onChange={(event) => handleInputChange(event)}
           />
-          <label htmlFor="etatCivil">Etat civil</label>
+          <label className="font-semibold" htmlFor="etatCivil">Etat civil</label>
           <select
             onChange={(event) => handleInputChange(event)}
             className="border mt-1 mb-7 px-1 py-2 w-[95%] md:w-[500px] text-sm"
@@ -131,7 +138,7 @@ export default function StepOne({}: Props) {
             type="date"
             onChange={(event) => handleInputChange(event)}
           />
-          <label htmlFor="country">Pays de citoyenneté</label>
+          <label className="font-semibold" htmlFor="country">Pays de citoyenneté</label>
           <select
             value={formData.country}
             name="country"
@@ -147,7 +154,7 @@ export default function StepOne({}: Props) {
               </option>
             ))}
           </select>
-          <label htmlFor="currentCountry">Pays de résidence actuel</label>
+          <label className="font-semibold" htmlFor="currentCountry">Pays de résidence actuel</label>
           <select
             value={formData.currentCountry}
             name="currentCountry"
@@ -178,7 +185,7 @@ export default function StepOne({}: Props) {
             type="tel"
             onChange={(event) => handleInputChange(event)}
           />
-          <p className="mb-4">Quel programme vous intéresse?</p>
+          <p className="mb-4 font-semibold">Quel programme vous intéresse?</p>
           {OptionsForCheckox.map((opt, index) => (
             <InputCheckBox
               key={index}
@@ -187,12 +194,12 @@ export default function StepOne({}: Props) {
               onChange={(event) => handleInputChange(event)}
             />
           ))}
-          <label htmlFor="detail">Veuillez founir plus de détails</label>
+          <label className="mt-4 font-semibold" htmlFor="detail">Veuillez fournir plus de détails</label>
           <textarea
             name="detail"
             // value={formData.details}
             onChange={(event) => handleInputChange(event)}
-            className="border focus:border-[#25a9e3] mt-1 mb-2 p-1 min-h-[100px]  bg-transparent outline-none shadow-sm rounded-md"
+            className="border focus:border-[#25a9e3] mt-3 mb-2 p-1 min-h-[100px]  bg-transparent outline-none shadow-sm rounded-md"
           >
             {formData.detail}
           </textarea>

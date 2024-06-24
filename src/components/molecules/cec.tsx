@@ -19,7 +19,7 @@ export default function Cec({}: Props) {
             <FaCheckCircle className="text-primary-color my-auto" size={15} />
           </div>
           <p className="text-[#666666]">
-          La Catégorie de l’expérience canadienne s’adresse aux travailleurs qualifiés qui souhaitent devenir des résidents permanents du Canada grâce à leur expérience de travail au Canada acquise dans les 3 années précédant la présentation de leur demande.
+          La Catégorie de l'expérience canadienne s'adresse aux travailleurs qualifiés qui souhaitent devenir des résidents permanents du Canada grâce à leur expérience de travail au Canada acquise dans les 3 années précédant la présentation de leur demande.
           </p>
         </div>
         <div className="flex text-sm gap-3">
@@ -41,8 +41,8 @@ export default function Cec({}: Props) {
             <p className="text-sm pb-4 text-[#666666] ">
               Les exigence minimales pour être admissible à la categorie de l'expérinece canadiene, il faut remplir toutes les exigences minimales concernant: 
               <br></br>
-              D’autres facteurs sont pris en compte, comme :
-              <ol className="list-decimal ml-6 font-semibold text-[#666666]">
+              D'autres facteurs sont pris en compte, comme :
+              <ol className="list-decimal leading-loose ml-6 font-semibold text-[#666666]">
                 <li>L'âge</li>
                 <li>Les études</li>
                 <li>L'epérience de travail qualifié au Canada</li>

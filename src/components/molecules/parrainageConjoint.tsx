@@ -45,7 +45,7 @@ export default function ParrainageConjoint({}: Props) {
               Vous pouvez parrainer votre époux, conjoint de fait et vos enfants
               à charge pour qu'ils deviennent résidents permanents du Canada.
               <br></br>
-              <ol className="list-decimal ml-6 font-semibold text-[#666666]">
+              <ol className="list-decimal leading-loose ml-6 font-semibold text-[#666666]">
                 <li>Votre époux</li>
                 <p>Votre epoux peut être de n'import quel sexe et doit:</p>
                 <ul>

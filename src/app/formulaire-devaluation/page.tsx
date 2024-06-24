@@ -17,17 +17,12 @@ import Loader from "@/components/atoms/loader";
 
 type Props = {};
 
-export const salutaionOptions = [
-  { value: "Mr", label: "Mr" },
-  { value: "Ms", label: "Ms" },
-  { value: "Mrs", label: "Mrs" },
-  { value: "Miss", label: "Miss" },
-  { value: "Dr", label: "Dr" },
-];
-
 export default function FormulaireEvaluation({}: Props) {
+  let curStep: number = 1
   const { file, setFile } = useFileStore();
-  const curStep = +(localStorage.getItem("currentStep") as string);
+  if (typeof localStorage !== "undefined") {
+    curStep = +(localStorage.getItem("currentStep") as string);
+  }
   const [currentStep, setCurrentStep] = useState<number>(curStep);
   const [errorMessage, setErrorMessage] = useState<string>("");
   const [isLoading, setIsLoading] = useState<Boolean>(false);
@@ -69,7 +64,7 @@ export default function FormulaireEvaluation({}: Props) {
     e.preventDefault();
     setIsLoading((prev) => !prev);
 
-    if (typeof window !== "undefined") {
+    if (typeof localStorage !== "undefined") {
       formData = JSON.parse(
         (localStorage.getItem("formData") as string) || "{}"
       );
@@ -177,7 +172,7 @@ export default function FormulaireEvaluation({}: Props) {
             <button
               className={
                 isLoading
-                  ? "hover:cursor-not-allowed px-10 bg-[#25aae386] rounded text-text-color"
+                  ? "hover:cursor-wait px-10 bg-[#25aae386] rounded text-text-color"
                   : "bg-[#25a9e3] text-text-color py-1 px-3 active:translate-y-1 hover:cursor-pointer rounded"
               }
               onClick={(e) => handleSubmit(e)}
