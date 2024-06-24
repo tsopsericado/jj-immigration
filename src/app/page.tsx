@@ -1,7 +1,9 @@
 "use client"
 import CategorySection from "@/components/molecules/categorySection";
 import LandingHero from "@/components/molecules/landinghero";
-import Slider from "@/components/section/Slider";
+import TextScroll from "@/components/molecules/textscroll";
+import { Slider } from "@/components/section/Slider";
+// import Slider from "@/components/section/Slider";
 import TestimonialSection from "@/components/section/TestimonialSection";
 import Layout from "@/components/templates/layout";
 import { useRouter } from "next/navigation";
@@ -36,12 +38,21 @@ export default function Home() {
             </div>
           </div>
           <TestimonialSection />
-          <Slider />
+          <div className="lg:pb-20 md:pb-7">
+            <div className="pb-10">
+              <p className="text-lightGray text-[2rem] font-[600] text-center ">
+                Notre Equipe
+              </p>
+              <p className="volkhov text-[3.125rem] text-title font-[700] text-center">
+                A votre te disposition 24h/24.</p>
+            </div>
+            <Slider />
+          </div>
+          {/* <div className="flex justify-center items-center h-screen bg-gray-800">
+            <TextScroll text="you are my beloved one and I shall never leave you" />
+          </div> */}
         </div>
-
-
-
       </Layout>
-    </main>
+    </main >
   );
 }

@@ -38,11 +38,13 @@ export default function CategorySection() {
   ];
   return (
     <section>
-      <p className="text-lightGray text-[1.2rem] font-[600] text-center mt-10">
-        Categories
-      </p>
-      <p className="volkhov text-[3.125rem] text-title font-[700] text-center">
-        Nous offrons Les Meilleur Services en</p>
+      <div className="pb-10">
+        <p className="text-lightGray text-[1.2rem] font-[600] text-center mt-10">
+          Categories
+        </p>
+        <p className="volkhov text-[3.125rem] text-title font-[700] text-center">
+          Nous offrons Les Meilleurs Services en</p>
+      </div>
       <div className="flex flex-col gap-4 md:flex-row justify-between w-full ">
         {features.map((feature) => (
           <CatergoryCard

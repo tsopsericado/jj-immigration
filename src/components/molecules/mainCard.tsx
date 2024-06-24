@@ -12,34 +12,34 @@ export default function MainCard() {
       description:
         "Built Wicket longer admire do barton vanity itself do in it.",
     },
-    {
-      id: 1,
-      image: "/assets/images/manitoba.jpg",
-      title: "Nos objectif",
-      description:
-        "Built Wicket longer admire do barton vanity itself do in it.",
-    },
-    {
-      id: 2,
-      image: "/assets/images/manitoba.jpg",
-      title: "Nos objectif",
-      description:
-        "Built Wicket longer admire do barton vanity itself do in it.",
-    },
-    {
-      id: 3,
-      iconUrl: "/assets/images/manitoba.jpg",
-      title: "Nos objectif",
-      description:
-        "Built Wicket longer admire do barton vanity itself do in it.",
-    },
-    {
-      id: 4,
-      image: "/assets/images/manitoba.jpg",
-      title: "Nos objectif",
-      description:
-        "Built Wicket longer admire do barton vanity itself do in it.",
-    }
+    // {
+    //   id: 1,
+    //   image: "/assets/images/manitoba.jpg",
+    //   title: "Nos objectif",
+    //   description:
+    //     "Built Wicket longer admire do barton vanity itself do in it.",
+    // },
+    // {
+    //   id: 2,
+    //   image: "/assets/images/manitoba.jpg",
+    //   title: "Nos objectif",
+    //   description:
+    //     "Built Wicket longer admire do barton vanity itself do in it.",
+    // },
+    // {
+    //   id: 3,
+    //   iconUrl: "/assets/images/manitoba.jpg",
+    //   title: "Nos objectif",
+    //   description:
+    //     "Built Wicket longer admire do barton vanity itself do in it.",
+    // },
+    // {
+    //   id: 4,
+    //   image: "/assets/images/manitoba.jpg",
+    //   title: "Nos objectif",
+    //   description:
+    //     "Built Wicket longer admire do barton vanity itself do in it.",
+    // }
   ]
 
 
@@ -56,12 +56,7 @@ export default function MainCard() {
     // </div>
 
     <section>
-      <p className="text-lightGray text-[1.2rem] font-[600] text-center mt-10">
-        Notre Equipe
-      </p>
-      <p className="volkhov text-[3.125rem] text-title font-[700] text-center">
-        A votre te disposition 24h/24.</p>
-      <div className="flex flex-col gap-4 md:flex-row justify-between w-full ">
+      <div className="flex flex-col gap-4 md:flex-row justify-between w-full pb-20">
         {slides.map((slide) => (
           <Card
             key={slide.id}

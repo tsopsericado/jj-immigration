@@ -21,7 +21,7 @@ function TestimonialSection() {
     },
   ];
   return (
-    <section className="flex justify-between flex-col xl:flex-row items-center lg:-mt-[5rem] gap-16 py-24">
+    <section className="flex justify-between flex-col xl:flex-row items-center lg:-mt-[5rem] gap-16 pt-32 lg:mb-20 sm:mb-8 ">
       <div>
         <p className="text-lightGray text-[1.125rem] font-[600] text-left uppercase">
           Témoignages
