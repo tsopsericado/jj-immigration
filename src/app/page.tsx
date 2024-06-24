@@ -1,8 +1,7 @@
 "use client"
 import CategorySection from "@/components/molecules/categorySection";
 import LandingHero from "@/components/molecules/landinghero";
-import { Slider } from "@/components/section/Slider";
-// import Testimoni from "@/components/section/Testimoni";
+import Slider from "@/components/section/Slider";
 import TestimonialSection from "@/components/section/TestimonialSection";
 import Layout from "@/components/templates/layout";
 import { useRouter } from "next/navigation";
@@ -37,7 +36,6 @@ export default function Home() {
             </div>
           </div>
           <TestimonialSection />
-          {/* <Testimoni /> */}
           <Slider />
         </div>
 
