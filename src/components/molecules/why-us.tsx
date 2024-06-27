@@ -51,7 +51,7 @@ function DesktopTopicComponent({
 }: TopicObject) {
   return (
     <div className="flex flex-col gap-y-4 ">
-      <Image src={ImageSource} alt={Name} width={125} height={125} className="fill-blue-500" className="fill-blue-500" />
+      <Image src={ImageSource} alt={Name} width={125} height={125} className="fill-blue-500" />
       <p className="text-dark-blue text-2xl">{Name}</p>
       <p className="text-grayish-blue max-w-sm text-lg">{Description}</p>
     </div>
