@@ -21,12 +21,12 @@ function TestimonialSection() {
     },
   ];
   return (
-    <section className="flex justify-between flex-col xl:flex-row items-center lg:-mt-[5rem] gap-16 pt-32 lg:mb-20 sm:mb-8 ">
+    <section className="flex justify-between flex-col xl:flex-row items-center lg:-mt-[5rem] gap-16 pt-32 lg:mb-20 sm:mb-8">
       <div>
-        <p className="text-lightGray text-[1.125rem] font-[600] text-left uppercase">
+        <p className="text-lightGray text-2xl font-[600] text-left uppercase">
           Témoignages
         </p>
-        <p className="volkhov text-[3.125rem] text-title font-[700] text-left">
+        <p className="volkhov text-5xl text-title  text-left">
           Ce que nos clients disent de nous</p>
 
         <div className="mt-[5.12rem] ">

@@ -1,5 +1,4 @@
 import React from "react";
-import MainButton from "../common/MainButton";
 
 function LandingHero() {
   return (
@@ -28,17 +27,17 @@ function LandingHero() {
                 vivez à l'étranger. Votre agence de confiance.</p>
             </div>
 
-            <p className="my-[1.6rem] font-bold leading-[1.692rem] text-lightGray text-[1.2rem] font-marker animate-slide-in-right">
+
+            <p className="my-[1.6rem] leading-[1.692rem] text-lightGray text-[1.4rem] font-marker animate-slide-in-right ">
               Votre clé pour une vie meilleure au Canada. Services d'immigration fiables et personnalisés.
-              the.
             </p>
 
             <div className="flex gap-6 items-center ">
               <div>
-                <MainButton
-                  text="Find out more"
-                  classes="bg-secondary text-white font-[600] shadow-none rounded-[0.564rem] border-none hover:bg-secondary  w-[9.58788rem] h-[3rem]"
-                />
+                <button
+
+                  className="bg-red-600 text-white text-[15px] font-[600] shadow-none rounded-[0.564rem] border-none hover:bg-secondary hover:text-blue-500 w-[9.58788rem] h-[3rem]"
+                > Find out more</button>
               </div>
             </div>
           </div>

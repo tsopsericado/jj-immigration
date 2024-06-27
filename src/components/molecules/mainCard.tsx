@@ -8,9 +8,9 @@ export default function MainCard() {
     {
       id: 0,
       image: "/assets/images/manitoba.jpg",
-      title: "Nos objectif",
+      title: "M Chadjie Brice",
       description:
-        "Built Wicket longer admire do barton vanity itself do in it.",
+        "Responsable Administratif zone Afrique",
     },
     // {
     //   id: 1,

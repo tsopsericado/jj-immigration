@@ -1,9 +1,9 @@
 "use client"
 import CategorySection from "@/components/molecules/categorySection";
 import LandingHero from "@/components/molecules/landinghero";
-import TextScroll from "@/components/molecules/textscroll";
+import LatestArticles from "@/components/molecules/latestArticle";
+import WhyUs from "@/components/molecules/why-us";
 import { Slider } from "@/components/section/Slider";
-// import Slider from "@/components/section/Slider";
 import TestimonialSection from "@/components/section/TestimonialSection";
 import Layout from "@/components/templates/layout";
 import { useRouter } from "next/navigation";
@@ -31,6 +31,7 @@ export default function Home() {
               alt="blob background shape"
             />
           </div>
+          <WhyUs />
           <div className="relative">
             <CategorySection />
             <div className="absolute top-0 right-0">
@@ -40,17 +41,15 @@ export default function Home() {
           <TestimonialSection />
           <div className="lg:pb-20 md:pb-7">
             <div className="pb-10">
-              <p className="text-lightGray text-[2rem] font-[600] text-center ">
+              <p className="text-lightGray text-2xl  text-center pb-5">
                 Notre Equipe
               </p>
-              <p className="volkhov text-[3.125rem] text-title font-[700] text-center">
+              <p className="volkhov text-5xl text-title text-center">
                 A votre te disposition 24h/24.</p>
             </div>
             <Slider />
+            <LatestArticles />
           </div>
-          {/* <div className="flex justify-center items-center h-screen bg-gray-800">
-            <TextScroll text="you are my beloved one and I shall never leave you" />
-          </div> */}
         </div>
       </Layout>
     </main >
