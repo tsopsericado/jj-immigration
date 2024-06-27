@@ -13,7 +13,7 @@ import Menu from "./menu";
 
 type Props = {};
 
-export default function Header({}: Props) {
+export default function Header({ }: Props) {
   return (
     <>
       <header className="z-50">
@@ -87,7 +87,7 @@ export default function Header({}: Props) {
         </div>
         {/* lower header */}
         <div className="main-header">
-          <div className="flex justify-between px-5 ">
+          <div className="flex justify-between px-5 shadow-2xl py-4">
             <div className="">
               <figure>
                 <Link href="/">
