@@ -31,7 +31,7 @@ const Articles: ArticleInformation[] = [
       "Immigration au Canada Les emplois les mieux payés au Québec Le Québec réunit les conditions pour le développement des compétences Le Canada est sans aucun …",
   },
   {
-    ImageSource: "/assets/images/canada.jpg",
+    ImageSource: "/assets/images/toronto.jpg",
     Writer: "Louis Charles",
     Title: "Les meilleures villes/provinces canadiennes pour votre PVT",
     Description:
