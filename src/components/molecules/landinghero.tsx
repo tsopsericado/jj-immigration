@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 function LandingHero() {
@@ -34,10 +35,10 @@ function LandingHero() {
 
             <div className="flex gap-6 items-center ">
               <div>
-                <button
+                <Link href="/a-propos"
 
-                  className="bg-red-600 text-white text-[15px] font-[600] shadow-none rounded-[0.564rem] border-none hover:bg-secondary hover:text-blue-500 w-[9.58788rem] h-[3rem]"
-                > Find out more</button>
+                  className="bg-red-600 text-white text-[15px] font-[600] shadow-none border-none rounded-full p-4 hover:bg-secondary hover:text-gray-800 w-[9.58788rem] h-[3rem]"
+                > Plus d'infos</Link>
               </div>
             </div>
           </div>

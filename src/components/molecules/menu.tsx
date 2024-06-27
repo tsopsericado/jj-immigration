@@ -6,7 +6,7 @@ import slugify from "react-slugify";
 
 type Props = {};
 
-export default function Menu({}: Props) {
+export default function Menu({ }: Props) {
   const pathname = usePathname();
 
   const immigrationSubtitle: string[] = [
