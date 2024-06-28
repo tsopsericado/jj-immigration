@@ -92,8 +92,8 @@ export default function StepOne({}: Props) {
   return (
     <div>
       <div className="border mt-4 text-[#5c6873] border-[#25a9e3] rounded-md">
-        <h3 className="pl-5 text-white bg-[#25a9e3] py-6"></h3>
-        <div className="p-3 text-base flex flex-col">
+        <div className="pl-5 text-white bg-[#25a9e3] py-6"></div>
+        <div className="p-3 text-base flex flex-col ">
           <label className="font-semibold " htmlFor="salutation">Salutation</label>
           <Select
             className="w-[95%] mb-7 md:w-[500px] py-1"

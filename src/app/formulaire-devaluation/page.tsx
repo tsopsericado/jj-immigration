@@ -132,7 +132,7 @@ export default function FormulaireEvaluation({}: Props) {
 
   return (
     <main className="">
-      <div className=" w-[95%] md:w-[70%] mx-auto mt-8">
+      <div className=" w-[95%] md:w-1/2 mx-auto mt-8">
         <div className="flex justify-center ">
           <Image src={logo} alt="logo" height={100} width={100} />
         </div>

@@ -11,30 +11,6 @@ export default function ParrainageParent({}: Props) {
         <h1 className="uppercase font-bold text-3xl text-primary-color text-center md:w-[75%] w-full mx-auto">
           Parrainer vos parents ou grands-parents
         </h1>
-        {/* <p className="font-bold py-4 text-[#666666]">
-          Immigrer au canada dans le cadre des programmes Québec: Programme de
-          l'experience Québécoise (PEQ - travailleur)
-        </p>
-        <div className="flex text-sm gap-3">
-          <div>
-            <FaCheckCircle className="text-primary-color my-auto" size={15} />
-          </div>
-          <p className="text-[#666666]">
-            Programme de l'expérience Québécoise (PEQ- Travailleur) s'adresse au
-            travailleur étranger temporaire pour l'obtention du certificat de
-            sélection du Québec (CSQ) dans le but de s'établir au Québec de
-            façon permanente.
-          </p>
-        </div> */}
-        {/* <div className="flex text-sm gap-3">
-          <div className="mb-1">
-            <FaCheckCircle className="text-primary-color" size={15} />
-          </div>
-          <p className="text-[#666666]">
-            Ne laissez rien au hasard à ce stade crucial. Faites nous parvenir
-            votre dossier pour une évaluation sans engagement.
-          </p>
-        </div> */}
       </div>
       <div className="md:flex block gap-3 w-[95%] md:w-[70%] mx-auto">
         <div className="w-[95%] md:w-[70%] mx-auto my-6 border-2 border-gray-400 px-4">

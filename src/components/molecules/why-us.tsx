@@ -22,8 +22,7 @@ const Topics: TopicObject[] = [
   },
   {
     Name: "Expertise et Fiabilité",
-    Description:
-      "Atteignez vos objectifs d'immigration avec succès.",
+    Description: "Atteignez vos objectifs d'immigration avec succès.",
     ImageSource: "/assets/images/images/icon-onboarding.svg",
   },
   {
@@ -36,10 +35,10 @@ const Topics: TopicObject[] = [
 
 function MobileTopicComponent({ Name, Description, ImageSource }: TopicObject) {
   return (
-    <div className="flex flex-col items-center gap-y-4 ">
+    <div className="flex flex-col shadow-xl w-[95%] mx-auto py-4 items-center  ">
       <Image src={ImageSource} alt={Name} width={125} height={125} />
-      <p className="text-dark-blue text-3xl">{Name}</p>
-      <p className="text-grayish-blue max-w-md text-lg">{Description}</p>
+      <p className="text-primary-color text-3xl font-bold">{Name}</p>
+      <p className="text-gray-800 max-w-md text-[1.4rem]">{Description}</p>
     </div>
   );
 }
@@ -50,55 +49,68 @@ function DesktopTopicComponent({
   ImageSource,
 }: TopicObject) {
   return (
-    <div className="flex flex-col gap-y-4 ">
-      <Image src={ImageSource} alt={Name} width={125} height={125} className="fill-blue-500" />
-      <p className="text-dark-blue text-2xl">{Name}</p>
-      <p className="text-grayish-blue max-w-sm text-lg">{Description}</p>
+    <div className="flex flex-col py-5 px-3 shadow-xl gap-y-4 ">
+      <Image
+        src={ImageSource}
+        alt={Name}
+        width={125}
+        height={125}
+        className="fill-blue-500 flex justify-center mx-auto"
+      />
+      <p className="text-center text-primary-color font-semibold text-2xl">{Name}</p>
+      <p className="text-gray-800 max-w-sm text-[1.1rem]">{Description}</p>
     </div>
   );
 }
 
 export default function WhyUs() {
-  return <section className="bg-gray-50">
-    <div className="md:hidden flex flex-col gap-y-8">
-      <div className="grid place-content-center text-center">
-        <div className="max-w-lg">
-          <div className="my-32 flex flex-col items-center">
-            <p className="text-5xl text-dark-blue max-w-md">
-              Pourqoui choisir <span className="text-red-500">JJ-Immigration?</span>
+  return (
+    <section className="bg-gray-50">
+      <div className="md:hidden flex flex-col gap-y-8">
+        <div className="grid  text-center">
+          <div className="max-w-lg">
+            <div className=" my-4 flex flex-col items-center">
+              <p className="text-3xl font-bold text-gray-800">
+                Pourqoui choisir{" "}
+                <span className="text-primary-color">JJ-Immigration?</span>
+              </p>
+
+              <p className="text-gray-800 text-[1.4rem] font-semibold my-8">
+                Votre partenaire de confiance pour une immigration canadienne
+                réussie. Expertise, accompagnement personnalisé, et succès
+                garanti.
+              </p>
+              <div className="flex flex-col gap-y-10">
+                {Topics.map((index) => {
+                  return <MobileTopicComponent key={uuidv4()} {...index} />;
+                })}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="flex flex-col max-md:hidden ">
+        <div className="px-3">
+          <div className="my-4">
+            <p className="text-gray-800 text-4xl font-bold text-center">
+              Pourquoi choisir{" "}
+              <span className="!text-primary-color ">JJ-Immigration ?</span>
             </p>
-            <p className="text-grayish-blue text-2xl my-8">
-              Votre partenaire de confiance pour une immigration canadienne réussie.
-              Expertise, accompagnement personnalisé, et succès garanti.
+            <p className="text-grayish-blue text-[1.4rem] mb-8 max-w-4xl mt-8">
+              Votre partenaire de confiance pour une immigration canadienne
+              réussie. Expertise, accompagnement personnalisé, et succès
+              garanti.
             </p>
-            <div className="flex flex-col gap-y-10">
+
+            <div className="flex gap-x-5 justify-around">
               {Topics.map((index) => {
-                return <MobileTopicComponent key={uuidv4()} {...index} />;
+                return <DesktopTopicComponent key={uuidv4()} {...index} />;
               })}
             </div>
           </div>
         </div>
       </div>
-    </div>
-
-    <div className="flex flex-col max-md:hidden">
-      <div className="px-16">
-        <div className="my-32">
-          <p className="text-5xl text-dark-blue max-w-md">
-            Pourqoui choisir <span className="text-red-600 font-bold">JJ-Immigration?</span>
-          </p>
-          <p className="text-grayish-blue text-2xl mb-8 max-w-4xl mt-8">
-            Votre partenaire de confiance pour une immigration canadienne réussie.
-            Expertise, accompagnement personnalisé, et succès garanti.
-          </p>
-
-          <div className="flex gap-x-10 justify-around">
-            {Topics.map((index) => {
-              return <DesktopTopicComponent key={uuidv4()} {...index} />;
-            })}
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>;
+    </section>
+  );
 }
