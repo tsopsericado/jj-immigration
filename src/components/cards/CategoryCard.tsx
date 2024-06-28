@@ -1,3 +1,5 @@
+import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 interface IProps {
@@ -10,19 +12,24 @@ interface IProps {
 function CatergoryCard({ iconUrl, title, description, highlighted }: IProps) {
   return (
     <div
-      className={`flex relative flex-col gap-4 items-center p-[2.5rem] ${highlighted ? "bg-white shadow-md rounded-[2.5rem]" : ""
-        }`}
+      className={`flex w-[96%] md:w-[300px] mx-auto relative flex-col border border-gray-400 gap-4 items-center p-[1.5rem] ${
+        highlighted ? "bg-white shadow-xl rounded-[2.5rem]" : ""
+      }`}
     >
-      <div>
-        <img src={iconUrl} alt="category card icon" className="h-[80px]" />
+      <div className="">
+        <Image
+          src={iconUrl}
+          alt="category card icon"
+          height={150}
+          width={220}
+          loading="lazy"
+          className=""
+        />
       </div>
-      <p className="text-subtitle text-[1.2rem] font-[600]">{title}</p>
-      <p className="text-lightGray text-[1rem] font-bold">{description}</p>
-      {highlighted && (
-        <div className="absolute -bottom-8 -left-10 -z-10">
-          <img src="/assets/images/manitoba1.jpg" alt="rectangle shape" />
-        </div>
-      )}
+      <Link href={"/a-propos"}>
+        <p className="text-primary-color text-[1.2rem] font-bold hover:underline">{title}</p>
+      </Link>
+      <p className="text-gray-800 text-[1rem] font-semibold">{description}</p>
     </div>
   );
 }

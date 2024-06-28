@@ -66,7 +66,7 @@ export default function About({}: Props) {
               </li>
             </ul>
           </div>
-          <div className="w-[500px] py-4 md:block gap-2">
+          <div className="w-fit py-4 md:block gap-2">
             <ImmigrationService />
             <ContactUsCart />
           </div>

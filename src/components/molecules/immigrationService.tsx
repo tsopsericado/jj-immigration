@@ -7,7 +7,7 @@ type Props = {};
 export default function ImmigrationService({}: Props) {
   return (
     <>
-      <div className="small-cart h-[330px] w-[350px] mb-6 py-3">
+      <div className="small-cart h-[330px] w-full md:w-[350px] mb-6 py-3">
         <h1 className="font-semibold w-[200px] text-text-color pl-5 text-3xl">
           Services d'immigration règlementé
         </h1>

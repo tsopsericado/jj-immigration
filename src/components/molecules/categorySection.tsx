@@ -21,7 +21,7 @@ export default function CategorySection() {
     },
     {
       id: 2,
-      iconUrl: "/assets/images/manitoba1.jpg",
+      iconUrl: "/assets/images/pexel1.jpg",
       title: "Notre vision",
       description:
         "Bâtir une communauté d'immigrants prospères et épanouis au Canada ",
@@ -29,20 +29,20 @@ export default function CategorySection() {
     },
     {
       id: 3,
-      iconUrl: "/assets/images/manitoba1.jpg",
+      iconUrl: "/assets/images/pexel2.jpg",
       title: "Nos valeurs",
       description:
-        " Nous sommes honnêtes, transparents et éthiques dans nos relations avec nos clients et nos partenaires.",
+        " Créer de la valeur aux entreprises grâce a un partenariat stratégique, percutant et innovant.",
       highlighted: true,
     },
   ];
   return (
     <section>
       <div className="pb-10">
-        <p className="text-lightGray text-2xl font-[300] text-center mt-10 pb-5">
+        <p className="text-primary-color text-5xl font-semibold text-center mt-10 pb-5">
           A propos
         </p>
-        <p className="volkhov text-5xl text-title text-center">
+        <p className="text-2xl text-center">
           Nous offrons Les Meilleurs Services en</p>
       </div>
       <div className="flex flex-col gap-4 md:flex-row justify-between w-full text-3xl">

@@ -16,12 +16,12 @@ type Props = {};
 export default function Header({ }: Props) {
   return (
     <>
-      <header className="z-50">
+      <header className="z-[9999]">
         <div className="bg-primary-color text-text-color  flex justify-center">
           <div className="w-full">
             <ul className="md:flex block  w-[70%] justify-between mx-auto text-xs">
               <li className="flex pt-2 gap-2 justify-center">
-                <FaRegEnvelope size={20} />
+                <FaRegEnvelope className="my-auto" size={20} />
                 <Link
                   className="my-auto hover:underline"
                   href="mailto:jjinternationalservcice@gmail.com"
@@ -30,13 +30,13 @@ export default function Header({ }: Props) {
                 </Link>
               </li>
               <li className="flex pl-12 pt-4 justify-center gap-2">
-                <FaMapMarkerAlt size={20} />
+                <FaMapMarkerAlt className="my-auto" size={20} />
                 <p className="my-auto">
                   152 rue Vallières Val-d'Or (Qc) J9P 4L3
                 </p>
               </li>
               <li className="flex pl-10 pt-4 justify-center gap-2">
-                <FaRegClock size={20} />
+                <FaRegClock className="my-auto" size={20} />
                 <p className="my-auto">Lun - Sam: 9:00 à 18:00</p>
               </li>
             </ul>
@@ -47,17 +47,17 @@ export default function Header({ }: Props) {
                     target="_blank"
                     href="https://www.facebook.com/profile.php?id=61557544078696&mibextid=ZbWKwL&_rdc=2&_rdr"
                   >
-                    <FaFacebookF size={20} />
+                    <FaFacebookF className="hover:translate-x-1 hover" size={20} />
                   </Link>
                 </li>
                 <li className="active:translate-x-1">
                   <Link href="https://www.x.com">
-                    <FaXTwitter size={20} />
+                    <FaXTwitter className="hover:translate-x-1 hover" size={20} />
                   </Link>
                 </li>
                 <li className="active:translate-x-1">
                   <Link href="https://www.instagram.com">
-                    <AiFillInstagram size={20} />
+                    <AiFillInstagram className="hover:translate-x-1 hover" size={20} />
                   </Link>
                 </li>
               </ul>
@@ -87,7 +87,7 @@ export default function Header({ }: Props) {
         </div>
         {/* lower header */}
         <div className="main-header">
-          <div className="flex justify-between px-5 shadow-2xl py-4">
+          <div className="flex justify-between px-5 shadow-2xl ">
             <div className="">
               <figure>
                 <Link href="/">
@@ -96,6 +96,7 @@ export default function Header({ }: Props) {
                     alt="logo jj-immigration"
                     width={100}
                     height={100}
+                    className="my-auto flex"
                   />
                 </Link>
               </figure>

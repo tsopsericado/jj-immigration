@@ -32,11 +32,11 @@ export default function Menu({ }: Props) {
 
   return (
     <>
-      <ul className="nav-links flex justify-end gap-1 w-full my-auto">
+      <ul className="nav-links flex justify-end gap-1 w-full my-auto z-[9999]">
         <li
           className={
             pathname === "/a-propos"
-              ? "text-text-color bg-primary-color nav-link"
+              ? "!text-text-color bg-primary-color nav-link"
               : "nav-link"
           }
         >
@@ -118,7 +118,7 @@ export default function Menu({ }: Props) {
         <li
           className={
             pathname === "/blogue"
-              ? "text-text-color bg-primary-color nav-link"
+              ? "!text-text-color bg-primary-color nav-link"
               : "nav-link"
           }
         >

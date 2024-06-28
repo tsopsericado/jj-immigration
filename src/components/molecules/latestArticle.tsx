@@ -14,14 +14,14 @@ const Articles: ArticleInformation[] = [
     Writer: "Claire Robinson",
     Title: "Partez vivre au Canada via Arrima!",
     Description:
-      "La création d’un profil de déclaration d’intérêt à Arrima est la première étape pour immigrer au Canada dans le cadre du QSWP. …",
+      "La création d'un profil de déclaration d'intérêt à Arrima est la première étape pour immigrer au Canada dans le cadre du QSWP. …",
   },
   {
     ImageSource: "/assets/images/nurse.jpg",
     Writer: "Paul Albert",
-    Title: "Emplois les plus en demande à l’Île-du-Prince-Édouard",
+    Title: "Emplois les plus en demande à l'Île-du-Prince-Édouard",
     Description:
-      "L’Île-du-Prince-Édouard accueille de nombreux immigrants qui peuvent occuper différents emplois …",
+      "L'Île-du-Prince-Édouard accueille de nombreux immigrants qui peuvent occuper différents emplois …",
   },
   {
     ImageSource: "/assets/images/mecanic.jpg",
@@ -35,7 +35,7 @@ const Articles: ArticleInformation[] = [
     Writer: "Louis Charles",
     Title: "Les meilleures villes/provinces canadiennes pour votre PVT",
     Description:
-      "Les choix sont quasiment infinis pour découvrir le Canada pendant vos vacances ainsi que les opportunités d’emplois. ...",
+      "Les choix sont quasiment infinis pour découvrir le Canada pendant vos vacances ainsi que les opportunités d'emplois. ...",
   },
 ];
 
@@ -71,7 +71,7 @@ export default function LatestArticles() {
   return (
     <section>
       <div className="grid justify-items-center py-32 bg-very-light-gray gap-y-16 bg-slate-50">
-        <p className="text-5xl text-dark-blue max-w-md text-center lg:pl-16 lg:justify-self-start">
+        <p className="text-5xl text-primary-color font-semibold max-w-md text-center lg:pl-16">
           Articles Recent
         </p>
 
