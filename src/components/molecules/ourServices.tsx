@@ -1,13 +1,11 @@
-"use client";
-import HeroSection from "@/components/molecules/heroSection";
-import Layout from "@/components/templates/layout";
-import Link from "next/link";
 import React from "react";
+import HeroSection from "./heroSection";
+import Link from "next/link";
 import { FaAngleDoubleRight } from "react-icons/fa";
 
 type Props = {};
 
-export default function Home({}: Props) {
+export default function OurServices({}: Props) {
   const servicesOffered: { [key: string]: string }[] = [
     {
       mainservice: "Demande de permis de travail",
@@ -75,49 +73,44 @@ export default function Home({}: Props) {
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis laborum deserunt saepe ?",
       link: "/contact-us",
     },
-    
   ];
 
   return (
     <>
-      <Layout>
-        <HeroSection
-          content={"Services d'entreprises"}
-          bgImage={
-            "https://st3.depositphotos.com/8881578/15097/i/450/depositphotos_150979940-stock-photo-business-technology-internet-and-network.jpg"
-          }
-        />
-        <div className="">
-          <h1 className="text-3xl font-bold text-center py-6 text-[#666666]">
-            Nos Services
-          </h1>
-          <div className="pb-6">
-            <div className="w-[96%] md:w-[65%] mx-auto ">
-              <h1 className="text-primary-color font-bold text-2xl ">
-                Immigration Canadinne
-              </h1>
-              {servicesOffered.map((item, indx) => (
-                <div key={indx} className=" pt-7">
-                  <div className="flex gap-4 text-[#666666]">
-                    <FaAngleDoubleRight size={25} className="my-auto" />
-                    <h1 className="font-semibold text-2xl ">
-                      {item.mainservice}
-                    </h1>
-                  </div>
-                  <p className="py-3 pl-8 md:w-[500px]">
-                    {item.detail}
-                  </p>
-                  <Link className="w-fit" href={item.link}>
-                    <button className="buttonn !p-2 !rounded-full flex hover:!text-white  !text-primary-color justify-center mx-auto my-2">
-                      En savoir plus
-                    </button>
-                  </Link>
+      <HeroSection
+        content={"Services d'entreprises"}
+        bgImage={
+          "https://st3.depositphotos.com/8881578/15097/i/450/depositphotos_150979940-stock-photo-business-technology-internet-and-network.jpg"
+        }
+      />
+      <div className="">
+        <h1 className="text-3xl font-bold text-center py-6 text-[#666666]">
+          Nos Services
+        </h1>
+        <div className="pb-6">
+          <div className="w-[96%] md:w-[65%] mx-auto ">
+            <h1 className="text-primary-color font-bold text-2xl ">
+              Immigration Canadinne
+            </h1>
+            {servicesOffered.map((item, indx) => (
+              <div key={indx} className=" pt-7">
+                <div className="flex gap-4 text-[#666666]">
+                  <FaAngleDoubleRight size={25} className="my-auto" />
+                  <h1 className="font-semibold text-2xl ">
+                    {item.mainservice}
+                  </h1>
                 </div>
-              ))}
-            </div>
+                <p className="py-3 pl-8 md:w-[500px]">{item.detail}</p>
+                <Link className="w-fit" href={item.link}>
+                  <button className="buttonn !p-2 !rounded-full flex hover:!text-white  !text-primary-color justify-center mx-auto my-2">
+                    En savoir plus
+                  </button>
+                </Link>
+              </div>
+            ))}
           </div>
         </div>
-      </Layout>
+      </div>
     </>
   );
 }

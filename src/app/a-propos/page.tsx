@@ -12,7 +12,6 @@ export default function About({}: Props) {
     <>
       <Layout>
         <HeroSection
-          linearGradient="linear-gradient(256deg, #1a1a1b93, #29292b79)"
           content={"à propos"}
           bgImage={"https://harmonyvisas.com/images/why_choose_us_img.jpg"}
         />

@@ -24,7 +24,7 @@ export default function Citoyenneté({}: Props) {
             <p className="text-sm pb-4 text-[#666666] ">
               Pour devenir citoyenne canadien, vous devez:
               <br></br>
-              <ul className="list-disc leading-loose ml-6 font-semibuld text-[#666666]">
+              <ul className="list-disc leading-loose ml-6 font-semibold text-[#666666]">
                 <li>être résident permanent;</li>
                 <li>
                   avoir habiter au Canada pendant au moins 3 des 5 dernières

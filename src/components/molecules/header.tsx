@@ -19,7 +19,7 @@ export default function Header({ }: Props) {
       <header className="z-[9999]">
         <div className="bg-primary-color text-text-color  flex justify-center">
           <div className="w-full">
-            <ul className="md:flex block  w-[70%] justify-between mx-auto text-xs">
+            <ul className="md:flex block  w-[70%] justify-between mx-auto text-sm font-semibold">
               <li className="flex pt-2 gap-2 justify-center">
                 <FaRegEnvelope className="my-auto" size={20} />
                 <Link
@@ -63,7 +63,7 @@ export default function Header({ }: Props) {
               </ul>
               <div className=" md:border-l-2 my-auto hidden md:flex px-6 md:border-text-color">
                 <form action="/" method="post">
-                  <div className="input flex text-[#3a3737] bg-text-color w-[60%] mx-auto md:w-[95%] items-center py-1 px-2 gap-2 rounded-full">
+                  <div className="input flex text-[#3a3737] bg-white w-[60%] mx-auto md:w-[95%] items-center py-1 px-2 gap-2 rounded-full">
                     <FaSearch size={20} />
                     <input
                       type="search"
@@ -76,9 +76,9 @@ export default function Header({ }: Props) {
 
               <Button
                 asChild
-                className="hidden md:flex my-auto active:translate-y-1 hover:bg-text-color hover:text-[#3a3737] bg-tertiary-color"
+                className=" hidden md:flex my-auto active:translate-y-1 hover:bg-text-color hover:text-[#3a3737] bg-tertiary-color"
               >
-                <Link href="formulaire-devaluation">
+                <Link href="/formulaire-devaluation">
                   Formulaire D'evaluation
                 </Link>
               </Button>

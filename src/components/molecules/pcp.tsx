@@ -79,46 +79,44 @@ export default function Pcp({}: Props) {
               <br></br>
               Explorez les différentes options disponibles selon la province ou
               le territoire
-              <ol className="list-decimal leading-loose ml-6 font-semibold text-[#666666]">
-                <li>
-                  Ontario : Programme Ontarien des Candidats à l'Immigration
-                  (POCI)
-                </li>
-                <li>
-                  Colombie-Britannique : Programme des Candidats de la
-                  Colombie-Britannique (PCCB)
-                </li>
-                <li>
-                  Alberta : Programme d'Immigration Avantage Alberta (PIAA)
-                </li>
-                <li>Manitoba : Programme des Candidats du Manitoba (PCM)</li>
-                <li>
-                  Nouvelle-Écosse : Programme des Candidats de la
-                  Nouvelle-Écosse (PCNE)
-                </li>
-                <li>
-                  Nouveau-Brunswick : Programme des Candidats du
-                  Nouveau-Brunswick (PCNB)
-                </li>
-                <li>
-                  Saskatchewan : Programme Candidats Immigrants pour la
-                  Saskatchewan (PCIS)
-                </li>
-                <li>
-                  Île-du-Prince-Édouard : Programme des Candidats de
-                  l'Île-du-Prince-Édouard (PC IPE)
-                </li>
-                <li>
-                  Terre-Neuve-et-Labrador : Programme des Candidats de la
-                  Province de Terre-Neuve-et- Labrador (PCPTNL)
-                </li>
-                <li>
-                  Territoires du Nord-Ouest : Programme des Candidats des
-                  Territoires du Nord-Ouest (PCTNO)
-                </li>
-                <li>Yukon : Programme des Candidats du Yukon (PCY)</li>
-              </ol>
             </p>
+            <ol className="list-decimal leading-loose ml-6 font-semibold text-[#666666]">
+              <li>
+                Ontario : Programme Ontarien des Candidats à l'Immigration
+                (POCI)
+              </li>
+              <li>
+                Colombie-Britannique : Programme des Candidats de la
+                Colombie-Britannique (PCCB)
+              </li>
+              <li>Alberta : Programme d'Immigration Avantage Alberta (PIAA)</li>
+              <li>Manitoba : Programme des Candidats du Manitoba (PCM)</li>
+              <li>
+                Nouvelle-Écosse : Programme des Candidats de la Nouvelle-Écosse
+                (PCNE)
+              </li>
+              <li>
+                Nouveau-Brunswick : Programme des Candidats du Nouveau-Brunswick
+                (PCNB)
+              </li>
+              <li>
+                Saskatchewan : Programme Candidats Immigrants pour la
+                Saskatchewan (PCIS)
+              </li>
+              <li>
+                Île-du-Prince-Édouard : Programme des Candidats de
+                l'Île-du-Prince-Édouard (PC IPE)
+              </li>
+              <li>
+                Terre-Neuve-et-Labrador : Programme des Candidats de la Province
+                de Terre-Neuve-et- Labrador (PCPTNL)
+              </li>
+              <li>
+                Territoires du Nord-Ouest : Programme des Candidats des
+                Territoires du Nord-Ouest (PCTNO)
+              </li>
+              <li>Yukon : Programme des Candidats du Yukon (PCY)</li>
+            </ol>
           </div>
         </div>
         <div className="my-6 mx-auto w-fit">

@@ -6,7 +6,7 @@ import slugify from "react-slugify";
 
 type Props = {};
 
-export default function Menu({ }: Props) {
+export default function Menu({}: Props) {
   const pathname = usePathname();
 
   const immigrationSubtitle: string[] = [
@@ -30,36 +30,47 @@ export default function Menu({ }: Props) {
     "Prolongation de Permis d'étude",
   ];
 
+  const optionServicesEntreprise: string[] = [
+    "Service d'entreprise",
+    "Déposer votre demande",
+    "Recrutement à l'international",
+    "Accueil et intégration",
+  ];
+
   return (
     <>
       <ul className="nav-links flex justify-end gap-1 w-full my-auto z-[9999]">
-        <li
-          className={
-            pathname === "/a-propos"
-              ? "!text-text-color bg-primary-color nav-link"
-              : "nav-link"
-          }
-        >
-          <Link href="/a-propos">A propos</Link>
-        </li>
+        <Link href="/a-propos">
+          <li
+            className={
+              pathname === "/a-propos"
+                ? "!text-text-color bg-primary-color nav-link"
+                : "nav-link"
+            }
+          >
+            <span className="uppercase">à</span> propos
+          </li>
+        </Link>
         <li className="nav-link content">
           <Link className="text-arrow" href="/immigration">
-            Immigration
+            Services d'immigration
             <IoMdArrowDropdown className="dropdown-icon" />
           </Link>
 
           <ul className="dropdown">
             {immigrationSubtitle.map((item, index) => (
-              <li
-                key={index}
-                className={
-                  pathname === `/immigration/${slugify(item)}`
-                    ? " py-1 px-1 bg-primary-color text-text-color "
-                    : " py-1 px-1 hover:bg-primary-color text-black hover:text-text-color "
-                }
-              >
-                <Link href={`/immigration/${slugify(`${item}`)}`}>{item}</Link>
-              </li>
+              <Link href={`/immigration/${slugify(item)}`}>
+                <li
+                  key={index}
+                  className={
+                    pathname === `/immigration/${slugify(item)}`
+                      ? " py-1 px-1 bg-primary-color !text-text-color "
+                      : " py-1 px-1 hover:bg-primary-color text-black hover:text-text-color "
+                  }
+                >
+                  {item}
+                </li>
+              </Link>
             ))}
           </ul>
         </li>
@@ -75,9 +86,17 @@ export default function Menu({ }: Props) {
             <IoMdArrowDropdown className="dropdown-icon" />
           </Link>
           <ul className="dropdown">
-            <li className=" py-1 px-1 hover:bg-primary-color text-black hover:text-text-color ">
-              <Link href={`/ourServices`}>Services d'immigration</Link>
-            </li>
+            {optionServicesEntreprise.map((item, idx) => (
+              <Link href={`/ourServices/${slugify(item)}`} key={idx}>
+                <li className={
+                    pathname === `/ourServices/${slugify(item)}`
+                      ? " py-1 px-1 bg-primary-color !text-text-color "
+                      : " py-1 px-1 hover:bg-primary-color text-black hover:text-text-color "
+                  }>
+                  {item}
+                </li>
+              </Link>
+            ))}
           </ul>
         </li>
 
@@ -89,12 +108,18 @@ export default function Menu({ }: Props) {
 
           <ul className="dropdown">
             {visiterOptions.map((item, indx) => (
-              <li
-                key={indx}
-                className=" py-1 px-1 hover:bg-primary-color text-black hover:text-text-color"
-              >
-                <Link href={`/visiter/${slugify(`${item}`)}`}>{item}</Link>
-              </li>
+              <Link href={`/visiter/${slugify(item)}`}>
+                <li
+                  key={indx}
+                  className={
+                    pathname === `/visiter/${slugify(item)}`
+                      ? " py-1 px-1 bg-primary-color !text-text-color "
+                      : " py-1 px-1 hover:bg-primary-color text-black hover:text-text-color "
+                  }
+                >
+                  {item}
+                </li>
+              </Link>
             ))}
           </ul>
         </li>
@@ -106,33 +131,43 @@ export default function Menu({ }: Props) {
 
           <ul className="dropdown">
             {optionsEtudes.map((item, idx) => (
-              <li
-                key={idx}
-                className=" py-1 px-1 hover:bg-primary-color text-black hover:text-text-color"
-              >
-                <Link href={`/etude/${slugify(`${item}`)}`}>{item}</Link>
-              </li>
+              <Link href={`/etude/${slugify(item)}`}>
+                <li
+                  key={idx}
+                  className={
+                    pathname === `/etude/${slugify(item)}`
+                      ? " py-1 px-1 bg-primary-color !text-text-color "
+                      : " py-1 px-1 hover:bg-primary-color text-black hover:text-text-color "
+                  }
+                >
+                  {item}
+                </li>
+              </Link>
             ))}
           </ul>
         </li>
-        <li
-          className={
-            pathname === "/blogue"
-              ? "!text-text-color bg-primary-color nav-link"
-              : "nav-link"
-          }
-        >
-          <Link href="/blogue">Blogue</Link>
-        </li>
-        <li
-          className={
-            pathname === "/contact-us"
-              ? "text-text-color rounded-full bg-primary-color nav-link"
-              : "nav-link rounded-full border-primary-color border-2"
-          }
-        >
-          <Link href="/contact-us">Nous joindre</Link>
-        </li>
+        <Link href="/blogue">
+          <li
+            className={
+              pathname === "/blogue"
+                ? "!text-text-color bg-primary-color nav-link"
+                : "nav-link"
+            }
+          >
+            Blogue
+          </li>
+        </Link>
+        <Link href="/contact-us">
+          <li
+            className={
+              pathname === "/contact-us"
+                ? "text-text-color rounded-full bg-primary-color nav-link"
+                : "nav-link rounded-full border-primary-color border-2"
+            }
+          >
+            Nous joindre
+          </li>
+        </Link>
       </ul>
     </>
   );

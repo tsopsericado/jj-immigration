@@ -47,25 +47,24 @@ export default function Peq({}: Props) {
               Les exigence minimales pour être admissible à la categorie de
               l'expérinece canadiene, il faut remplir toutes les exigences
               minimales concernant:
-              <br></br>
-              <ol className="list-disc ml-6 font-semibold text-[#666666]">
-                <li>
-                  Avoir l’intention de s’établir au Québec pour y occuper un
-                  emploi dans une entreprise sur laquelle vous n’exercez pas un
-                  contrôle juridique ou de fait, directement ou indirectement.
-                  Cet emploi ne doit pas être dans un secteur inadmissible;
-                </li>
-                <li>Avoir 18 ans ou plus</li>
-                <li>
-                  Avoir une connaissance du français oral qui équivaut au niveau
-                  7
-                </li>
-                <li>
-                  Être légalement au Québec lorsque vous présentez votre demande
-                </li>
-                <li>Démontrer votre capacité d’autonomie financière.</li>
-              </ol>
             </p>
+            <br></br>
+            <ol className="list-disc ml-6 font-semibold text-[#666666]">
+              <li>
+                Avoir l’intention de s’établir au Québec pour y occuper un
+                emploi dans une entreprise sur laquelle vous n’exercez pas un
+                contrôle juridique ou de fait, directement ou indirectement. Cet
+                emploi ne doit pas être dans un secteur inadmissible;
+              </li>
+              <li>Avoir 18 ans ou plus</li>
+              <li>
+                Avoir une connaissance du français oral qui équivaut au niveau 7
+              </li>
+              <li>
+                Être légalement au Québec lorsque vous présentez votre demande
+              </li>
+              <li>Démontrer votre capacité d’autonomie financière.</li>
+            </ol>
           </div>
         </div>
         <div className="my-6 mx-auto w-fit">
