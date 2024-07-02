@@ -1,8 +1,8 @@
 "use client";
 import AccueilEtIntegration from "@/components/molecules/accueilEtIntegration";
 import DepotCandidature from "@/components/molecules/depotCandidature";
+import DocumentAFournir from "@/components/molecules/document-a-fournir";
 import HeroSection from "@/components/molecules/heroSection";
-import OurServices from "@/components/molecules/ourServices";
 import Recrutement from "@/components/molecules/recrutement";
 import Layout from "@/components/templates/layout";
 import { usePathname } from "next/navigation";
@@ -29,9 +29,7 @@ export default function Subserices({}: Props) {
           <>
             <HeroSection
               content={"Recrutement à l'international"}
-              bgImage={
-                "/assets/images/recrutement1.jpg"
-              }
+              bgImage={"/assets/images/recrutement1.jpg"}
             />
             <Recrutement />
           </>
@@ -39,14 +37,23 @@ export default function Subserices({}: Props) {
           <>
             <HeroSection
               content={"Accueil et intégration"}
-              bgImage={"https://static.wixstatic.com/media/a7d137_b51f4f2623c64443945146a127e82c2d~mv2.jpg/v1/fill/w_640,h_292,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/a7d137_b51f4f2623c64443945146a127e82c2d~mv2.jpg"}
+              bgImage={
+                "https://static.wixstatic.com/media/a7d137_b51f4f2623c64443945146a127e82c2d~mv2.jpg/v1/fill/w_640,h_292,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/a7d137_b51f4f2623c64443945146a127e82c2d~mv2.jpg"
+              }
             />
             <AccueilEtIntegration />
           </>
         ) : (
-          <OurServices />
+          <>
+            <HeroSection
+              content={"Documents à fournir"}
+              bgImage={
+                "https://img.freepik.com/premium-photo/businessman-working-stacks-paper-searching-information-work-desk-office_101448-92.jpg?w=360"
+              }
+            />
+            <DocumentAFournir />
+          </>
         )}
-        
       </Layout>
     </>
   );
