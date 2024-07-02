@@ -21,7 +21,6 @@ export default function Home({}: Props) {
     <>
       <Layout>
         <HeroSection
-          linearGradient="linear-gradient(256deg, #1a1a1b93, #29292b79)"
           content={"Immigration"}
           bgImage={
             "https://www.immilawglobal.com/uploads/media/Caregivers65324b0f96461.webp"

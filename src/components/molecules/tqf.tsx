@@ -45,19 +45,19 @@ export default function Tqf({}: Props) {
               Les exigences minimales pour être admissible au programme des
               travailleurs qualifiés (fédéral), il faut remplir toutes les
               exigences minimales concernant:
-              <br></br>
-              <ol className="list-decimal leading-loose py-3 ml-6 font-semibold text-[#666666]">
-                <li>L'âge</li>
-                <li>Les études</li>
-                <li>L'epérience de travail qualifié au Canada</li>
-                <li>Les compétences linquistique en français ou en anglais</li>
-                <li>Si vous avez ou non une offre d'emploi valide</li>
-                <li>
-                  Province de deestination (prévoir habiter à l'extérieur de la
-                  province du Québec)
-                </li>
-              </ol>
             </p>
+            <br></br>
+            <ol className="list-decimal leading-loose py-3 ml-6 font-semibold text-[#666666]">
+              <li>L'âge</li>
+              <li>Les études</li>
+              <li>L'epérience de travail qualifié au Canada</li>
+              <li>Les compétences linquistique en français ou en anglais</li>
+              <li>Si vous avez ou non une offre d'emploi valide</li>
+              <li>
+                Province de deestination (prévoir habiter à l'extérieur de la
+                province du Québec)
+              </li>
+            </ol>
           </div>
         </div>
         <div className="my-6 mx-auto w-fit">

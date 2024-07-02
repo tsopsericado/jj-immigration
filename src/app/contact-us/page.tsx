@@ -82,7 +82,6 @@ export default function ContactUs({}: Props) {
       <Layout>
         <div>
           <HeroSection
-            linearGradient="linear-gradient(256deg, #1a1a1b93, #29292b79)"
             content={""}
             bgImage={"/assets/images/contact-banner.jpg"}
           />

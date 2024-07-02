@@ -11,7 +11,6 @@ export default function Home({}: Props) {
       <Layout>
         <HeroSection
           content={""}
-          linearGradient="linear-gradient(256deg, #1a1a1b93, #29292b79)"
           bgImage={
             "https://softamo.org/wp-content/uploads/2023/11/study-in-canada.jpeg"
           }

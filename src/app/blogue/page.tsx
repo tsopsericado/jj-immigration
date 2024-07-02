@@ -11,7 +11,6 @@ export default function Blogue({}: Props) {
     <>
       <Layout>
         <HeroSection
-          linearGradient="linear-gradient(256deg, #1a1a1b93, #29292b79)"
           content={"Blogue"}
           bgImage={
             "https://b2362590.smushcdn.com/2362590/wp-content/uploads/2021/06/entete-blogue_new.png?lossy=1&strip=1&webp=1"
