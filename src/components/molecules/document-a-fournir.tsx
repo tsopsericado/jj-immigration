@@ -8,7 +8,7 @@ type Props = {};
 export default function DocumentAFournir({}: Props) {
   return (
     <div className="md:flex block gap-3 w-[95%] md:w-[70%] py-10 mx-auto">
-      <ul className="leading-loose text-xl">
+      <ul className="leading-loose text-xl list-disc">
         <li>Demande de permis de travail</li>
         <li>Demande de Certificat d'acceptation du Québec (CAQ)</li>
         <li>Demande d'Étude d'impact sur le marché du travail (EIMT)</li>
