@@ -49,7 +49,7 @@ export default () => {
       ],
     },
     {
-      label: "A propos",
+      label: "A propos de nous",
       items: [
         {
           href: "javascript:void()",
@@ -76,14 +76,17 @@ export default () => {
       <div className="gap-6 justify-between md:flex">
         <div className="flex-1">
           <div className="max-w-xs">
-            <Image
-              src="/assets/images/logoo-jj.png"
-              className="w-32"
-              alt=""
-              height={50}
-              width={50}
-              loading="lazy"
-            />
+            <Link className="hover:cursor-pointer" href="/">
+              <Image
+                src="/assets/images/logoo-jj.png"
+                className="w-32"
+                alt=""
+                height={50}
+                width={50}
+                loading="lazy"
+                
+              />
+            </Link>
             <p className="leading-relaxed mt-2 text-[15px]">
               L'honnêteté est une priorité chez nous et votre satisfaction est
               notre défi.
@@ -97,11 +100,11 @@ export default () => {
             <div className="max-w-sm flex items-center gap-2 border rounded-md p-1">
               <input
                 type="text"
-                placeholder="Enter your email"
+                placeholder="Entrer votre email"
                 className="w-full rounded p-2.5 outline-none"
               />
               <button className="p-2.5 rounded-md text-text-color bg-primary-color outline-none shadow-md focus:shadow-none sm:px-5">
-                Subscribe
+                Subscrire
               </button>
             </div>
           </form>
@@ -172,10 +175,6 @@ export default () => {
                   // xml:space="preserve"
                 >
                   <FaFacebookSquare className="flex justify-center" size={18} />
-                  {/* <path
-                    fill="none"
-                    d="M11.344,5.71c0-0.73,0.074-1.122,1.199-1.122h1.502V1.871h-2.404c-2.886,0-3.903,1.36-3.903,3.646v1.765h-1.8V10h1.8v8.128h3.601V10h2.403l0.32-2.718h-2.724L11.344,5.71z"
-                  ></path> */}
                 </svg>
               </a>
               <div className="tooltip">Facebook</div>

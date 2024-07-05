@@ -161,7 +161,7 @@ export default function Menu({}: Props) {
           <li
             className={
               pathname === "/contact-us"
-                ? "text-text-color rounded-full bg-primary-color nav-link"
+                ? "!text-text-color rounded-full bg-primary-color nav-link"
                 : "nav-link rounded-full border-primary-color border-2"
             }
           >
