@@ -47,7 +47,7 @@ export default function MobileMenu({}: Props) {
   ];
 
   return (
-    <section className="bg-[#361a1ac9] !text-text-color h-screen">
+    <section style={{background: 'linear-gradient(205deg, #050505e3, #0f0f0fcb)'}} className="overflow-auto   !text-text-color h-screen">
       <div className="flex justify-between p-4">
         <div className="">
           <figure>
@@ -109,7 +109,7 @@ export default function MobileMenu({}: Props) {
                     className={
                       pathname === `/immigration/${slugify(item)}`
                         ? " py-1 px-1 bg-primary-color !text-text-color "
-                        : " py-1 px-1 hover:bg-primary-color border-white border-y text-text-color hover:text-black"
+                        : " py-1 px-1 hover:bg-primary-color border-text-color border-y text-text-color hover:text-black"
                     }
                   >
                     {item}
@@ -147,7 +147,7 @@ export default function MobileMenu({}: Props) {
                     className={
                       pathname === `/immigration/${slugify(item)}`
                         ? " py-1 px-1 bg-primary-color !text-text-color "
-                        : " py-1 px-1 hover:bg-primary-color text-text-color hover:text-black"
+                        : " py-1 px-1 hover:bg-primary-color border-text-color border-y text-text-color hover:text-black"
                     }
                   >
                     {item}
@@ -185,7 +185,7 @@ export default function MobileMenu({}: Props) {
                     className={
                       pathname === `/immigration/${slugify(item)}`
                         ? " py-1 px-1 bg-primary-color !text-text-color "
-                        : " py-1 px-1 hover:bg-primary-color text-text-color hover:text-black"
+                        : " py-1 px-1 hover:bg-primary-color border-text-color border-y text-text-color hover:text-black"
                     }
                   >
                     {item}
@@ -223,7 +223,7 @@ export default function MobileMenu({}: Props) {
                     className={
                       pathname === `/immigration/${slugify(item)}`
                         ? " py-1 px-1 bg-primary-color !text-text-color "
-                        : " py-1 px-1 hover:bg-primary-color text-text-color hover:text-black"
+                        : " py-1 px-1 hover:bg-primary-color border-text-color border-y text-text-color hover:text-black"
                     }
                   >
                     {item}

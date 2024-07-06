@@ -1,4 +1,5 @@
 "use client";
+import useIsOpen from "@/app/stores/menuState";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -7,16 +8,14 @@ import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import { IoMdClose } from "react-icons/io";
 import slugify from "react-slugify";
 
-type Props = {
-  isClicked: boolean;
-  setClicked?: (prev: any) => void
-};
+type Props = {};
 
-export default function MobileMenu({isClicked, setClicked}: Props) {
+export default function MobileMenu({}: Props) {
   const [immigrationClicked, setImmigrationClicked] = useState<boolean>(false);
   const [visiterClicked, setVisiterClicked] = useState<boolean>(false);
   const [etudeClicked, setEtudeClicked] = useState<boolean>(false);
   const [serviceClicked, setServiceClicked] = useState<boolean>(false);
+  const {isOpen, setIsOpen} = useIsOpen()
 
   const pathname = usePathname();
 
@@ -48,10 +47,11 @@ export default function MobileMenu({isClicked, setClicked}: Props) {
     "Accueil et intégration",
   ];
 
-  console.log('from mobile menu', isClicked)
-
   return (
-    <section className={isClicked ? "hidden" : "bg-[#361a1ac9] w-screen mx-auto !text-text-color h-screen z-50 absolute" }>
+    <section
+      style={{ background: "linear-gradient(205deg, #252424fa, #0f0f0fcb)" }}
+      className="overflow-auto left-1 transition-all duration-1000 ease-in-out absolute top-0 w-screen z-50 !text-text-color h-screen"
+    >
       <div className="flex justify-between p-4">
         <div className="">
           <figure>
@@ -67,7 +67,7 @@ export default function MobileMenu({isClicked, setClicked}: Props) {
           </figure>
         </div>
         <div
-          onClick={setClicked}
+          onClick={() => setIsOpen(!isOpen)}
           className="md:hidden border border-text-color text-text-color h-fit w-fit my-auto"
         >
           <IoMdClose className="hover:cursor-pointer" size={30} />
@@ -92,15 +92,9 @@ export default function MobileMenu({isClicked, setClicked}: Props) {
           <p className="flex justify-between">
             Service d'immigration{" "}
             {immigrationClicked ? (
-              <FaChevronUp
-                className="my-auto"
-                
-              />
+              <FaChevronUp className="my-auto" />
             ) : (
-              <FaChevronDown
-                className="my-auto"
-                
-              />
+              <FaChevronDown className="my-auto" />
             )}
           </p>
 
@@ -113,7 +107,7 @@ export default function MobileMenu({isClicked, setClicked}: Props) {
                     className={
                       pathname === `/immigration/${slugify(item)}`
                         ? " py-1 px-1 bg-primary-color !text-text-color "
-                        : " py-1 px-1 hover:bg-primary-color text-text-color hover:text-black"
+                        : " py-1 px-1 hover:bg-primary-color border-text-color border-y text-text-color hover:text-black"
                     }
                   >
                     {item}
@@ -130,15 +124,9 @@ export default function MobileMenu({isClicked, setClicked}: Props) {
           <p className="flex justify-between">
             Nos services{" "}
             {serviceClicked ? (
-              <FaChevronUp
-                className="my-auto"
-                
-              />
+              <FaChevronUp className="my-auto" />
             ) : (
-              <FaChevronDown
-                className="my-auto"
-                
-              />
+              <FaChevronDown className="my-auto" />
             )}
           </p>
 
@@ -151,7 +139,7 @@ export default function MobileMenu({isClicked, setClicked}: Props) {
                     className={
                       pathname === `/immigration/${slugify(item)}`
                         ? " py-1 px-1 bg-primary-color !text-text-color "
-                        : " py-1 px-1 hover:bg-primary-color text-text-color hover:text-black"
+                        : " py-1 px-1 hover:bg-primary-color border-text-color border-y text-text-color hover:text-black"
                     }
                   >
                     {item}
@@ -168,15 +156,9 @@ export default function MobileMenu({isClicked, setClicked}: Props) {
           <p className="flex justify-between">
             Visiter{" "}
             {visiterClicked ? (
-              <FaChevronUp
-                className="my-auto"
-                
-              />
+              <FaChevronUp className="my-auto" />
             ) : (
-              <FaChevronDown
-                className="my-auto"
-                
-              />
+              <FaChevronDown className="my-auto" />
             )}
           </p>
 
@@ -189,7 +171,7 @@ export default function MobileMenu({isClicked, setClicked}: Props) {
                     className={
                       pathname === `/immigration/${slugify(item)}`
                         ? " py-1 px-1 bg-primary-color !text-text-color "
-                        : " py-1 px-1 hover:bg-primary-color text-text-color hover:text-black"
+                        : " py-1 px-1 hover:bg-primary-color border-text-color border-y text-text-color hover:text-black"
                     }
                   >
                     {item}
@@ -206,15 +188,9 @@ export default function MobileMenu({isClicked, setClicked}: Props) {
           <p className="flex justify-between">
             Etudier{" "}
             {etudeClicked ? (
-              <FaChevronUp
-                className="my-auto"
-                
-              />
+              <FaChevronUp className="my-auto" />
             ) : (
-              <FaChevronDown
-                className="my-auto"
-                
-              />
+              <FaChevronDown className="my-auto" />
             )}
           </p>
 
@@ -227,7 +203,7 @@ export default function MobileMenu({isClicked, setClicked}: Props) {
                     className={
                       pathname === `/immigration/${slugify(item)}`
                         ? " py-1 px-1 bg-primary-color !text-text-color "
-                        : " py-1 px-1 hover:bg-primary-color text-text-color hover:text-black"
+                        : " py-1 px-1 hover:bg-primary-color border-text-color border-y text-text-color hover:text-black"
                     }
                   >
                     {item}

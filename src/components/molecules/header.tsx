@@ -3,7 +3,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { FaRegEnvelope, FaRegClock } from "react-icons/fa6";
-import { IoMdClose, IoMdMenu } from "react-icons/io";
+import { IoMdMenu } from "react-icons/io";
 import { FaFacebookF, FaSearch } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
 import { FaXTwitter } from "react-icons/fa6";
@@ -11,13 +11,13 @@ import { Button } from "../ui/button";
 import Image from "next/image";
 import Menu from "./menu";
 import MobileMenu from "./mobile-menu";
-import useIsClicked from "@/app/stores/menuState";
+import useIsOpen from "@/app/stores/menuState";
 
 type Props = {};
 
 export default function Header({}: Props) {
-  const [isClicked, setIsClicked] = useState(false)
-  console.log('from header', isClicked)
+  const {isOpen, setIsOpen} = useIsOpen();
+  console.log("from header", isOpen);
   return (
     <>
       <header className="z-[9999]">
@@ -119,18 +119,18 @@ export default function Header({}: Props) {
                 <Menu />
               </nav>
             </div>
-            {!isClicked ? (
+            {!isOpen ? (
               <div
                 onClick={() => {
-                  console.log('header =>', isClicked)
-                  setIsClicked(!isClicked)
+                  console.log("header =>", isOpen);
+                  setIsOpen(!isOpen)
                 }}
                 className="md:hidden border border-primary-color text-primary-color h-fit w-fit my-auto"
               >
                 <IoMdMenu className="hover:cursor-pointer p-1" size={30} />
               </div>
             ) : (
-              <MobileMenu isClicked={isClicked} />
+              <MobileMenu />
             )}
           </div>
         </div>

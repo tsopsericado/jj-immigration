@@ -63,7 +63,7 @@ function TestimonialSection() {
       reviewerName: "Morgane Nguena",
       position: "Etudiante en soin Infirmiers",
       review:
-        "Je suis étudiante en soin infirmiers, j'ai immigrer au Canada par le bias de JJ-immigration international.",
+        "Je suis étudiante en soin infirmiers, j'ai immigrer au Canada par le bias de JJ-immigration international, et je recommande vivement jj-immigration à toute personnes qui voudrons faire comme moi.",
     },
     {
       id: 4,
@@ -81,7 +81,7 @@ function TestimonialSection() {
       reviewerName: "Yomeni Lyse",
       position: "Regroupement familial",
       review:
-        "J'ai rejoins ma famille au Canada. Mon avenir est prometteur ici Merci JJ-immigration pour le service de qualité.",
+        "J'ai rejoins ma famille au Canada. Mon avenir est prometteur ici. Merci JJ-immigration pour le service de qualité.",
     },
   ];
 
