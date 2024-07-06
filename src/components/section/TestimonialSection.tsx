@@ -33,46 +33,55 @@ function TestimonialSection() {
     {
       id: 0,
       isBackdrop: false,
-      imageUrl: "https://jeunessedumboa.com/wp-content/uploads/2022/03/Ev4Q53LWYAAjxiI-767x1024.jpeg",
-      reviewerName: "Ricardo, Tsopse ",
-      position: "Lahore, Pakistan",
+      imageUrl: "assets/images/lalong.jpg",
+      reviewerName: "Boris Lalong ",
+      position: "Résident permanent",
       review:
-        "J'ai immigrer au Canada par le bias de JJ-immigration international. La procedure d'immigration n'était pas si stressante et diffice. Comme moi, faites confiance a JJ-immigration",
+        "Je suis très satisfait de l'accompagnement de JJ Immigration pour mon installation au Canada. Leur soutien a été exceptionnel, rendant le processus, fluide et sans stress. Je recommande leurs services sans réserve.",
     },
     {
       id: 1,
-      imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYSIS-ONPuo8_XxJAYNNhea4uP0hJUTMiG8A&s",
-      reviewerName: "Megane boone",
-      position: "CEO of Red Button",
+      imageUrl: "assets/images/marc-aurel.jpg",
+      reviewerName: "Marc Aurel",
+      position: "Etudiant en soin infirmier",
       review:
-        "Je suis très heureuse d'avoir confier ma procedure d'immigration a l'agence JJ-immigration.",
+        "Je suis très heureux d'avoir confier ma procedure d'immigration a l'agence JJ-immigration.",
     },
     {
       id: 2,
       isBackdrop: false,
-      imageUrl: "/assets/images/pexel1.jpg",
-      reviewerName: "Alexandrine Spinter",
-      position: "CEO of Red Button",
+      imageUrl: "/assets/images/elise.jpg",
+      reviewerName: "Eslie Azapgue",
+      position: "Etudiante en soin infirmier",
       review:
-        "L'immigration au Canada a changé ma vie. J'ai trouvé un emploi épanouissant, élevé une famille formidable et je me sens chez moi..",
+        "I'm a nurse student, I've moved to Canada through the help of JJ-immigration international. I'm looking forward to get a job at the end of my training. ",
     },
     {
       id: 3,
       isBackdrop: false,
-      imageUrl: "https://img.freepik.com/photos-gratuite/casual-jeune-homme-africain-souriant-isole-blanc_93675-128895.jpg",
-      reviewerName: "Anderson Bilong",
-      position: "CEO of Red Button",
+      imageUrl: "assets/images/Morgan.jpg",
+      reviewerName: "Morgane Nguena",
+      position: "Etudiante en soin Infirmiers",
       review:
-        "L'immigration au Canada a changé ma vie. J'ai trouvé un emploi épanouissant, élevé une famille formidable et je me sens chez moi..",
+        "Je suis étudiante en soin infirmiers, j'ai immigrer au Canada par le bias de JJ-immigration international, et je recommande vivement jj-immigration à toute personnes qui voudrons faire comme moi.",
     },
     {
       id: 4,
       isBackdrop: false,
-      imageUrl: "https://st4.depositphotos.com/12985790/21173/i/450/depositphotos_211731336-stock-photo-smiling-african-man-arms-crossed.jpg",
-      reviewerName: "Borel Gardel",
-      position: "CEO of Red Button",
+      imageUrl: "assets/images/boris.jpg",
+      reviewerName: "Boris Djiongo",
+      position: "Résident permanent",
       review:
-        "Je suis reconnaissant pour le système d'éducation de qualité et les soins de santé accessibles au Canada. Mon avenir est prometteur ici Merci JJ-immigration pour le service de qualité.",
+        "Je suis très satisfait du mode de vie au Canada en tant que RP. Mon avenir est prometteur ici Merci JJ-immigration pour le service de qualité.",
+    },
+    {
+      id: 5,
+      isBackdrop: false,
+      imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkKJxc8M3nWKfNIwVIm7cL4Z5hRputh3x_eA&s",
+      reviewerName: "Yomeni Lyse",
+      position: "Regroupement familial",
+      review:
+        "J'ai rejoins ma famille au Canada. Mon avenir est prometteur ici. Merci JJ-immigration pour le service de qualité.",
     },
   ];
 
@@ -122,8 +131,8 @@ function TestimonialSection() {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
+          <CarouselPrevious className=" hidden md:flex" />
+          <CarouselNext className=" hidden md:flex" />
         </Carousel>
       </div>
     </section>

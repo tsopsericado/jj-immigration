@@ -13,27 +13,12 @@ import Card from "../molecules/card";
 export function Slider() {
   const teams: { [key: string]: string }[] = [
     {
-      image: "/assets/images/manitoba.jpg",
-      title: "M Chadjie Brice",
-      description: "Responsable Bureau Canada",
-    },
-    {
-      image: "/assets/images/manitoba.jpg",
-      title: "M Matame Christian",
-      description: "Responsable Cameroun",
-    },
-    {
-      image: "/assets/images/manitoba.jpg",
-      title: "M Charle Belinga",
-      description: "Responsable bureau Côte d'Ivoire",
-    },
-    {
-      image: "/assets/images/manitoba.jpg",
+      image: "/assets/images/president.jpg",
       title: "Mlle Cynthia Kenfack",
       description: "Responsable marketing",
     },
     {
-      image: "/assets/images/manitoba.jpg",
+      image: "/assets/images/president.jpg",
       title: "Mme Luciana Tamdja",
       description: "Contact",
     },
@@ -58,8 +43,8 @@ export function Slider() {
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselPrevious />
-      <CarouselNext />
+      <CarouselPrevious className="text-primary-color hidden md:flex" />
+      <CarouselNext className="text-primary-color hidden md:flex" />
     </Carousel>
   );
 }

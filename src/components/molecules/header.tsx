@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
-import React from "react";
-import { FaMapMarkerAlt, FaTwitter } from "react-icons/fa";
+import React, { useState } from "react";
+import { FaMapMarkerAlt } from "react-icons/fa";
 import { FaRegEnvelope, FaRegClock } from "react-icons/fa6";
 import { IoMdMenu } from "react-icons/io";
 import { FaFacebookF, FaSearch } from "react-icons/fa";
@@ -10,10 +10,14 @@ import { FaXTwitter } from "react-icons/fa6";
 import { Button } from "../ui/button";
 import Image from "next/image";
 import Menu from "./menu";
+import MobileMenu from "./mobile-menu";
+import useIsOpen from "@/app/stores/menuState";
 
 type Props = {};
 
-export default function Header({ }: Props) {
+export default function Header({}: Props) {
+  const {isOpen, setIsOpen} = useIsOpen();
+  console.log("from header", isOpen);
   return (
     <>
       <header className="z-[9999]">
@@ -47,17 +51,26 @@ export default function Header({ }: Props) {
                     target="_blank"
                     href="https://www.facebook.com/profile.php?id=61557544078696&mibextid=ZbWKwL&_rdc=2&_rdr"
                   >
-                    <FaFacebookF className="hover:translate-x-1 hover" size={20} />
+                    <FaFacebookF
+                      className="hover:translate-x-1 hover"
+                      size={20}
+                    />
                   </Link>
                 </li>
                 <li className="active:translate-x-1">
                   <Link href="https://www.x.com">
-                    <FaXTwitter className="hover:translate-x-1 hover" size={20} />
+                    <FaXTwitter
+                      className="hover:translate-x-1 hover"
+                      size={20}
+                    />
                   </Link>
                 </li>
                 <li className="active:translate-x-1">
                   <Link href="https://www.instagram.com">
-                    <AiFillInstagram className="hover:translate-x-1 hover" size={20} />
+                    <AiFillInstagram
+                      className="hover:translate-x-1 hover"
+                      size={20}
+                    />
                   </Link>
                 </li>
               </ul>
@@ -87,7 +100,7 @@ export default function Header({ }: Props) {
         </div>
         {/* lower header */}
         <div className="main-header">
-          <div className="flex justify-between px-5 shadow-2xl ">
+          <div className="flex justify-between px-4 shadow-2xl ">
             <div className="">
               <figure>
                 <Link href="/">
@@ -106,9 +119,19 @@ export default function Header({ }: Props) {
                 <Menu />
               </nav>
             </div>
-            <div className="md:hidden bg-primary-color text-text-color h-fit w-fit my-auto">
-              <IoMdMenu className="hover:cursor-pointer" size={30} />
-            </div>
+            {!isOpen ? (
+              <div
+                onClick={() => {
+                  console.log("header =>", isOpen);
+                  setIsOpen(!isOpen)
+                }}
+                className="md:hidden border border-primary-color text-primary-color h-fit w-fit my-auto"
+              >
+                <IoMdMenu className="hover:cursor-pointer p-1" size={30} />
+              </div>
+            ) : (
+              <MobileMenu />
+            )}
           </div>
         </div>
       </header>
