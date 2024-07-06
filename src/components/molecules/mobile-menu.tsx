@@ -27,7 +27,7 @@ export default function MobileMenu({}: Props) {
     "Programme des candidats des provinces (PCP)",
     "Parrainer votre époux, conjoint de fait ou enfant à charge",
     "Parrainer vos parents ou vos grand-parents",
-    "Citoyenneté",
+    "Citoyenneté"
   ];
 
   const visiterOptions: string[] = [
@@ -222,7 +222,7 @@ export default function MobileMenu({}: Props) {
           <li onClick={() => setIsOpen(!isOpen)} className="px-4 py-1">Blogue</li>
         </Link>
         <Link href="/contact-us">
-          <li onClick={() => setIsOpen(!isOpen)} className="px-4 py-1">Nous contacter</li>
+          <li onClick={() => setIsOpen(!isOpen)} className="px-4  py-1">Nous contacter</li>
         </Link>
       </ul>
     </section>
