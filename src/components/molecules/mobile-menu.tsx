@@ -15,7 +15,7 @@ export default function MobileMenu({}: Props) {
   const [visiterClicked, setVisiterClicked] = useState<boolean>(false);
   const [etudeClicked, setEtudeClicked] = useState<boolean>(false);
   const [serviceClicked, setServiceClicked] = useState<boolean>(false);
-  const {isOpen, setIsOpen} = useIsOpen()
+  const { isOpen, setIsOpen } = useIsOpen();
 
   const pathname = usePathname();
 
@@ -76,6 +76,7 @@ export default function MobileMenu({}: Props) {
       <ul className=" flex flex-col list-none leading-loose gap-3 text-xl font-semibold py-5 ">
         <Link href="/a-propos">
           <li
+            onClick={() => setIsOpen(!isOpen)}
             className={
               pathname === "/a-propos"
                 ? "!text-text-color px-4 py-1 bg-primary-color "
@@ -104,6 +105,7 @@ export default function MobileMenu({}: Props) {
                 <Link href={`/immigration/${slugify(item)}`}>
                   <li
                     key={index}
+                    onClick={() => setIsOpen(!isOpen)}
                     className={
                       pathname === `/immigration/${slugify(item)}`
                         ? " py-1 px-1 bg-primary-color !text-text-color "
@@ -136,6 +138,7 @@ export default function MobileMenu({}: Props) {
                 <Link href={`/immigration/${slugify(item)}`}>
                   <li
                     key={index}
+                    onClick={() => setIsOpen(!isOpen)}
                     className={
                       pathname === `/immigration/${slugify(item)}`
                         ? " py-1 px-1 bg-primary-color !text-text-color "
@@ -168,6 +171,7 @@ export default function MobileMenu({}: Props) {
                 <Link href={`/immigration/${slugify(item)}`}>
                   <li
                     key={index}
+                    onClick={() => setIsOpen(!isOpen)}
                     className={
                       pathname === `/immigration/${slugify(item)}`
                         ? " py-1 px-1 bg-primary-color !text-text-color "
@@ -200,6 +204,7 @@ export default function MobileMenu({}: Props) {
                 <Link href={`/immigration/${slugify(item)}`}>
                   <li
                     key={index}
+                    onClick={() => setIsOpen(!isOpen)}
                     className={
                       pathname === `/immigration/${slugify(item)}`
                         ? " py-1 px-1 bg-primary-color !text-text-color "
@@ -213,8 +218,12 @@ export default function MobileMenu({}: Props) {
             </ul>
           )}
         </li>
-        <li className="px-4 py-1">Blogue</li>
-        <li className="px-4 py-1">Nous contacter</li>
+        <Link href="/blogue">
+          <li onClick={() => setIsOpen(!isOpen)} className="px-4 py-1">Blogue</li>
+        </Link>
+        <Link href="/contact-us">
+          <li onClick={() => setIsOpen(!isOpen)} className="px-4 py-1">Nous contacter</li>
+        </Link>
       </ul>
     </section>
   );
