@@ -3,7 +3,6 @@ import Select from "react-select";
 import InputField from "../atoms/inputField";
 import InputCheckBox from "../atoms/checkBox";
 import { FormData } from "@/domain/formData";
-import Button from "../atoms/button";
 
 type Props = {};
 
