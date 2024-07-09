@@ -37,22 +37,22 @@ function TestimonialSection() {
       reviewerName: "Boris Lalong ",
       position: "Résident permanent",
       review:
-        "Je suis très satisfait de l'accompagnement de JJ Immigration pour mon installation au Canada. Leur soutien a été exceptionnel, rendant le processus, fluide et sans stress. Je recommande leurs services sans réserve.",
+        "Avant JJ-INTERNATIONAL, j'avais connu plusieurs déceptions par des consultants véreux. Aujourd'hui ma famille et moi sommes installées au Canada comme résident permanent. Leur soutien a été exceptionnel, rendant le processus fluide et sans stress. Je recommande sans reserve les services de JJ-INTERNATIONAL.",
     },
     {
       id: 1,
       imageUrl: "assets/images/marc-aurel.jpg",
       reviewerName: "Marc Aurel",
-      position: "Etudiant en soin infirmier",
+      position: "Étudiant en soins infirmiers",
       review:
-        "Je suis très heureux d'avoir confier ma procedure d'immigration a l'agence JJ-immigration.",
+        "Je suis très heureux d'avoir confié ma procédure d'immigration à JJ-INTERNATIONAL. Grâce à leur professionnalisme, ils font la différence.",
     },
     {
       id: 2,
       isBackdrop: false,
       imageUrl: "/assets/images/elise.jpg",
-      reviewerName: "Eslie Azapgue",
-      position: "Etudiante en soin infirmier",
+      reviewerName: "Patricia Kenfack",
+      position: "Étudiante en soins infirmiers",
       review:
         "I'm a nurse student, I've moved to Canada through the help of JJ-immigration international. I'm looking forward to get a job at the end of my training. ",
     },
@@ -63,7 +63,7 @@ function TestimonialSection() {
       reviewerName: "Morgane Nguena",
       position: "Etudiante en soin Infirmiers",
       review:
-        "Je suis étudiante en soin infirmiers, j'ai immigrer au Canada par le bias de JJ-immigration international, et je recommande vivement jj-immigration à toute personnes qui voudrons faire comme moi.",
+        "Je suis étudiante en Soins infirmiers, j'ai immigré au Canada par le biais de JJ-INTERNATIONAL. Je recommande vivement cette entreprise à toutes les personnes qui veulent faire comme moi, réaliser leur rêve canadien.",
     },
     {
       id: 4,
@@ -72,7 +72,7 @@ function TestimonialSection() {
       reviewerName: "Boris Djiongo",
       position: "Résident permanent",
       review:
-        "Je suis très satisfait du mode de vie au Canada en tant que RP. Mon avenir est prometteur ici Merci JJ-immigration pour le service de qualité.",
+        "Je suis très satisfait des avantages que me procurent ma Résidence permanente au Canada. Mon avenir est prometteur ici. Merci JJ-INTERNATIONAL pour le service de qualité et pour vos précieux conseils",
     },
     {
       id: 5,
@@ -81,7 +81,7 @@ function TestimonialSection() {
       reviewerName: "Yomeni Lyse",
       position: "Regroupement familial",
       review:
-        "J'ai rejoins ma famille au Canada. Mon avenir est prometteur ici. Merci JJ-immigration pour le service de qualité.",
+        "Grâce à JJ-INTERNATIONAL, J'ai fais venir mon conjoint et mes enfants au Canada. Nous sommes enfin réunis et je ne dirais jamais assez Merci aux experts de JJ pour leur patience et leur proactivité.",
     },
   ];
 
@@ -131,8 +131,8 @@ function TestimonialSection() {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className=" hidden md:flex" />
-          <CarouselNext className=" hidden md:flex" />
+          <CarouselPrevious className=" hidden md:flex text-primary-color" />
+          <CarouselNext className=" hidden md:flex text-primary-color" />
         </Carousel>
       </div>
     </section>

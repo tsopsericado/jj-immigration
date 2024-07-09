@@ -40,7 +40,7 @@ export default function CategorySection() {
     <section>
       <div className="pb-10">
         <p className="text-primary-color text-5xl font-semibold text-center mt-10 pb-5">
-          A propos
+          <span className="uppercase">à</span> propos
         </p>
         <p className="text-2xl text-center">
           Nous offrons Les Meilleurs Services en</p>
