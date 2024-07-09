@@ -81,8 +81,8 @@ export default function ArticleRécent({}: Props) {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className=" hidden md:flex"/>
-          <CarouselNext className=" hidden md:flex"/>
+          <CarouselPrevious className=" hidden md:flex text-primary-color"/>
+          <CarouselNext className=" hidden md:flex text-primary-color"/>
         </Carousel>
       </div>
     </>
