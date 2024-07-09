@@ -61,7 +61,7 @@ function TestimonialSection() {
       isBackdrop: false,
       imageUrl: "assets/images/Morgan.jpg",
       reviewerName: "Morgane Nguena",
-      position: "Etudiante en soin Infirmiers",
+      position: "Etudiante en soins Infirmiers",
       review:
         "Je suis étudiante en Soins infirmiers, j'ai immigré au Canada par le biais de JJ-INTERNATIONAL. Je recommande vivement cette entreprise à toutes les personnes qui veulent faire comme moi, réaliser leur rêve canadien.",
     },
