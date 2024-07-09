@@ -26,7 +26,6 @@ import {
   CarouselPrevious,
 } from "../ui/carousel";
 import { Card, CardContent } from "../ui/card";
-// import TestimonialCard from "../cards/TestimonialCard";
 
 function TestimonialSection() {
   const reviews = [
