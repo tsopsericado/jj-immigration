@@ -114,7 +114,7 @@ export default function Header({}: Props) {
                 </Link>
               </figure>
             </div>
-            <div className="hidden w-[75%] md:flex">
+            <div className="hidden w-[77%] md:flex">
               <nav className="my-auto w-full flex">
                 <Menu />
               </nav>

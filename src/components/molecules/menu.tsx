@@ -53,7 +53,7 @@ export default function Menu({}: Props) {
         </Link>
         <li className="nav-link content">
           <Link className="text-arrow" href="/immigration">
-            Services aux entreprises
+            Services d'immigration
             <IoMdArrowDropdown className="dropdown-icon" />
           </Link>
 
@@ -82,7 +82,7 @@ export default function Menu({}: Props) {
           }
         >
           <Link className="text-arrow" href="/ourServices">
-            Nos services
+            Services aux entreprises
             <IoMdArrowDropdown className="dropdown-icon" />
           </Link>
           <ul className="dropdown">
