@@ -91,7 +91,7 @@ export default function MobileMenu({}: Props) {
           onClick={() => setImmigrationClicked((prev) => !prev)}
         >
           <p className="flex justify-between">
-            Service aux entreprises{" "}
+            Services d'immigration{" "}
             {immigrationClicked ? (
               <FaChevronUp className="my-auto" />
             ) : (
@@ -124,7 +124,7 @@ export default function MobileMenu({}: Props) {
           onClick={() => setServiceClicked((prev) => !prev)}
         >
           <p className="flex justify-between">
-            Nos services{" "}
+            Services aux entreprise{" "}
             {serviceClicked ? (
               <FaChevronUp className="my-auto" />
             ) : (

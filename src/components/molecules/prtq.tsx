@@ -1,6 +1,7 @@
 import React from "react";
 import { FaCheckCircle } from "react-icons/fa";
 import ImmigrationService from "./immigrationService";
+import ContactUsCart from "./contactUsCart";
 
 type Props = {};
 
@@ -61,6 +62,7 @@ export default function Prtq({}: Props) {
         </div>
         <div className="my-6 mx-auto w-fit">
           <ImmigrationService />
+          <ContactUsCart />
         </div>
       </div>
     </>

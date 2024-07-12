@@ -12,34 +12,6 @@ export default function MainCard() {
       description:
         "Responsable Administratif zone Afrique",
     },
-    // {
-    //   id: 1,
-    //   image: "/assets/images/manitoba.jpg",
-    //   title: "Nos objectif",
-    //   description:
-    //     "Built Wicket longer admire do barton vanity itself do in it.",
-    // },
-    // {
-    //   id: 2,
-    //   image: "/assets/images/manitoba.jpg",
-    //   title: "Nos objectif",
-    //   description:
-    //     "Built Wicket longer admire do barton vanity itself do in it.",
-    // },
-    // {
-    //   id: 3,
-    //   iconUrl: "/assets/images/manitoba.jpg",
-    //   title: "Nos objectif",
-    //   description:
-    //     "Built Wicket longer admire do barton vanity itself do in it.",
-    // },
-    // {
-    //   id: 4,
-    //   image: "/assets/images/manitoba.jpg",
-    //   title: "Nos objectif",
-    //   description:
-    //     "Built Wicket longer admire do barton vanity itself do in it.",
-    // }
   ]
 
 
