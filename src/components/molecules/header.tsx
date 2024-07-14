@@ -127,7 +127,7 @@ export default function Header({}: Props) {
                 }}
                 className="md:hidden border border-primary-color text-primary-color h-fit w-fit my-auto"
               >
-                <IoMdMenu className="hover:cursor-pointer p-1" size={30} />
+                <IoMdMenu className="hover:cursor-pointer active:translate-y-1 p-1" size={30} />
               </div>
             ) : (
               <MobileMenu />

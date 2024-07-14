@@ -43,7 +43,7 @@ export default function MobileMenu({}: Props) {
   const optionServicesEntreprise: string[] = [
     "Déposer votre demande",
     "Recrutement à l'international",
-    "Document à obtenir",
+    "Document à fournir",
     "Accueil et intégration",
   ];
 
@@ -70,7 +70,7 @@ export default function MobileMenu({}: Props) {
           onClick={() => setIsOpen(!isOpen)}
           className="md:hidden border border-text-color text-text-color h-fit w-fit my-auto"
         >
-          <IoMdClose className="hover:cursor-pointer" size={30} />
+          <IoMdClose className="hover:cursor-pointer active:translate-y-1" size={30} />
         </div>
       </div>
       <ul className=" flex flex-col list-none leading-loose gap-3 text-xl font-semibold py-5 ">

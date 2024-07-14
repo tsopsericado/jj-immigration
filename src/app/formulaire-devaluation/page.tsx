@@ -2,7 +2,6 @@
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import logo from "../../../public/logo.jpg";
-import Button from "@/components/atoms/button";
 import Steps from "@/components/molecules/steps";
 import StepOne from "@/components/molecules/stepOne";
 import StepTwo from "@/components/molecules/stepTwo";
@@ -14,11 +13,12 @@ import useFileStore from "../stores/fileStore";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 import Loader from "@/components/atoms/loader";
+import Link from "next/link";
 
 type Props = {};
 
 export default function FormulaireEvaluation({}: Props) {
-  let curStep: number = 1
+  let curStep: number = 1;
   const { file, setFile } = useFileStore();
   if (typeof localStorage !== "undefined") {
     curStep = +(localStorage.getItem("currentStep") as string);
@@ -133,8 +133,10 @@ export default function FormulaireEvaluation({}: Props) {
   return (
     <main className="">
       <div className=" w-[95%] md:w-1/2 mx-auto mt-8">
-        <div className="flex justify-center ">
-          <Image src={logo} alt="logo" height={100} width={100} />
+        <div className="flex justify-center hover:cursor-pointer">
+          <Link href="/">
+            <Image src={logo} alt="logo" height={100} width={100} />
+          </Link>
         </div>
         <div className="flex justify-between pt-8 pb-4">
           <h3 className="w-1/2">INFORMATIONS GENERALES</h3>
