@@ -33,7 +33,7 @@ export default function Menu({}: Props) {
   const optionServicesEntreprise: string[] = [
     "Déposer votre demande",
     "Recrutement à l'international",
-    "Document à obtenir",
+    "Document à fournir",
     "Accueil et intégration",
   ];
 
