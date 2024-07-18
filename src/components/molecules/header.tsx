@@ -17,7 +17,7 @@ type Props = {};
 
 export default function Header({}: Props) {
   const {isOpen, setIsOpen} = useIsOpen();
-  console.log("from header", isOpen);
+
   return (
     <>
       <header className="z-[9999]">
@@ -28,9 +28,9 @@ export default function Header({}: Props) {
                 <FaRegEnvelope className="my-auto" size={20} />
                 <Link
                   className="my-auto hover:underline"
-                  href="mailto:jjinternationalservcice@gmail.com"
+                  href="mailto:info@jj-immigration.com"
                 >
-                  jjinternationalservcice@gmail.com
+                  info@jj-immigration.com
                 </Link>
               </li>
               <li className="flex pl-12 pt-4 justify-center gap-2">
@@ -122,7 +122,6 @@ export default function Header({}: Props) {
             {!isOpen ? (
               <div
                 onClick={() => {
-                  console.log("header =>", isOpen);
                   setIsOpen(!isOpen)
                 }}
                 className="md:hidden border border-primary-color text-primary-color h-fit w-fit my-auto"

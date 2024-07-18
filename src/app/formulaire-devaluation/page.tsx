@@ -106,7 +106,7 @@ export default function FormulaireEvaluation({}: Props) {
         file: uploadedCv.url,
       })
         .then((res) => {
-          console.log("response from email sent", res);
+          // console.log("response from email sent", res);
           toast.success("Formulaire envoyé", {
             position: "top-right",
             theme: "dark",
