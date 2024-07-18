@@ -38,10 +38,9 @@ export default function StepThree({}: Props) {
       reader.readAsDataURL(e.target.files[0]);
     }
     localStorage.setItem("cvFile", JSON.stringify(e.target.files[0]));
-    console.log(e.target.files[0]);
     setFile(e.target.files?.[0]);
   };
-  console.log("from cpt =>", file);
+  
   return (
     <div className="border mt-4 text-[#5c6873] border-[#25a9e3] rounded-md">
       <h3 className="pl-5 text-white bg-[#25a9e3] py-6"></h3>

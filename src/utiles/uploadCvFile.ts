@@ -11,7 +11,7 @@ export const uploadCv = async (file: any) => {
     formData.append("file", file);
     formData.append("upload_preset", "code-files");
     formData.append("folder", "code-files-folder");
-    console.log("formData =>", formData)
+    // console.log("formData =>", formData)
     try {
       const data = await fetch(
         url,

@@ -1,7 +1,6 @@
 
 export async function sendContactEmail(data: any) {
   const apiEndpoint = '/api/contactEmail';
-  console.log(" sending constact email")
 
   return fetch(apiEndpoint, {
     method: 'POST',
@@ -13,7 +12,7 @@ export async function sendContactEmail(data: any) {
   })
     .then((res) => res.json())
     .then((response) => {
-      console.log('from utils', response)
+      console.log('from utils')
       // alert(response.message);
     })
     .catch((err) => {

@@ -76,7 +76,6 @@ export default function StepOne({}: Props) {
     })
       .then((Response) => Response.json())
       .then((data) => {
-        console.log("data => ", data);
         setCountries(data);
       })
       .catch((error) => {

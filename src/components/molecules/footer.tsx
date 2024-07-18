@@ -14,12 +14,12 @@ export default () => {
           name: "Nos Services",
         },
         {
-          href: "/our-partners",
-          name: "Nos partenaires",
-        },
-        {
           href: "/blogue",
           name: "Blogue",
+        },
+        {
+          href: "/our-partners",
+          name: "Nos partenaires",
         },
         {
           href: "/our-team",

@@ -16,7 +16,6 @@ type Props = {};
 
 export default function Home({}: Props) {
   const pathname = usePathname();
-  console.log(pathname);
   return (
     <>
       <Layout>

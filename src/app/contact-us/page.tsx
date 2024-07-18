@@ -74,7 +74,6 @@ export default function ContactUs({}: Props) {
       setIsLoading((prev) => !prev);
     }
 
-    console.log(formData);
   }
 
   return (
@@ -174,7 +173,9 @@ export default function ContactUs({}: Props) {
                     {errorMsg}
                   </p>
                 )}
-                <Button
+                <div className="flex justify-between">
+                  <p></p>
+                  <Button
                   type="submit"
                   className={
                     isLoading
@@ -190,6 +191,7 @@ export default function ContactUs({}: Props) {
                     </>
                   )}
                 </Button>
+                </div>
               </form>
             </div>
             <div className="bg-[#0a0a0a] w-[98%] h-fit py-5 mx-auto md:w-[400px] px-3 text-text-color">
@@ -207,13 +209,13 @@ export default function ContactUs({}: Props) {
                 <div className="flex pl-3 pt-4 gap-2 ">
                   <FaRegEnvelope className="text-primary-color" size={20} />
                   <Link
-                    href="mailto:jjinternationalservcice@gmail.com"
+                    href="mailto:info@jj-immigration.com"
                     className="my-auto hover:underline"
                   >
-                    jjinternationalservcice@gmail.com
+                    info@jj-immigration.com
                   </Link>
                 </div>
-                <div className="flex pl-3 pt-4 gap-2 ">
+                <div className="flex pl-3 pt-4 gap-2">
                   <BsTelephoneFill className="text-primary-color" size={20} />
                   <Link
                     href="tel:+1 581-305-4090"
@@ -233,13 +235,13 @@ export default function ContactUs({}: Props) {
                     Situé près de l'Etat Civil Secondaire de Simbock
                   </p>
                 </div>
-                <div className="flex pl-3 pt-4 gap-2 ">
+                <div className="flex pl-3 pt-4 gap-2">
                   <FaRegEnvelope className="text-primary-color" size={20} />
                   <Link
-                    href="mailto:jjinternationalservcice@gmail.com"
+                    href="mailto:info@jj-immigration.com"
                     className="my-auto hover:underline"
                   >
-                    jjinternationalservcice@gmail.com
+                    info@jj-immigration.com
                   </Link>
                 </div>
                 <div className="flex pl-3 pt-4 gap-2 ">
