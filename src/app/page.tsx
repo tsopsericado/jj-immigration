@@ -46,7 +46,7 @@ export default function Home() {
                 Notre Equipe
               </p>
               <p className="volkhov text-2xl text-title text-center pb-10">
-                A votre te disposition 24h/24.
+                A votre te disposition 24h/24
               </p>
               <Slider />
             </div>
