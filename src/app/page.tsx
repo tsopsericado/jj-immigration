@@ -41,15 +41,16 @@ export default function Home() {
           </div>
           <TestimonialSection />
           <div  className="lg:pb-20 md:pb-7">
-            <div className="pb-10">
+            <div className="pb-10 bg-gray-50 py-12">
               <p className="text-5xl text-primary-color font-semibold text-center pb-5">
                 Notre Equipe
               </p>
-              <p className="volkhov text-2xl text-title text-center">
-                A votre te disposition 24h/24.
+              <p className="volkhov text-2xl text-title text-center pb-10">
+                A votre te disposition 24h/24
               </p>
+              <Slider />
             </div>
-            <Slider />
+            
             <ArticleRécent/>
           </div>
         </div>

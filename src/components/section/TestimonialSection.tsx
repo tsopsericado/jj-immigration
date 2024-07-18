@@ -89,7 +89,7 @@ function TestimonialSection() {
   );
 
   return (
-    <section className="bg-gray-50">
+    <section className="bg-gray-50 py-12">
       <div className="">
         <h1 className="font-semibold text-5xl text-primary-color text-center">
           Témoignages
