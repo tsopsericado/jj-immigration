@@ -5,15 +5,15 @@ export default function CategorySection() {
   const features = [
     {
       id: 0,
-      iconUrl: "/assets/images/manitoba.jpg",
+      iconUrl: "/assets/images/Objectifs.png",
       title: "Nos objectifs",
       description:
-        "Offrir des services personnalisés et de qualité..",
+        "Offrir des services personnalisés et de qualité.",
       highlighted: true,
     },
     {
       id: 1,
-      iconUrl: "/assets/images/aircraft.png",
+      iconUrl: "/assets/images/mission2.jpg",
       title: "Notre mission",
       description:
         "Guider et soutenir les immigrants potentiels dans leur parcours d'immigration.",
@@ -21,7 +21,7 @@ export default function CategorySection() {
     },
     {
       id: 2,
-      iconUrl: "/assets/images/pexel1.jpg",
+      iconUrl: "/assets/images/notre-vision.jpg",
       title: "Notre vision",
       description:
         "Bâtir une communauté d'immigrants prospères et épanouis au Canada ",
@@ -29,7 +29,7 @@ export default function CategorySection() {
     },
     {
       id: 3,
-      iconUrl: "/assets/images/pexel2.jpg",
+      iconUrl: "/assets/images/nos-value.jpeg",
       title: "Nos valeurs",
       description:
         " Créer de la valeur aux entreprises grâce a un partenariat stratégique, percutant et innovant.",
