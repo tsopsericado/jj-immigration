@@ -17,7 +17,7 @@ export function Slider() {
     },
     {
       image: "/assets/images/pdg.jpg",
-      title: "Mr Lucien Tamdja",
+      title: "Mr Jiotsa Bertrand",
       description: "Président Directeur Général",
     },
   ];
