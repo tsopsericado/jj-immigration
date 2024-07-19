@@ -8,7 +8,7 @@ import "react-toastify/dist/ReactToastify.min.css";
 
 const fontSans = FontSans({
   subsets: ["latin"],
-  variable: "--font-sans",
+  variable: "--font-sans"
 });
 
 export const metadata: Metadata = {
