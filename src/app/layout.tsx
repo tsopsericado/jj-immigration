@@ -13,7 +13,12 @@ const fontSans = FontSans({
 
 export const metadata: Metadata = {
   title: "jj-immigration",
-  description: "Votre clé pour une vie meilleure au Canada. Services d'immigration fiables et personnalisés."
+  description: "Votre clé pour une vie meilleure au Canada. Services d'immigration fiables et personnalisés.",
+  icons: {
+    icon: ['/favicon.ico?v=4'],
+    apple: ['/apple-touch-icon.png?v=4'],
+    shortcut: ['apple-touch-icon.png']
+  }
 };
 
 export default function RootLayout({
