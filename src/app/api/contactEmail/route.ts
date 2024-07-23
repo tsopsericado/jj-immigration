@@ -5,6 +5,7 @@ import Mail from 'nodemailer/lib/mailer';
 
 export async function POST(request: NextRequest) {
   const { email, name, surname, message, tel, ville, entreprise } = await request.json();
+  console.log("entreprise", entreprise)
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
@@ -40,6 +41,7 @@ export async function POST(request: NextRequest) {
       transporter.sendMail(mailOptions, (err) => {
         if (!err) {
           resolve('Email sent');
+          console.log('email sent from route.ts')
         } else {
           // console.log('an error occured', err.message)
           reject(err.message);

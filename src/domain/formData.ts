@@ -10,7 +10,7 @@ export type FormData = {
   email: string,
   telephone: string,
   detail: string,
-  programme: string
+  program: string
 }
 
 export type Salutation = {
