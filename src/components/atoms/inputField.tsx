@@ -11,7 +11,7 @@ type Props = {
 export default function InputField({ label, value, type, inputName, onChange }: Props) {
   return (
     <>
-      <label className="font-semibold" htmlFor={inputName}>{label}</label>
+      <label className="font-semibold" htmlFor={inputName}>{label}<span className="text-primary-color">*</span></label>
       <input
         className="border mt-1 mb-7 p-1 w-[95%] md:w-[500px] bg-transparent outline-none focus:border-[#25a9e3] shadow-sm rounded-md"
         name={inputName}

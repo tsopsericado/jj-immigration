@@ -2,11 +2,13 @@ import React, { useState } from "react";
 import InputField from "../atoms/inputField";
 import { useEdgeStore } from "@/lib/edgestore";
 import useFileStore from "@/app/stores/fileStore";
+import { Progress } from "../ui/progress";
 
 type Props = {
+  progress: number
 };
 
-export default function StepThree({}: Props) {
+export default function StepThree({progress}: Props) {
   const { file, setFile } = useFileStore();
   const { edgestore } = useEdgeStore();
   const [profession, setProfession] = useState((): string => {
@@ -53,6 +55,7 @@ export default function StepThree({}: Props) {
           accept=".docx, .pdf, .html, .zip"
           className="border py-2 px-3 mt-3 mb-5"
         />
+        <Progress value={progress} className="w-[60%]" />
         <InputField
           value={profession}
           label="Votre profession actuelle"
@@ -63,7 +66,4 @@ export default function StepThree({}: Props) {
       </div>
     </div>
   );
-}
-function useUserStore(): { file: any; setFile: any } {
-  throw new Error("Function not implemented.");
 }

@@ -18,11 +18,12 @@ export async function POST(request: NextRequest) {
 
   const mailOptions: Mail.Options = {
     from: email,
-    to: "info@jj-immigration.com",
+    to: "gaellambou1@gmail.com",
     subject: `Formulaire d evaluation de ${salutation} ${name} ${prenom}`,
     html: `
     <div>
-      <h1>Voici les informations relatives</h1>
+    <h1>${salutation} ${name} viens d'envoyer un formulaire pour l'évaluation de son dossier</h1>
+      <h2>Voici les informations relatives</h2>
       <br>
       <h2>Nom et prenom: <b>${name} ${prenom}</b></h2>
       <p>Etat civil: <b>${etatcivil}</b></p>
@@ -36,7 +37,6 @@ export async function POST(request: NextRequest) {
       <p>Niveau d'étude: <b>${etude}</b></p>
       <p>Profession: <b>${profession}</b></p>
       <p>Cv: ${file}</p>
-      <h2>${salutation} ${name} viens d'envoyer un formulaire pour l'évaluation de son dossier</h2>
     </div>
     `,
   };

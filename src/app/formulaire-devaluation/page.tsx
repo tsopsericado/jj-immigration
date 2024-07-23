@@ -21,8 +21,9 @@ export default function FormulaireEvaluation({}: Props) {
   let curStep: number = 1;
   const { file, setFile } = useFileStore();
   if (typeof localStorage !== "undefined") {
-    curStep = +(localStorage.getItem("currentStep") as string);
+    curStep = +(localStorage.getItem("currentStep") as string || '1');
   }
+  const [progressBar, setProgressBar] = useState<number>(0);
   const [currentStep, setCurrentStep] = useState<number>(curStep);
   const [errorMessage, setErrorMessage] = useState<string>("");
   const [isLoading, setIsLoading] = useState<Boolean>(false);
@@ -41,7 +42,7 @@ export default function FormulaireEvaluation({}: Props) {
     email: "",
     telephone: "",
     detail: "",
-    programme: "",
+    program: "",
   };
   let salutation: Salutation = {
     value: "",
@@ -56,13 +57,13 @@ export default function FormulaireEvaluation({}: Props) {
       JSON.parse(localStorage.getItem("salutation") as string) || "{}";
     profession = (localStorage.getItem("profession") as string) || "";
     niveauetude = (localStorage.getItem("niveauEtude") as string) || "";
+		console.log(currentStep)
   }, []);
 
   const handleSubmit = async (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
     e.preventDefault();
-    setIsLoading((prev) => !prev);
 
     if (typeof localStorage !== "undefined") {
       formData = JSON.parse(
@@ -83,12 +84,15 @@ export default function FormulaireEvaluation({}: Props) {
       file: file,
       onProgressChange: (progress) => {
         // you can use this to show a progress bar
+        setProgressBar(progress);
         console.log(progress);
       },
     });
 
     // send mail
     if (uploadedCv) {
+			console.log('file uploaded successfully')
+      setIsLoading((prev) => !prev);
       sendEmail({
         name: formData.nom,
         prenom: formData.prenom,
@@ -96,7 +100,7 @@ export default function FormulaireEvaluation({}: Props) {
         country: formData.country,
         currentCountry: formData.currentCountry,
         telephone: formData.telephone,
-        programme: formData.programme,
+        programme: formData.program,
         profession: profession,
         etude: niveauetude,
         details: formData.detail,
@@ -130,6 +134,36 @@ export default function FormulaireEvaluation({}: Props) {
     }
   };
 
+  const handleNextBtn = () => {
+    setErrorMessage("");
+    if (typeof localStorage !== "undefined") {
+      formData = JSON.parse(
+        (localStorage.getItem("formData") as string) || "{}"
+      );
+    }
+    console.log("formData => ", formData);
+
+    if (
+      formData.nom !== undefined &&
+      formData.email !== undefined &&
+      formData.country !== "" &&
+      formData.telephone !== undefined &&
+      formData.program !== '' &&
+      formData.etatCivil !== undefined &&
+      formData.dateDeNaissance !== undefined
+    ) {
+      console.log(formData.nom);
+      if (currentStep < 3) {
+        let curStep = currentStep + 1;
+        localStorage.setItem("currentStep", JSON.stringify(curStep));
+        setCurrentStep(curStep);
+      }
+      console.log("into loop");
+    } else {
+      setErrorMessage("Les champs avec * sont obligatoire");
+    }
+  };
+
   return (
     <main className="">
       <div className=" w-[95%] md:w-1/2 mx-auto mt-8">
@@ -140,18 +174,24 @@ export default function FormulaireEvaluation({}: Props) {
         </div>
         <div className="flex justify-between pt-8 pb-4">
           <h3 className="w-1/2">INFORMATIONS GENERALES</h3>
-          <p className="text-red-500 text-center md:text-right text-sm w-1/2">
-            Veillez répondre a TOUTES les questions
-          </p>
+          <div className="w-1/2">
+            <p className="text-red-500 text-center md:text-right text-sm ">
+              Veillez répondre a TOUTES les questions
+            </p>
+            <p className="text-red-500 text-center md:text-right text-sm ">
+              * INDIQUE LES CHAMPS OBLIGATOIRE
+            </p>
+          </div>
         </div>
         <Steps currentStep={currentStep} />
+        <p className="text-primary-color">{errorMessage} </p>
         {currentStep == 1 ? (
           <StepOne />
         ) : currentStep == 2 ? (
           <StepTwo />
-        ) : (
-          <StepThree />
-        )}
+        ) : currentStep == 3 ? (
+          <StepThree progress={progressBar} />
+        ) : ''}
         <div className="flex justify-between mt-6">
           <button
             onClick={() => {
@@ -183,13 +223,7 @@ export default function FormulaireEvaluation({}: Props) {
             </button>
           ) : (
             <button
-              onClick={() => {
-                if (currentStep < 3) {
-                  let curStep = currentStep + 1;
-                  localStorage.setItem("currentStep", JSON.stringify(curStep));
-                  setCurrentStep(curStep);
-                }
-              }}
+              onClick={handleNextBtn}
               className={`py-1 px-3 active:translate-y-1 hover:cursor-pointer bg-[#25a9e3] text-text-color rounded`}
             >
               Suivant
@@ -201,9 +235,12 @@ export default function FormulaireEvaluation({}: Props) {
             Veillez cliquer sur Submit pour envoyer le formulaire
           </p>
         ) : (
-          <p className="text-center py-4 text-sm">
-            Veillez cliquer sur Suivant pour aller à la page suivante
-          </p>
+          <div className="">
+            <p className="text-red-500  text-lg ">{errorMessage}</p>
+            <p className="text-center py-4 text-sm">
+              Veillez cliquer sur Suivant pour aller à la page suivante
+            </p>
+          </div>
         )}
       </div>
     </main>

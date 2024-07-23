@@ -11,7 +11,6 @@ export default function StepOne({}: Props) {
     value: string;
     label: string;
   }>();
-  const [currentStep, setCurrentStep] = useState(1);
 
   const [localData, setLocalData] = useState<FormData | null>(() => {
     if (typeof window !== "undefined") {
@@ -40,7 +39,7 @@ export default function StepOne({}: Props) {
     email: localData?.email || "",
     detail: localData?.detail || "",
     name: undefined,
-    programme: localData?.programme || ""
+    program: localData?.program || "",
   });
 
   const [coutries, setCountries] = useState([]);
@@ -60,6 +59,7 @@ export default function StepOne({}: Props) {
     >
   ) => {
     let data = { ...formData, [event.target.name]: event.target.value };
+    console.log(data);
     localStorage.setItem("formData", JSON.stringify(data));
     localStorage.setItem("salutation", JSON.stringify(salutation));
     setFormData(data);
@@ -92,7 +92,9 @@ export default function StepOne({}: Props) {
       <div className="border mt-4 text-[#5c6873] border-[#25a9e3] rounded-md">
         <div className="pl-5 text-white bg-[#25a9e3] py-6"></div>
         <div className="p-3 text-base flex flex-col ">
-          <label className="font-semibold " htmlFor="salutation">Salutation</label>
+          <label className="font-semibold " htmlFor="salutation">
+            Salutation
+          </label>
           <Select
             className="w-[95%] mb-7 md:w-[500px] py-1"
             options={salutaionOptions}
@@ -114,13 +116,19 @@ export default function StepOne({}: Props) {
             type="text"
             onChange={(event) => handleInputChange(event)}
           />
-          <label className="font-semibold" htmlFor="etatCivil">Etat civil</label>
+          <label className="font-semibold" htmlFor="etatCivil">
+            Etat civil
+          </label>
           <select
             onChange={(event) => handleInputChange(event)}
             className="border mt-1 mb-7 px-1 py-2 w-[95%] md:w-[500px] text-sm"
             name="etatCivil"
             value={formData.etatCivil}
           >
+            <option>
+              {" "}
+              -- Veillez selectionner --
+            </option>
             <option value="celibataire">Célibataire</option>
             <option value="marié(e)">Marié(e)</option>
             <option value="veuf(e)">Veuf(e)</option>
@@ -136,7 +144,9 @@ export default function StepOne({}: Props) {
             type="date"
             onChange={(event) => handleInputChange(event)}
           />
-          <label className="font-semibold" htmlFor="country">Pays de citoyenneté</label>
+          <label className="font-semibold" htmlFor="country">
+            Pays de citoyenneté<span className="text-primary-color">*</span>
+          </label>
           <select
             value={formData.country}
             name="country"
@@ -152,7 +162,10 @@ export default function StepOne({}: Props) {
               </option>
             ))}
           </select>
-          <label className="font-semibold" htmlFor="currentCountry">Pays de résidence actuel</label>
+          <label className="font-semibold" htmlFor="currentCountry">
+            Pays de résidence actuel
+            <span className="text-primary-color">*</span>
+          </label>
           <select
             value={formData.currentCountry}
             name="currentCountry"
@@ -183,7 +196,10 @@ export default function StepOne({}: Props) {
             type="tel"
             onChange={(event) => handleInputChange(event)}
           />
-          <p className="mb-4 font-semibold">Quel programme vous intéresse?</p>
+          <p className="mb-4 font-semibold">
+            Quel programme vous intéresse?
+            <span className="text-primary-color">*</span>
+          </p>
           {OptionsForCheckox.map((opt, index) => (
             <InputCheckBox
               key={index}
@@ -192,7 +208,9 @@ export default function StepOne({}: Props) {
               onChange={(event) => handleInputChange(event)}
             />
           ))}
-          <label className="mt-4 font-semibold" htmlFor="detail">Veuillez fournir plus de détails</label>
+          <label className="mt-4 font-semibold" htmlFor="detail">
+            Veuillez fournir plus de détails
+          </label>
           <textarea
             name="detail"
             // value={formData.details}

@@ -13,7 +13,7 @@ export async function sendEmail(data: any) {
   })
     .then((res) => res.json())
     .then((response) => {
-      console.log('from utils')
+      console.log('from utils', response)
       // alert(response.message);
     })
     .catch((err) => {
