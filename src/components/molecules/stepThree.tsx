@@ -55,7 +55,7 @@ export default function StepThree({progress}: Props) {
           accept=".docx, .pdf, .html, .zip"
           className="border py-2 px-3 mt-3 mb-5"
         />
-        <Progress value={progress} className="w-[60%]" />
+        {progress ? <Progress value={progress} className="w-[60%] pb-5" /> : ""}
         <InputField
           value={profession}
           label="Votre profession actuelle"

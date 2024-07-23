@@ -21,7 +21,7 @@ export default function FormulaireEvaluation({}: Props) {
   let curStep: number = 1;
   const { file, setFile } = useFileStore();
   if (typeof localStorage !== "undefined") {
-    curStep = +(localStorage.getItem("currentStep") as string || '1');
+    curStep = +((localStorage.getItem("currentStep") as string) || "1");
   }
   const [progressBar, setProgressBar] = useState<number>(0);
   const [currentStep, setCurrentStep] = useState<number>(curStep);
@@ -57,14 +57,14 @@ export default function FormulaireEvaluation({}: Props) {
       JSON.parse(localStorage.getItem("salutation") as string) || "{}";
     profession = (localStorage.getItem("profession") as string) || "";
     niveauetude = (localStorage.getItem("niveauEtude") as string) || "";
-		console.log(currentStep)
+    console.log(currentStep);
   }, []);
 
   const handleSubmit = async (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
     e.preventDefault();
-
+    console.log("Into handlesubmit");
     if (typeof localStorage !== "undefined") {
       formData = JSON.parse(
         (localStorage.getItem("formData") as string) || "{}"
@@ -91,7 +91,7 @@ export default function FormulaireEvaluation({}: Props) {
 
     // send mail
     if (uploadedCv) {
-			console.log('file uploaded successfully')
+      console.log("file uploaded successfully");
       setIsLoading((prev) => !prev);
       sendEmail({
         name: formData.nom,
@@ -148,7 +148,7 @@ export default function FormulaireEvaluation({}: Props) {
       formData.email !== undefined &&
       formData.country !== "" &&
       formData.telephone !== undefined &&
-      formData.program !== '' &&
+      formData.program !== "" &&
       formData.etatCivil !== undefined &&
       formData.dateDeNaissance !== undefined
     ) {
@@ -191,7 +191,9 @@ export default function FormulaireEvaluation({}: Props) {
           <StepTwo />
         ) : currentStep == 3 ? (
           <StepThree progress={progressBar} />
-        ) : ''}
+        ) : (
+          ""
+        )}
         <div className="flex justify-between mt-6">
           <button
             onClick={() => {
