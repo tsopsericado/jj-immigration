@@ -70,7 +70,7 @@ export default function FormulaireEvaluation({}: Props) {
         (localStorage.getItem("formData") as string) || "{}"
       );
       salutation =
-        JSON.parse(localStorage.getItem("salutation") as string) || "{}";
+        JSON.parse(localStorage.getItem("salutation") as string) || "{}"
       profession = (localStorage.getItem("profession") as string) || "";
       niveauetude = (localStorage.getItem("niveauEtude") as string) || "";
     }
