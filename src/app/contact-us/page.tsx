@@ -16,7 +16,7 @@ import { toast } from "react-toastify";
 
 type Props = {};
 
-export default function ContactUs({}: Props) {
+export default function ContactUs({ }: Props) {
   const initialValues = {
     name: "",
     surname: "",
@@ -176,21 +176,21 @@ export default function ContactUs({}: Props) {
                 <div className="flex justify-between">
                   <p></p>
                   <Button
-                  type="submit"
-                  className={
-                    isLoading
-                      ? "my-3 bg-black hover:cursor-wait"
-                      : "my-3 bg-black"
-                  }
-                >
-                  {isLoading ? (
-                    <Loader />
-                  ) : (
-                    <>
-                      <Mail className="mr-2 h-4 w-4" /> <span>Envoyer</span>
-                    </>
-                  )}
-                </Button>
+                    type="submit"
+                    className={
+                      isLoading
+                        ? "my-3 bg-black hover:cursor-wait"
+                        : "my-3 bg-black"
+                    }
+                  >
+                    {isLoading ? (
+                      <Loader />
+                    ) : (
+                      <>
+                        <Mail className="mr-2 h-4 w-4" /> <span>Envoyer</span>
+                      </>
+                    )}
+                  </Button>
                 </div>
               </form>
             </div>
@@ -250,7 +250,7 @@ export default function ContactUs({}: Props) {
                     href="tel:+237 674 883 322"
                     className="my-auto hover:underline"
                   >
-                    +237 674 883 322
+                    +237 693-423-366
                   </Link>
                 </div>
               </div>
