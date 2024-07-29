@@ -14,11 +14,11 @@ function LandingHero() {
               <div className="font-[700] text-[2.5rem] inline-block md:inline-flex md:text-[3.75rem]  ">
                 <h1>Voyagez,</h1>
                 <div className="flex  flex-col">
-                  <h1 className="ml-8 z-10">immigrez,</h1>
+                  <h1 className="md:ml-4 z-10">immigrez,</h1>
                   <img
                     src="/assets/images/stylish-underline.png"
                     alt="stylish underline"
-                    className="-mt-4 z-0 hidden md:block"
+                    className="-mt-4 z-0 md:block"
                     loading="lazy"
                   />
                 </div>
