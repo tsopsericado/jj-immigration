@@ -128,8 +128,8 @@ export default () => {
       </div>
       <div className="mt-8 py-6 border-t items-center justify-between sm:flex">
         <p className="w-1/3 hidden md:flex"></p>
-        <div className="md:flex md:justify-between md:bg-yellow-400 md:w-2/3">
-          <div className="mt-4 my-auto sm:mt-0">
+        <div className="md:flex md:justify-between md:w-2/3">
+          <div className="mt-4 sm:mt-0">
             &copy; 2024 jj-immigration All rights reserved.
           </div>
           <div className="mt-6 sm:mt-0">

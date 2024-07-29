@@ -70,7 +70,7 @@ export default function FormulaireEvaluation({}: Props) {
         (localStorage.getItem("formData") as string) || "{}"
       );
       salutation =
-        JSON.parse(localStorage.getItem("salutation") as string) || "{}"
+        JSON.parse(localStorage.getItem("salutation") as string) || "{}";
       profession = (localStorage.getItem("profession") as string) || "";
       niveauetude = (localStorage.getItem("niveauEtude") as string) || "";
     }
@@ -90,48 +90,46 @@ export default function FormulaireEvaluation({}: Props) {
     });
 
     // send mail
-    if (uploadedCv) {
-      console.log("file uploaded successfully");
-      setIsLoading((prev) => !prev);
-      sendEmail({
-        name: formData.nom,
-        prenom: formData.prenom,
-        etatcivil: formData.etatCivil,
-        country: formData.country,
-        currentCountry: formData.currentCountry,
-        telephone: formData.telephone,
-        programme: formData.program,
-        profession: profession,
-        etude: niveauetude,
-        details: formData.detail,
-        dateDeNaissance: formData.dateDeNaissance,
-        salutation: salutation.value,
-        email: formData.email,
-        file: uploadedCv.url,
-      })
-        .then((res) => {
-          // console.log("response from email sent", res);
-          toast.success("Formulaire envoyé", {
-            position: "top-right",
-            theme: "dark",
-            hideProgressBar: true,
-            autoClose: 2000,
-          });
-        })
-        .catch((err) => {
-          console.log("this is error", err);
+    console.log("file uploaded successfully");
+    setIsLoading((prev) => !prev);
+    sendEmail({
+      name: formData.nom,
+      prenom: formData.prenom,
+      etatcivil: formData.etatCivil,
+      country: formData.country,
+      currentCountry: formData.currentCountry,
+      telephone: formData.telephone,
+      programme: formData.program,
+      profession: profession,
+      etude: niveauetude,
+      details: formData.detail,
+      dateDeNaissance: formData.dateDeNaissance,
+      salutation: salutation.value,
+      email: formData.email,
+      file: uploadedCv.url,
+    })
+      .then((res) => {
+        // console.log("response from email sent", res);
+        toast.success("Formulaire envoyé", {
+          position: "top-right",
+          theme: "dark",
+          hideProgressBar: true,
+          autoClose: 2000,
         });
-      if (typeof window !== "undefined") {
-        localStorage.setItem("currentStep", "1");
-        localStorage.removeItem("formData");
-        localStorage.removeItem("currentStep");
-        localStorage.removeItem("profession");
-        localStorage.removeItem("cvFile");
-        localStorage.removeItem("niveauEtude");
-        localStorage.removeItem("salutation");
-      }
-      router.push("/");
+      })
+      .catch((err) => {
+        console.log("this is error", err);
+      });
+    if (typeof window !== "undefined") {
+      localStorage.setItem("currentStep", "1");
+      localStorage.removeItem("formData");
+      localStorage.removeItem("currentStep");
+      localStorage.removeItem("profession");
+      localStorage.removeItem("cvFile");
+      localStorage.removeItem("niveauEtude");
+      localStorage.removeItem("salutation");
     }
+    router.push("/");
   };
 
   const handleNextBtn = () => {
