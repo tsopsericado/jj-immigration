@@ -33,7 +33,7 @@ function LandingHero() {
               Votre clé pour une vie meilleure au Canada. Services d'immigration
               fiables et personnalisés.
             </p>
-            <Link href="/formulaire-evaluation">
+            <Link href="/formulaire-devaluation">
               <button className="contact-us-btn-landingPage">
                 Formulaire d'évaluation
               </button>
