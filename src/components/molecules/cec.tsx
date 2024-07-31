@@ -5,7 +5,7 @@ import ContactUsCart from "./contactUsCart";
 
 type Props = {};
 
-export default function Cec({}: Props) {
+export default function Cec({ }: Props) {
   return (
     <>
       <div className="px-10 border-gray-40 pb-3 p-3 w-[95%] md:w-1/2 mx-auto my-6 border-2">
@@ -56,7 +56,7 @@ export default function Cec({}: Props) {
               <li>Les compétences linquistique en français ou en anglais</li>
               <li>Si vous avez ou non une offre d'emploi valide</li>
               <li>
-                Province de deestination (prévoir habiter à l'extérieur de la
+                Province de destination (prévoir habiter à l'extérieur de la
                 province du Québec)
               </li>
             </ol>

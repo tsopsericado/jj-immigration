@@ -30,7 +30,7 @@ export default function About({ }: Props) {
               complementaire aux entreprises, avec la pénurie de main
               d'oeuvre.
               <br></br>
-              Notre solide équipe constitué de consultants réglementés en
+              Notre solide équipe constituée de consultants réglementés en
               immigration canadienne et experts en gestion des resources humaines
               saura vous offrir des solutions spécifiques afin de répondre a vos
               besoins spécifiques.
