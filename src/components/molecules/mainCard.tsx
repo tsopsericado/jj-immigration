@@ -8,7 +8,7 @@ export default function MainCard() {
     {
       id: 0,
       image: "/assets/images/manitoba.jpg",
-      title: "M Chadjie Brice",
+      title: "M Chadjie Bruce",
       description:
         "Responsable Administratif zone Afrique",
     },
