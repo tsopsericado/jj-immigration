@@ -24,7 +24,7 @@ export default function AccueilEtIntegration({}: Props) {
           <li>Mise en contact avec l'employeur.</li>
           <li>Fourniture d'une trousse de santé, salubrité et hygiène.</li>
           <li>
-            Suivi post placement et support au travailleur afin que d'assurer la
+            Suivi post placement et support au travailleur afin d'assurer la
             réussite.
           </li>
         </ul>

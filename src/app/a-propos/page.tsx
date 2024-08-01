@@ -7,7 +7,7 @@ import React from "react";
 
 type Props = {};
 
-export default function About({}: Props) {
+export default function About({ }: Props) {
   return (
     <>
       <Layout>
@@ -23,15 +23,15 @@ export default function About({}: Props) {
                 JJ-RECRUTEMENT INTERNATIONAL
               </span>{" "}
               est une entreprise de conseil en immigration dont la valeur
-              essentielle est de fournire du soutien, des conseils et de
-              l'accompagnement en matière d'immigration aux particulier et aux
-              entreprises à travert un service professionnel, transparent et
-              confidentiel. Nous nous engageons à offrir ue solution
-              complementaire auxx entreprises au prise avec la pénerie de main
+              essentielle est de fournir du soutien, des conseils et de
+              l'accompagnement en matière d'immigration aux particuliers et aux
+              entreprises à travers un service professionnel, transparent et
+              confidentiel. Nous nous engageons à offrir une solution
+              complementaire aux entreprises, avec la pénurie de main
               d'oeuvre.
               <br></br>
-              Notre solide équipe constituer des consultants réglementé en
-              immigration canadienne et expert en gestion des resources humaines
+              Notre solide équipe constituée de consultants réglementés en
+              immigration canadienne et experts en gestion des resources humaines
               saura vous offrir des solutions spécifiques afin de répondre a vos
               besoins spécifiques.
             </p>
@@ -58,7 +58,7 @@ export default function About({}: Props) {
               </li>
               <li>
                 Nous vous aidons à vous démarquer, afin de pouvoir marqué votre
-                positionnement dans votree secteur d'activité. Pour ce faire,
+                positionnement dans votre secteur d'activité. Pour ce faire,
                 nous vous proposons des solutions novatrices. Nous misons sur
                 notre authenticité. L'honnêteté est une priorité chez nous et
                 votre satisfaction est notre défi.

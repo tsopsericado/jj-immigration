@@ -58,7 +58,7 @@ function TestimonialSection() {
     {
       id: 3,
       isBackdrop: false,
-      imageUrl: "assets/images/Morgan.jpg",
+      imageUrl: "assets/images/Morgan1.jpg",
       reviewerName: "Morgane Nguena",
       position: "Étudiante en soins Infirmiers",
       review:

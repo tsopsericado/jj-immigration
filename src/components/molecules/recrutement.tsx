@@ -4,7 +4,7 @@ import ImmigrationService from "./immigrationService";
 
 type Props = {};
 
-export default function Recrutement({}: Props) {
+export default function Recrutement({ }: Props) {
   return (
     <div className="md:flex block gap-3 w-[95%] md:w-[80%] py-10 mx-auto">
       <div className="text-[#292828] leading-loose">
@@ -16,7 +16,7 @@ export default function Recrutement({}: Props) {
         <ol className="list-decimal  ">
           <li className="font-semibold uppercase text-xl">La réputation</li>
           <p>
-            La main d'oeuvre burkinabé est considéré comme étant la meilleure le
+            La main d'oeuvre burkinabé est considéré comme étant la meilleure de
             l'Afrique par l'industrie canadienne des mines. Elle est réputé
             vaillante, qualifié et pourvu d'une attitude exemplaire.
           </p>

@@ -103,7 +103,7 @@ export default () => {
                 className="w-full rounded p-2.5 outline-none"
               />
               <button className="p-2.5 rounded-md text-text-color bg-primary-color outline-none shadow-md focus:shadow-none sm:px-5">
-                Subscrire
+                Souscrire
               </button>
             </div>
           </form>
