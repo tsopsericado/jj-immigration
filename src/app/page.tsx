@@ -40,8 +40,8 @@ export default function Home() {
             </div>
           </div>
           <TestimonialSection />
-          <div  className="lg:pb-20 md:pb-7">
-            <div className="pb-10 bg-gray-50 py-12">
+          <div  className="lg:pb-14 md:pb-7">
+            <div className="pb-10 bg-gray-50 py-8">
               <p className="text-5xl text-primary-color font-semibold text-center pb-5">
                 Notre Equipe
               </p>

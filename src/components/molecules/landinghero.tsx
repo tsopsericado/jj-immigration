@@ -14,7 +14,7 @@ function LandingHero() {
               <div className="font-[700] text-[2.5rem] inline-block md:inline-flex md:text-[3.75rem]  ">
                 <h1>Voyagez,</h1>
                 <div className="flex  flex-col">
-                  <h1 className="ml-8 z-10">immigrez,</h1>
+                  <h1 className="md:ml-4 z-10">immigrez,</h1>
                   <img
                     src="/assets/images/stylish-underline.png"
                     alt="stylish underline"
@@ -33,9 +33,11 @@ function LandingHero() {
               Votre clé pour une vie meilleure au Canada. Services d'immigration
               fiables et personnalisés.
             </p>
-            <button className="contact-us-btn-landingPage">
-              <Link href="/contact-us">Plus d'info</Link>
-            </button>
+            <Link href="/formulaire-devaluation">
+              <button className="contact-us-btn-landingPage">
+                Formulaire d'évaluation
+              </button>
+            </Link>
           </div>
           <div className="hidden md:block w-[45%]">
             <img

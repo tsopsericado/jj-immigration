@@ -21,7 +21,7 @@ export default function Header({}: Props) {
   return (
     <>
       <header className="z-[9999]">
-        <div className="bg-primary-color text-text-color  flex justify-center">
+        <div className="bg-primary-color text-text-color flex justify-center">
           <div className="w-full">
             <ul className="md:flex block  w-[70%] justify-between mx-auto text-sm font-semibold">
               <li className="flex pt-2 gap-2 justify-center">
@@ -33,13 +33,13 @@ export default function Header({}: Props) {
                   info@jj-immigration.com
                 </Link>
               </li>
-              <li className="flex pl-12 pt-4 justify-center gap-2">
+              <li className="flex pt-4 justify-center gap-2">
                 <FaMapMarkerAlt className="my-auto" size={20} />
                 <p className="my-auto">
                   152 rue Vallières Val-d'Or (Qc) J9P 4L3
                 </p>
               </li>
-              <li className="flex pl-10 pt-4 justify-center gap-2">
+              <li className="flex pt-4 justify-center gap-2">
                 <FaRegClock className="my-auto" size={20} />
                 <p className="my-auto">Lun - Sam: 9:00 à 18:00</p>
               </li>

@@ -165,7 +165,7 @@ export default function ContactUs({ }: Props) {
                 <Textarea
                   name="message"
                   onChange={(e) => handleChangeEvent(e)}
-                  placeholder="Type your message here."
+                  placeholder="Ecrivez votre message ici."
                   value={formData.message}
                 />
                 {errorMsg && (
