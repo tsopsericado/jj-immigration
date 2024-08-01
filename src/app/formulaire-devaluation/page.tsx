@@ -64,6 +64,7 @@ export default function FormulaireEvaluation({}: Props) {
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
     e.preventDefault();
+		setIsLoading((prev) => !prev);
     console.log("Into handlesubmit");
     if (typeof localStorage !== "undefined") {
       formData = JSON.parse(
@@ -76,7 +77,7 @@ export default function FormulaireEvaluation({}: Props) {
     }
 
     if (!file) {
-      setErrorMessage("Veillez renseigner tout les champs svp");
+      setErrorMessage("Veillez fournir votre svp");
       return;
     }
 
@@ -91,7 +92,7 @@ export default function FormulaireEvaluation({}: Props) {
 
     // send mail
     console.log("file uploaded successfully");
-    setIsLoading((prev) => !prev);
+    
     sendEmail({
       name: formData.nom,
       prenom: formData.prenom,

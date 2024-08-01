@@ -7,6 +7,7 @@ const edgeStoreRouter = es.router({
 })
 
 const handler = createEdgeStoreNextHandler({
+  logLevel: 'debug', // optional, defaults to 'error' in production and 'info' in development
   router: edgeStoreRouter
 })
 

@@ -5,10 +5,10 @@ import useFileStore from "@/app/stores/fileStore";
 import { Progress } from "../ui/progress";
 
 type Props = {
-  progress: number
+  progress: number;
 };
 
-export default function StepThree({progress}: Props) {
+export default function StepThree({ progress }: Props) {
   const { file, setFile } = useFileStore();
   const { edgestore } = useEdgeStore();
   const [profession, setProfession] = useState((): string => {
@@ -42,7 +42,7 @@ export default function StepThree({progress}: Props) {
     localStorage.setItem("cvFile", JSON.stringify(e.target.files[0]));
     setFile(e.target.files?.[0]);
   };
-  
+
   return (
     <div className="border mt-4 text-[#5c6873] border-[#25a9e3] rounded-md">
       <h3 className="pl-5 text-white bg-[#25a9e3] py-6"></h3>
