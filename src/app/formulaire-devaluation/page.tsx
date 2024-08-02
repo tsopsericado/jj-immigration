@@ -43,6 +43,7 @@ export default function FormulaireEvaluation({}: Props) {
     telephone: "",
     detail: "",
     program: "",
+		salutation: ""
   };
   let salutation: Salutation = {
     value: "",
@@ -53,8 +54,6 @@ export default function FormulaireEvaluation({}: Props) {
 
   useEffect(() => {
     formData = JSON.parse((localStorage.getItem("formData") as string) || "{}");
-    salutation =
-      JSON.parse(localStorage.getItem("salutation") as string) || "{}";
     profession = (localStorage.getItem("profession") as string) || "";
     niveauetude = (localStorage.getItem("niveauEtude") as string) || "";
     console.log(currentStep);
@@ -117,6 +116,7 @@ export default function FormulaireEvaluation({}: Props) {
           hideProgressBar: true,
           autoClose: 2000,
         });
+				setIsLoading((prev) => !prev);
       })
       .catch((err) => {
         console.log("this is error", err);

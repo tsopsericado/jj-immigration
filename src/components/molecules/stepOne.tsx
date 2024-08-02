@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Select from "react-select";
 import InputField from "../atoms/inputField";
 import InputCheckBox from "../atoms/checkBox";
 import { FormData } from "@/domain/formData";
@@ -7,10 +6,6 @@ import { FormData } from "@/domain/formData";
 type Props = {};
 
 export default function StepOne({}: Props) {
-  const [salutation, setSalutation] = useState<{
-    value: string;
-    label: string;
-  }>();
 
   const [localData, setLocalData] = useState<FormData | null>(() => {
     if (typeof window !== "undefined") {
@@ -20,13 +15,7 @@ export default function StepOne({}: Props) {
     } else return null;
   });
 
-  const salutaionOptions = [
-    { value: "Mr", label: "Mr" },
-    { value: "Ms", label: "Ms" },
-    { value: "Mrs", label: "Mrs" },
-    { value: "Miss", label: "Miss" },
-    { value: "Dr", label: "Dr" },
-  ];
+  const salutationOption: string[] = ["Mr", "Ms", "Mrs", "Miss", "Dr"];
 
   const [formData, setFormData] = useState<FormData>({
     nom: localData?.nom || "",
@@ -40,6 +29,7 @@ export default function StepOne({}: Props) {
     detail: localData?.detail || "",
     name: undefined,
     program: localData?.program || "",
+    salutation: localData?.salutation || ""
   });
 
   const [coutries, setCountries] = useState([]);
@@ -61,7 +51,6 @@ export default function StepOne({}: Props) {
     let data = { ...formData, [event.target.name]: event.target.value };
     console.log(data);
     localStorage.setItem("formData", JSON.stringify(data));
-    localStorage.setItem("salutation", JSON.stringify(salutation));
     setFormData(data);
   };
 
@@ -95,13 +84,17 @@ export default function StepOne({}: Props) {
           <label className="font-semibold " htmlFor="salutation">
             Salutation
           </label>
-          <Select
-            className="w-[95%] mb-7 md:w-[500px] py-1"
-            options={salutaionOptions}
-            value={salutation}
-            closeMenuOnSelect={true}
-            onChange={(selectedOption: any) => setSalutation(selectedOption)}
-          />
+          <select
+            onChange={(event) => handleInputChange(event)}
+            className="border mt-1 mb-7 px-1 py-2 w-[95%] md:w-[500px] text-sm"
+            name="salutation"
+            value={formData.salutation}
+          >
+            <option>-- Veillez selectionner --</option>
+            {salutationOption.map((item, idx) => (
+              <option key={idx}>{item} </option>
+            ))}
+          </select>
           <InputField
             value={formData.nom}
             label="Nom"
@@ -125,10 +118,7 @@ export default function StepOne({}: Props) {
             name="etatCivil"
             value={formData.etatCivil}
           >
-            <option>
-              {" "}
-              -- Veillez selectionner --
-            </option>
+            <option> -- Veillez selectionner --</option>
             <option value="celibataire">Célibataire</option>
             <option value="marié(e)">Marié(e)</option>
             <option value="veuf(e)">Veuf(e)</option>
