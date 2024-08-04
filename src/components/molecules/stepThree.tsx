@@ -11,6 +11,7 @@ type Props = {
 export default function StepThree({ progress }: Props) {
   const { file, setFile } = useFileStore();
   const { edgestore } = useEdgeStore();
+  const [fileSrc, setFileSrc] = useState<any>()
   const [profession, setProfession] = useState((): string => {
     if (typeof localStorage !== "undefined") {
       const fromLocalStorage =
@@ -26,6 +27,7 @@ export default function StepThree({ progress }: Props) {
   const [localFile, setLocalFile] = useState<string | ArrayBuffer | null>("");
 
   const handleFileUpload = async (e: any) => {
+    console.log('hello boys')
     const reader = new FileReader();
     if (e) {
       reader.onload = (onLoadEvent) => {
@@ -50,6 +52,7 @@ export default function StepThree({ progress }: Props) {
         <label htmlFor="cv">Joignez votre CV le plus récent</label>
         <input
           onChange={(e) => handleFileUpload(e)}
+          // onChange={(event) => handleCvEvent(event)}
           type="file"
           name="cv"
           accept=".docx, .pdf, .html, .zip"

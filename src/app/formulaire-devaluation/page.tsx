@@ -14,6 +14,7 @@ import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 import Loader from "@/components/atoms/loader";
 import Link from "next/link";
+import { uploadCv } from "@/utiles/uploadCvFile";
 
 type Props = {};
 
@@ -80,17 +81,20 @@ export default function FormulaireEvaluation({}: Props) {
       return;
     }
 
-    uploadedCv = await edgestore.publicFiles.upload({
-      file: file,
-      onProgressChange: (progress) => {
-        // you can use this to show a progress bar
-        setProgressBar(progress);
-        console.log(progress);
-      },
-    });
+    // uploadedCv = await edgestore.publicFiles.upload({
+    //   file: file,
+    //   onProgressChange: (progress) => {
+    //     // you can use this to show a progress bar
+    //     setProgressBar(progress);
+    //     console.log(progress);
+    //   },
+    // });
+
+		uploadedCv = await uploadCv (file)
+		console.log("file from cloudinary", uploadedCv)
 
     // send mail
-    console.log("file uploaded successfully");
+		if (!uploadedCv) return
     
     sendEmail({
       name: formData.nom,
@@ -106,7 +110,7 @@ export default function FormulaireEvaluation({}: Props) {
       dateDeNaissance: formData.dateDeNaissance,
       salutation: salutation.value,
       email: formData.email,
-      file: uploadedCv.url,
+      file: uploadedCv
     })
       .then((res) => {
         // console.log("response from email sent", res);
