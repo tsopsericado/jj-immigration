@@ -18,7 +18,7 @@ export async function POST(request: NextRequest) {
 
   const mailOptions: Mail.Options = {
     from: email,
-    to: "ricardotsopse@gmail.com",
+    to: "petitbao@yahoo.fr",
     subject: `Formulaire d evaluation de ${salutation} ${name} ${prenom}`,
     html: `
     <div>

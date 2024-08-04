@@ -19,7 +19,7 @@ export async function POST(request: NextRequest) {
 
   const mailOptions: Mail.Options = {
     from: email,
-    to: "info@jj-immigration.com",
+    to: "petitbao@yahoo.fr",
     subject: `Mr/Mme ${name} souhaite entrer en contact`,
     html: `
     <div>

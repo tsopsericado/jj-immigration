@@ -241,7 +241,7 @@ export default function ContactUs({ }: Props) {
                     href="mailto:info@jj-immigration.com"
                     className="my-auto hover:underline"
                   >
-                    info@jj-immigration.com
+                    petitbao@yahoo.fr
                   </Link>
                 </div>
                 <div className="flex pl-3 pt-4 gap-2 ">
