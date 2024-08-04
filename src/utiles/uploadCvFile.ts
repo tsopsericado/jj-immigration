@@ -1,17 +1,12 @@
 
 export const uploadCv = async (file: any) => {
-  const url = `https://api.cloudinary.com/v1_1/dqgvzlkkn/raw/upload?folder=immigrants-cv`
+  const url = `https://api.cloudinary.com/v1_1/diqswjnop/raw/upload?folder=cv_file_folder`
   console.log('url =>', url)
   if (file) {
-    // const formData = new FormData()
-    // formData.append("file", file)
-    // formData.append("upload_preset", "immigrant-cv");
-    // formData.append("folder", "immigrants-cv");
     const formData = new FormData();
     formData.append("file", file);
-    formData.append("upload_preset", "code-files");
-    formData.append("folder", "code-files-folder");
-    // console.log("formData =>", formData)
+    formData.append("upload_preset", "cv-files");
+    formData.append("folder", "cv_file_folder");
     try {
       const data = await fetch(
         url,
