@@ -6,7 +6,7 @@ import Mail from 'nodemailer/lib/mailer';
 export async function POST(request: NextRequest) {
   const { email, name, file, etude, details, profession, salutation, programme, telephone, prenom, etatcivil, currentCountry, dateDeNaissance, country } = await request.json();
   const transporter = nodemailer.createTransport({
-    service: 'yahoo',
+    service: 'gmail',
     auth: {
       user: process.env.NEXT_PUBLIC_EMAIL,
       pass: process.env.NEXT_PUBLIC_APP_PASSWORD,
