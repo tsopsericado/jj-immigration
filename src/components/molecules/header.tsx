@@ -91,7 +91,7 @@ export default function Header({}: Props) {
                 asChild
                 className=" hidden md:flex my-auto active:translate-y-1 hover:bg-text-color hover:text-[#3a3737] bg-tertiary-color"
               >
-                <Link href="/formulaire-devealuation">
+                <Link href="/formulaire-devaluation">
                   Formulaire D'evaluation
                 </Link>
               </Button>
