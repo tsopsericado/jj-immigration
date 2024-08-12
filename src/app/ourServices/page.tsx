@@ -7,7 +7,7 @@ import { FaAngleDoubleRight } from "react-icons/fa";
 
 type Props = {};
 
-export default function Home({}: Props) {
+export default function Home({ }: Props) {
   const servicesOffered: { [key: string]: string }[] = [
     {
       mainservice: "Demande de permis de travail",
@@ -75,7 +75,7 @@ export default function Home({}: Props) {
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis laborum deserunt saepe ?",
       link: "/contact-us",
     },
-    
+
   ];
 
   return (
@@ -94,7 +94,7 @@ export default function Home({}: Props) {
           <div className="pb-6">
             <div className="w-[96%] md:w-[65%] mx-auto ">
               <h1 className="text-primary-color font-bold text-2xl ">
-                Immigration Canadinne
+                Immigration Canadienne
               </h1>
               {servicesOffered.map((item, indx) => (
                 <div key={indx} className=" pt-7">

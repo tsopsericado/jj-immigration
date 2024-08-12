@@ -5,7 +5,7 @@ import { FaAngleDoubleRight } from "react-icons/fa";
 
 type Props = {};
 
-export default function OurServices({}: Props) {
+export default function OurServices({ }: Props) {
   const servicesOffered: { [key: string]: string }[] = [
     {
       mainservice: "Demande de permis de travail",
@@ -40,7 +40,7 @@ export default function OurServices({}: Props) {
     {
       mainservice: "Résidence permanente",
       detail:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis laborum deserunt saepe ?",
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis laborum deserunt saep ?",
       link: "/visiter",
     },
     {

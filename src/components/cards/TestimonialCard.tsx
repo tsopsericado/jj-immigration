@@ -29,7 +29,7 @@ function TestimonialCard({
         <p className="text-gray-800 font-semibold text-[1rem] leading-loose">
           &apos;&apos; {review} &apos;&apos;
         </p>
-        <article className="text-[1.125rem] text-primary-color font-[600] mt-[2.12rem]">
+        <article className="text-[1.125rem] text-primary-colo text-blue-400 font-[600] mt-[2.12rem]">
           {reviewerName}
         </article>
         <p className="text-gray-800 font-[500] text-[0.875rem]">{position}</p>

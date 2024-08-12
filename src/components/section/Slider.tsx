@@ -12,12 +12,12 @@ export function Slider() {
   const teams: { [key: string]: string }[] = [
     {
       image: "/assets/images/president.jpg",
-      title: "Mr Chajie Bruce",
+      title: "M Chajie Bruce",
       description: "Responsable marketing",
     },
     {
       image: "/assets/images/pdg.jpg",
-      title: "Mr Jiotsa Bertrand",
+      title: "M Jiotsa Bertrand",
       description: "Président Directeur Général",
     },
   ];
