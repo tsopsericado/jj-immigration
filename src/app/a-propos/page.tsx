@@ -20,7 +20,7 @@ export default function About({ }: Props) {
             <h1 className="font-semibold text-3xl py-3">Qui sommes nous.</h1>
             <p>
               <span className="text-primary-color italic">
-                JJ-RECRUTEMENT INTERNATIONAL
+                JJ-IMMIGRATION
               </span>{" "}
               est une entreprise de conseil en immigration dont la valeur
               essentielle est de fournir du soutien, des conseils et de
@@ -44,7 +44,7 @@ export default function About({ }: Props) {
             <p>
               Combler les besoins de main d'oeuvre des entreprises. Avec{" "}
               <span className="text-primary-color italic">
-                JJ-RECRUTEMENT INTERNATIONAL{" "}
+                JJ-IMMIGRATION{" "}
               </span>{" "}
               les entreprises économisent du temps requis dans la sélection des
               candidats, diminuent le risque d'embauche des travailleurs non
