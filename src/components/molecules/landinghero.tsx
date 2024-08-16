@@ -3,7 +3,7 @@ import React from "react";
 
 function LandingHero() {
   return (
-    <main className=" ">
+    <main className="">
       <div className=" flex flex-col w-[96%] mx-auto ">
         <section className="flex justify-between items-center  mt-6 ">
           <div className="pt-2 md:pt-4  w-full md:w-[55%]">
