@@ -95,7 +95,7 @@ export default function WhyUs() {
           <div className="my-4">
             <p className="text-gray-800 text-4xl font-bold text-center">
               Pourquoi choisir{" "}
-              <span className="!text-primary-color ">JJ-IMMIGRATION ?</span>
+              <span className="!text-primary-color ">JJ-INTERNATIONAL ?</span>
             </p>
             <p className="text-grayish-blue text-[1.4rem] mb-8 max-w-4xl mt-8">
               Votre partenaire de confiance pour une immigration canadienne
