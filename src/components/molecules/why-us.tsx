@@ -72,7 +72,7 @@ export default function WhyUs() {
             <div className=" my-4 flex flex-col items-center">
               <p className="text-3xl font-bold text-gray-800">
                 Pourqoui choisir{" "}
-                <span className="text-primary-color">JJ-IMMIGRATION ?</span>
+                <span className="text-primary-color">JJ-INTERNATIONAL ?</span>
               </p>
 
               <p className="text-gray-800 text-[1.4rem] font-semibold my-8">
