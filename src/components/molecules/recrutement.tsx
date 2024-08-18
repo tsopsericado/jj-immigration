@@ -10,13 +10,13 @@ export default function Recrutement({ }: Props) {
       <div className="text-[#292828] leading-loose">
         <h1 className=" text-3xl font-semibold pb-3 text-primary-color">Connecter les talents</h1>
         <p>
-          Nous avons choisi de vous proposer des candidats du Burkina Faso pour
+          Nous avons choisi de vous proposer des candidats du Cameroun pour
           plusieurs raisons :
         </p>
         <ol className="list-decimal  ">
           <li className="font-semibold uppercase text-xl">La réputation</li>
           <p>
-            La main d'oeuvre burkinabé est considéré comme étant la meilleure de
+            La main d'oeuvre Camerounaise est considéré comme étant la meilleure de
             l'Afrique par l'industrie canadienne des mines. Elle est réputé
             vaillante, qualifié et pourvu d'une attitude exemplaire.
           </p>
@@ -29,7 +29,7 @@ export default function Recrutement({ }: Props) {
           </p>
           <li className="font-semibold uppercase text-xl">Les valeurs</li>
           <p>
-            Le citoyen burkinabè, reconnu pour être intègre, possède un bon sens
+            Le citoyen Camerounais, reconnu pour être intègre, possède un bon sens
             des responsabilités et du respect de l'autorité. De plus, il est des
             plus fidèle à l'employeur et ne cherche pas à changer d'employeur.
           </p>
@@ -37,14 +37,14 @@ export default function Recrutement({ }: Props) {
           <p>
             Un des objectifs visés par les gouvernements du Québec et du Canada
             est d'attirer des immigrants francophones. Tous les candidats
-            Burkinabè reçoivent leur formation en français, ce qui facilite leur
+            Camerounais reçoivent leur formation en français, ce qui facilite leur
             intégration dans le milieu du travail et au sein de la communauté.
           </p>
           <li className="font-semibold uppercase text-xl">
             La conpétence et +
           </li>
           <p>
-            Le Burkina possède des centres de formation professionnelle de
+            Le Cameroun possède des centres de formation professionnelle de
             qualité. Ces centres utilisent la même technologie que la plupart
             des entreprises au Canada et engagent des formateurs de haut niveau.
             Nous nous engageons à vous présenter les meilleurs candidats issus
@@ -55,7 +55,7 @@ export default function Recrutement({ }: Props) {
           </p>
           <li className="font-semibold uppercase text-xl">La diversité</li>
           <p>
-            Embaucher des Burkinabès, c'est encourager la diversité. C'est
+            Embaucher des Camerounais, c'est encourager la diversité. C'est
             également permettre à votre organisation de profiter d'expériences
             et de perspectives variées, contribuant ainsi au développement de
             votre créativité et de votre innovation.

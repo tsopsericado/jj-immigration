@@ -53,16 +53,16 @@ function TestimonialSection() {
       reviewerName: "Patricia Kenfack",
       position: "Étudiante en soins infirmiers",
       review:
-        "I'm a nurse student, I've moved to Canada through the help of JJ-immigration international. I'm looking forward to get a job at the end of my training. ",
+        "I'm a nurse student, I've moved to Canada through the help of JJ-INTERNATIONAL. I'm looking forward to get a job at the end of my training. ",
     },
     {
       id: 3,
       isBackdrop: false,
-      imageUrl: "assets/images/Morgan1.jpg",
+      imageUrl: "assets/images/Morgan.jpg",
       reviewerName: "Morgane Nguena",
       position: "Étudiante en soins Infirmiers",
       review:
-        "Je suis étudiante en Soins infirmiers, j'ai immigré au Canada par le biais de JJ-INTERNATIONAL. Je recommande vivement cette entreprise à toutes les personnes qui veulent faire comme moi, réaliser leur rêve canadien.",
+        "Je suis étudiante Soins infirmiers, j'ai immigré au Canada par le biais de JJ-INTERNATIONAL. Je recommande vivement cette entreprise à toutes les personnes qui veulent comme moi, réaliser leur rêve canadien.",
     },
     {
       id: 4,
