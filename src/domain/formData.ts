@@ -11,7 +11,21 @@ export type FormData = {
   telephone: string,
   detail: string,
   program: string,
-  salutation: string
+  salutation: string,
+
+}
+
+export type FormDatatwo = {
+  niveauEtude: string,
+  emploi: string,
+  function: string,
+  experience: string,
+  marié: string,
+  age: string,
+  niveau: string,
+  emplois: string,
+  sonexperience: string,
+  enfant: string
 }
 
 export type Salutation = {

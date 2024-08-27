@@ -30,7 +30,7 @@ export default function Header({ }: Props) {
                   className="my-auto hover:underline"
                   href="mailto:info@jj-immigration.com"
                 >
-                  info@jj-immigration.com
+                  info@jj-immigrations.com
                 </Link>
               </li>
               <li className="flex pt-4 justify-center gap-2">
