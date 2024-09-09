@@ -8,7 +8,7 @@ import StepTwo from "@/components/molecules/stepTwo";
 import StepThree from "@/components/molecules/stepThree";
 import { useEdgeStore } from "@/lib/edgestore";
 import { sendEmail } from "@/utiles/sendEmail";
-import { FormData, Salutation } from "@/domain/formData";
+import { FormData, FormDatatwo, Salutation } from "@/domain/formData";
 import useFileStore from "../stores/fileStore";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
@@ -44,40 +44,56 @@ export default function FormulaireEvaluation({}: Props) {
     telephone: "",
     detail: "",
     program: "",
-		salutation: ""
+    salutation: "",
   };
+
+  let formDatatwo: FormDatatwo = {
+    niveauEtude: "",
+    emploi: "",
+    function: "",
+    experience: "",
+    age: "",
+    niveau: "",
+    emplois: "",
+    sonexperience: "",
+    enfant: "",
+  };
+
   let salutation: Salutation = {
     value: "",
     label: "",
   };
   let profession: string = "";
-  let niveauetude: string = "";
+  // let niveauetude: string = "";
 
   useEffect(() => {
     formData = JSON.parse((localStorage.getItem("formData") as string) || "{}");
     profession = (localStorage.getItem("profession") as string) || "";
-    niveauetude = (localStorage.getItem("niveauEtude") as string) || "";
-    console.log(currentStep);
+    formDatatwo =
+      JSON.parse(localStorage.getItem("secondFormData") as string) || "";
+    // console.log(currentStep);
   }, []);
 
   const handleSubmit = async (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
     e.preventDefault();
-		setIsLoading((prev) => !prev);
+    setIsLoading((prev) => !prev);
     console.log("Into handlesubmit");
     if (typeof localStorage !== "undefined") {
       formData = JSON.parse(
         (localStorage.getItem("formData") as string) || "{}"
       );
+      formDatatwo =
+        JSON.parse(localStorage.getItem("formDatatwo") as string) || "{}";
       salutation =
         JSON.parse(localStorage.getItem("salutation") as string) || "{}";
       profession = (localStorage.getItem("profession") as string) || "";
-      niveauetude = (localStorage.getItem("niveauEtude") as string) || "";
+      // formDatatwo = (localStorage.getItem("formDatatwo") as string) || "";
     }
 
     if (!file) {
-      setErrorMessage("Veillez fournir votre svp");
+      setErrorMessage("Veillez fournir votre CV svp");
       return;
     }
 
@@ -90,12 +106,12 @@ export default function FormulaireEvaluation({}: Props) {
     //   },
     // });
 
-		uploadedCv = await uploadCv (file)
-		console.log("file from cloudinary", uploadedCv)
+    uploadedCv = await uploadCv(file);
+    console.log("file from cloudinary", uploadedCv);
 
     // send mail
-		if (!uploadedCv) return
-    
+    if (!uploadedCv) return;
+
     sendEmail({
       name: formData.nom,
       prenom: formData.prenom,
@@ -105,22 +121,32 @@ export default function FormulaireEvaluation({}: Props) {
       telephone: formData.telephone,
       programme: formData.program,
       profession: profession,
-      etude: niveauetude,
+      // etude: niveaudetude,
       details: formData.detail,
       dateDeNaissance: formData.dateDeNaissance,
       salutation: salutation.value,
       email: formData.email,
-      file: uploadedCv
+      file: uploadedCv,
+
+      niveauEtude: formDatatwo.niveauEtude,
+      emploi: formDatatwo.emploi,
+      fonction: formDatatwo.function,
+      experience: formDatatwo.experience,
+      age: formDatatwo.age,
+      niveau: formDatatwo.niveau,
+      emplois: formDatatwo.emplois,
+      sonexperience: formDatatwo.sonexperience,
+      enfant: formDatatwo.enfant,
     })
       .then((res) => {
-        // console.log("response from email sent", res);
+        console.log("response from email sent", res);
         toast.success("Formulaire envoyé", {
           position: "top-right",
           theme: "dark",
           hideProgressBar: true,
           autoClose: 2000,
         });
-				setIsLoading((prev) => !prev);
+        setIsLoading((prev) => !prev);
       })
       .catch((err) => {
         console.log("this is error", err);
@@ -131,7 +157,7 @@ export default function FormulaireEvaluation({}: Props) {
       localStorage.removeItem("currentStep");
       localStorage.removeItem("profession");
       localStorage.removeItem("cvFile");
-      localStorage.removeItem("niveauEtude");
+      localStorage.removeItem("secondFormData");
       localStorage.removeItem("salutation");
     }
     router.push("/");
@@ -143,8 +169,12 @@ export default function FormulaireEvaluation({}: Props) {
       formData = JSON.parse(
         (localStorage.getItem("formData") as string) || "{}"
       );
+      formDatatwo = JSON.parse(
+        (localStorage.getItem("secondFormData") as string) || "{}"
+      );
     }
     console.log("formData => ", formData);
+    console.log("formDatatwo => ", formDatatwo);
 
     if (
       formData.nom !== undefined &&

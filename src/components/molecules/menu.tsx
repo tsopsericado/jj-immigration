@@ -6,7 +6,7 @@ import slugify from "react-slugify";
 
 type Props = {};
 
-export default function Menu({}: Props) {
+export default function Menu({ }: Props) {
   const pathname = usePathname();
 
   const immigrationSubtitle: string[] = [
@@ -40,6 +40,18 @@ export default function Menu({}: Props) {
   return (
     <>
       <ul className="nav-links flex justify-end gap-1 w-full my-auto z-[9999]">
+        <Link href="/billets">
+          <li
+            className={
+              pathname === "/billets"
+                ? "!text-text-color bg-primary-color nav-link"
+                : "nav-link"
+            }
+          >
+            Billets
+          </li>
+        </Link>
+
         <Link href="/a-propos">
           <li
             className={
@@ -89,10 +101,10 @@ export default function Menu({}: Props) {
             {optionServicesEntreprise.map((item, idx) => (
               <Link href={`/ourServices/${slugify(item)}`} key={idx}>
                 <li className={
-                    pathname === `/ourServices/${slugify(item)}`
-                      ? " py-1 px-1 bg-primary-color !text-text-color "
-                      : " py-1 px-1 hover:bg-primary-color text-black hover:text-text-color "
-                  }>
+                  pathname === `/ourServices/${slugify(item)}`
+                    ? " py-1 px-1 bg-primary-color !text-text-color "
+                    : " py-1 px-1 hover:bg-primary-color text-black hover:text-text-color "
+                }>
                   {item}
                 </li>
               </Link>

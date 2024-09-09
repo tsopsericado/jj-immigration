@@ -20,18 +20,16 @@ export default function Steps({ currentStep }: Props) {
             className="flex-1 last:flex-none flex items-center"
           >
             <div
-              className={`w-8 h-8 rounded-full border-2 flex-none flex items-center justify-center ${
-                currentStep > idx + 1
-                  ? "bg-[#25a9e3] border-[#25a9e3]"
-                  : "" || currentStep == idx + 1
+              className={`w-8 h-8 rounded-full border-2 flex-none flex items-center justify-center ${currentStep > idx + 1
+                ? "bg-[#25a9e3] border-[#25a9e3]"
+                : "" || currentStep == idx + 1
                   ? "border-[#25a9e3]"
                   : ""
-              }`}
+                }`}
             >
               <span
-                className={`w-2.5 h-2.5 rounded-full bg-[#25a9e3] ${
-                  currentStep != idx + 1 ? "hidden" : ""
-                }`}
+                className={`w-2.5 h-2.5 rounded-full bg-[#25a9e3] ${currentStep != idx + 1 ? "hidden" : ""
+                  }`}
               ></span>
               {currentStep > idx + 1 ? (
                 <svg
@@ -53,13 +51,12 @@ export default function Steps({ currentStep }: Props) {
               )}
             </div>
             <hr
-              className={`w-full border ${
-                idx + 1 == steps.stpesCount.length
-                  ? "hidden"
-                  : "" || currentStep > idx + 1
+              className={`w-full border ${idx + 1 == steps.stpesCount.length
+                ? "hidden"
+                : "" || currentStep > idx + 1
                   ? "border-[#25a9e3]"
                   : ""
-              }`}
+                }`}
             />
           </li>
         ))}

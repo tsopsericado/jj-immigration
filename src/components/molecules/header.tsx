@@ -15,8 +15,8 @@ import useIsOpen from "@/app/stores/menuState";
 
 type Props = {};
 
-export default function Header({}: Props) {
-  const {isOpen, setIsOpen} = useIsOpen();
+export default function Header({ }: Props) {
+  const { isOpen, setIsOpen } = useIsOpen();
 
   return (
     <>
@@ -28,9 +28,9 @@ export default function Header({}: Props) {
                 <FaRegEnvelope className="my-auto" size={20} />
                 <Link
                   className="my-auto hover:underline"
-                  href="mailto:info@jj-immigration.com"
+                  href="mailto:info@jj-immigrations.com"
                 >
-                  info@jj-immigration.com
+                  info@jj-immigrations.com
                 </Link>
               </li>
               <li className="flex pt-4 justify-center gap-2">

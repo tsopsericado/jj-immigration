@@ -20,7 +20,7 @@ function Card({ image, title, description }: IProps) {
           loading="lazy"
         />
         <div className="flex flex-col justify-center mx-auto pt-10">
-          <h1 className="mb-2 text-center text-xl font-bold tracking-tight text-primary-color dark:text-white">
+          <h1 className="mb-2 text-center text-xl font-bold tracking-tight text-primary-colo text-blue-400 dark:text-white">
             {title}
           </h1>
           <p className="mb-3 font-normal text-center text-gray-800 dark:text-gray-400">
