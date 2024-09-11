@@ -17,7 +17,7 @@ export default function StepTwo({}: Props) {
   const [formData, setFormData] = useState<FormDatatwo>({
     niveauEtude: localData?.niveauEtude || "",
     emploi: localData?.emploi || "",
-    function: localData?.function || "",
+    fonction: localData?.fonction || "",
     experience: localData?.experience || "",
     // marié: localData?.marié || "",
     age: localData?.age || "",
@@ -57,9 +57,6 @@ export default function StepTwo({}: Props) {
     setFormData(data);
   };
 
-  
- 
-
   return (
     <div className="border mt-4 text-[#5c6873] border-[#25a9e3] rounded-md">
       <h3 className="pl-5 text-white bg-[#25a9e3] py-6"></h3>
@@ -91,9 +88,9 @@ export default function StepTwo({}: Props) {
           onChange={(event) => handleChange(event)}
         />
         <InputField
-          value={formData.function}
+          value={formData.fonction}
           label="Quel est votre function ou post ?"
-          inputName="function"
+          inputName="fonction"
           type="text"
           onChange={(event) => handleChange(event)}
         />
@@ -118,12 +115,12 @@ export default function StepTwo({}: Props) {
           type="text"
           onChange={(event) => handleChange(event)}
         />
-        {/* <label htmlFor="niveau-étude" className="text-gray-500 font-semibold">
+        <label htmlFor="niveau-étude" className="text-gray-500 font-semibold">
           Quel est son niveau d'étude le plus élevé ?
         </label>
         <select
           className="border mt-1 mb-7 px-1 py-2 w-[95%] md:w-[500px] text-sm bg-transparent outline-none focus:border-[#25a9e3] shadow-sm rounded-md"
-          name="niveau-étude"
+          name="niveau"
           // value={schoolLevel}
           onChange={(event) => handleChange(event)}
         >
@@ -135,7 +132,7 @@ export default function StepTwo({}: Props) {
               {option}
             </option>
           ))}
-        </select> */}
+        </select>
         <InputField
           value={formData.emplois}
           label="Son emploi ?"

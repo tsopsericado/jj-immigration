@@ -62,7 +62,7 @@ export default function Home() {
         typeVoyage: formData.typeVoyage,
         typeBillet: formData.typeBillet,
         villeDepart: formData.villeDepart,
-        villeArrive: formData.villeArrivee,
+        villeArrivee: formData.villeArrivee,
         dateRetour: formData.dateRetour,
         dateDepart: formData.dateDepart,
         adultes: formData.adultes,
