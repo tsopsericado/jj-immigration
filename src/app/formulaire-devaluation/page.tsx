@@ -18,7 +18,7 @@ import { uploadCv } from "@/utiles/uploadCvFile";
 
 type Props = {};
 
-export default function FormulaireEvaluation({ }: Props) {
+export default function FormulaireEvaluation({}: Props) {
   let curStep: number = 1;
   const { file, setFile } = useFileStore();
   if (typeof localStorage !== "undefined") {
@@ -44,7 +44,7 @@ export default function FormulaireEvaluation({ }: Props) {
     telephone: "",
     detail: "",
     program: "",
-    salutation: ""
+    salutation: "",
   };
 
   let formDatatwo: FormDatatwo = {
@@ -52,13 +52,12 @@ export default function FormulaireEvaluation({ }: Props) {
     emploi: "",
     function: "",
     experience: "",
-    marié: "",
     age: "",
     niveau: "",
     emplois: "",
     sonexperience: "",
-    enfant: ""
-  }
+    enfant: "",
+  };
 
   let salutation: Salutation = {
     value: "",
@@ -70,8 +69,9 @@ export default function FormulaireEvaluation({ }: Props) {
   useEffect(() => {
     formData = JSON.parse((localStorage.getItem("formData") as string) || "{}");
     profession = (localStorage.getItem("profession") as string) || "";
-    formDatatwo = JSON.parse(localStorage.getItem("formDatatwo") as string) || "";
-    console.log(currentStep);
+    formDatatwo =
+      JSON.parse(localStorage.getItem("secondFormData") as string) || "";
+    // console.log(currentStep);
   }, []);
 
   const handleSubmit = async (
@@ -82,9 +82,10 @@ export default function FormulaireEvaluation({ }: Props) {
     console.log("Into handlesubmit");
     if (typeof localStorage !== "undefined") {
       formData = JSON.parse(
-        (localStorage.getItem("formData") as string) || "{}",
-        formDatatwo = JSON.parse(localStorage.getItem("formDatatwo") as string) || "{}"
+        (localStorage.getItem("formData") as string) || "{}"
       );
+      formDatatwo =
+        JSON.parse(localStorage.getItem("formDatatwo") as string) || "{}";
       salutation =
         JSON.parse(localStorage.getItem("salutation") as string) || "{}";
       profession = (localStorage.getItem("profession") as string) || "";
@@ -92,7 +93,7 @@ export default function FormulaireEvaluation({ }: Props) {
     }
 
     if (!file) {
-      setErrorMessage("Veillez fournir votre svp");
+      setErrorMessage("Veillez fournir votre CV svp");
       return;
     }
 
@@ -105,11 +106,11 @@ export default function FormulaireEvaluation({ }: Props) {
     //   },
     // });
 
-    uploadedCv = await uploadCv(file)
-    console.log("file from cloudinary", uploadedCv)
+    uploadedCv = await uploadCv(file);
+    console.log("file from cloudinary", uploadedCv);
 
     // send mail
-    if (!uploadedCv) return
+    if (!uploadedCv) return;
 
     sendEmail({
       name: formData.nom,
@@ -129,18 +130,16 @@ export default function FormulaireEvaluation({ }: Props) {
 
       niveauEtude: formDatatwo.niveauEtude,
       emploi: formDatatwo.emploi,
-      function: formDatatwo.function,
-      experience: formDatatwo.function,
-      marié: formDatatwo.marié,
+      fonction: formDatatwo.function,
+      experience: formDatatwo.experience,
       age: formDatatwo.age,
       niveau: formDatatwo.niveau,
       emplois: formDatatwo.emplois,
       sonexperience: formDatatwo.sonexperience,
-      enfant: formDatatwo.enfant
-
+      enfant: formDatatwo.enfant,
     })
       .then((res) => {
-        // console.log("response from email sent", res);
+        console.log("response from email sent", res);
         toast.success("Formulaire envoyé", {
           position: "top-right",
           theme: "dark",
@@ -158,7 +157,7 @@ export default function FormulaireEvaluation({ }: Props) {
       localStorage.removeItem("currentStep");
       localStorage.removeItem("profession");
       localStorage.removeItem("cvFile");
-      localStorage.removeItem("formDatatwo");
+      localStorage.removeItem("secondFormData");
       localStorage.removeItem("salutation");
     }
     router.push("/");
@@ -171,12 +170,11 @@ export default function FormulaireEvaluation({ }: Props) {
         (localStorage.getItem("formData") as string) || "{}"
       );
       formDatatwo = JSON.parse(
-        (localStorage.getItem("formDatatwo") as string) || "{}"
+        (localStorage.getItem("secondFormData") as string) || "{}"
       );
     }
     console.log("formData => ", formData);
     console.log("formDatatwo => ", formDatatwo);
-
 
     if (
       formData.nom !== undefined &&

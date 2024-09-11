@@ -28,7 +28,7 @@ export default function Header({ }: Props) {
                 <FaRegEnvelope className="my-auto" size={20} />
                 <Link
                   className="my-auto hover:underline"
-                  href="mailto:info@jj-immigration.com"
+                  href="mailto:info@jj-immigrations.com"
                 >
                   info@jj-immigrations.com
                 </Link>

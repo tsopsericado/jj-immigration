@@ -4,11 +4,46 @@ import { FormDatatwo } from "@/domain/formData";
 
 type Props = {};
 
-export default function StepTwo({ }: Props) {
+export default function StepTwo({}: Props) {
   // const schoolLevel = localStorage.getItem('niveauEtude') as string || ""
   // const [niveaEdude, setNiveauEtude] = useState<string>(schoolLevel)
+  const [localData, setLocalData] = useState<FormDatatwo | null>(() => {
+    if (typeof window !== "undefined") {
+      const fromLocalStorage =
+        JSON.parse(localStorage.getItem("secondFormData") as string) || {};
+      if (fromLocalStorage) return fromLocalStorage;
+    } else return null;
+  });
+  const [formData, setFormData] = useState<FormDatatwo>({
+    niveauEtude: localData?.niveauEtude || "",
+    emploi: localData?.emploi || "",
+    function: localData?.function || "",
+    experience: localData?.experience || "",
+    // marié: localData?.marié || "",
+    age: localData?.age || "",
+    niveau: localData?.niveau || "",
+    emplois: localData?.emplois || "",
+    sonexperience: localData?.sonexperience || "",
+    enfant: localData?.enfant || "",
+  });
 
-  const slectOption: string[] = ["Doctorat", "Maitrise", "+2 ou plus license/Bachelor", "Universitaire 1er cycle, 4 ans (License/Bachelor)", "Universitaire 1er cycle, 3 ans (License/Bachelor)", "Universitaire 1er cycle, 2 ans (License/Bachelor)", "Universitaire 1er cycle, 1 an", "Diplôme, certificat (3 ans)", "Diplôme, certificat (2 ans)", "Diplôme, certificat (1 an)", "Diplôme d'études secondaire", "Diplôme, certificat (1 an)"]
+
+  const slectOption: string[] = [
+    "Doctorat",
+    "Maitrise",
+    "+2 ou plus license/Bachelor",
+    "Universitaire 1er cycle, 4 ans (License/Bachelor)",
+    "Universitaire 1er cycle, 3 ans (License/Bachelor)",
+    "Universitaire 1er cycle, 2 ans (License/Bachelor)",
+    "Universitaire 1er cycle, 1 an",
+    "Diplôme, certificat (3 ans)",
+    "Diplôme, certificat (2 ans)",
+    "Diplôme, certificat (1 an)",
+    "Diplôme d'études secondaire",
+    "Diplôme, certificat (1 an)",
+  ];
+
+  
 
   const handleChange = (
     event: React.ChangeEvent<
@@ -18,33 +53,12 @@ export default function StepTwo({ }: Props) {
     let data = { ...formData, [event.target.name]: event.target.value };
     console.log(data);
     // setNiveauEtude(event.target.value)
-    localStorage.setItem('formData', JSON.stringify(event.target.value))
+    localStorage.setItem("secondFormData", JSON.stringify(data));
     setFormData(data);
-  }
+  };
 
-
-  const [localData, setLocalData] = useState<FormDatatwo | null>(() => {
-    if (typeof window !== "undefined") {
-      const fromLocalStorage =
-        JSON.parse(localStorage.getItem("formData") as string) || {};
-      if (fromLocalStorage) return fromLocalStorage;
-    } else return null;
-  });
-
-  const [formData, setFormData] = useState<FormDatatwo>({
-    niveauEtude: localData?.niveauEtude || "",
-    emploi: localData?.emploi || "",
-    function: localData?.function || "",
-    experience: localData?.experience || "",
-    marié: localData?.marié || "",
-    age: localData?.age || "",
-    niveau: localData?.niveau || "",
-    emplois: localData?.emplois || "",
-    sonexperience: localData?.sonexperience || "",
-    enfant: localData?.enfant || ""
-  }
-
-  );
+  
+ 
 
   return (
     <div className="border mt-4 text-[#5c6873] border-[#25a9e3] rounded-md">
@@ -64,17 +78,19 @@ export default function StepTwo({ }: Props) {
             -- Veillez selectionner --
           </option>
           {slectOption.map((option, index) => (
-            <option key={index} value={option}>{option}</option>
+            <option key={index} value={option}>
+              {option}
+            </option>
           ))}
         </select>
-
         <InputField
           value={formData.emploi}
-          label="Avez-vous actuellement en emploi ?"
+          label="Avez-vous actuellement un emploi ?"
           inputName="emploi"
           type="text"
           onChange={(event) => handleChange(event)}
-        />        <InputField
+        />
+        <InputField
           value={formData.function}
           label="Quel est votre function ou post ?"
           inputName="function"
@@ -88,22 +104,21 @@ export default function StepTwo({ }: Props) {
           type="text"
           onChange={(event) => handleChange(event)}
         />
-        <InputField
+        {/* <InputField
           value={formData.marié}
           label="Etes-vous marié ?"
           inputName="marié"
           type="text"
           onChange={(event) => handleChange(event)}
-        />
+        /> */}
         <InputField
           value={formData.age}
           label="Age de votre conjoint/conjointe ?"
           inputName="age"
-          type="date"
+          type="text"
           onChange={(event) => handleChange(event)}
         />
-
-        <label htmlFor="niveau-étude" className="text-gray-500 font-semibold">
+        {/* <label htmlFor="niveau-étude" className="text-gray-500 font-semibold">
           Quel est son niveau d'étude le plus élevé ?
         </label>
         <select
@@ -116,10 +131,11 @@ export default function StepTwo({ }: Props) {
             -- Veillez selectionner --
           </option>
           {slectOption.map((option, index) => (
-            <option key={index} value={option}>{option}</option>
+            <option key={index} value={option}>
+              {option}
+            </option>
           ))}
-        </select>
-
+        </select> */}
         <InputField
           value={formData.emplois}
           label="Son emploi ?"

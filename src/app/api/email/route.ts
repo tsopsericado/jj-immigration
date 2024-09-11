@@ -4,7 +4,7 @@ import nodemailer from 'nodemailer'
 import Mail from 'nodemailer/lib/mailer';
 
 export async function POST(request: NextRequest) {
-  const { email, name, file, etude, details, profession, salutation, programme, telephone, prenom, etatcivil, currentCountry, dateDeNaissance, country } = await request.json();
+  const { email, name, file, niveauEtude, details, profession, salutation, programme, telephone, prenom, etatcivil, currentCountry, dateDeNaissance, country, emploi, fonction, emplois, experience, age, niveau, sonexperience, enfant } = await request.json();
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
@@ -22,7 +22,7 @@ export async function POST(request: NextRequest) {
     subject: `Formulaire d evaluation de ${salutation} ${name} ${prenom}`,
     html: `
     <div>
-    <h1>${salutation} ${name} viens d'envoyer un formulaire pour l'évaluation de son dossier</h1>
+      <h1>${salutation} ${name} viens d'envoyer un formulaire pour l'évaluation de son dossier</h1>
       <h2>Voici les informations relatives</h2>
       <br>
       <h2>Nom et prenom: <b>${name} ${prenom}</b></h2>
@@ -34,9 +34,19 @@ export async function POST(request: NextRequest) {
       <p>Telephone: <b>${telephone}</b></p>
       <p>Programme: <b>${programme}</b></p>
       <p>Détails: <b>${details}</b></p>
-      <p>Niveau d'étude: <b>${etude}</b></p>
+      <p>Experience: <b>${experience}</b></p>
+      <p>Emploi: <b>${emploi}</b></p>
+      <p>Niveau d'étude: <b>${niveauEtude}</b></p>
       <p>Profession: <b>${profession}</b></p>
       <p>Cv: ${file}</p>
+      <h2>Information sur le/la conjoiint(e)</h2>
+      <p>NOmbre d'enfant: <b>${enfant}</b></p>
+      <p>Sa fonction: <b>${fonction}</b></p>
+      <p>Son emploi: <b>${emplois}</b></p>
+      <p>Son niveau d'étude: <b>${niveau}</b></p>
+      <p>Son âge: <b>${age}</b></p>
+      <p>Son expérience professionnel: <b>${sonexperience}</b></p>
+      
     </div>
     `,
   };

@@ -4,7 +4,7 @@ import nodemailer from 'nodemailer'
 import Mail from 'nodemailer/lib/mailer';
 
 export async function POST(request: NextRequest) {
-    const { email, name, file, etude, details, profession, salutation, programme, telephone, prenom, etatcivil, currentCountry, dateDeNaissance, country } = await request.json();
+    const { nom, prenom, email, typeVoyage, villeDepart, villeArrivee, typeBillet, dateDepart, dateRetour, adultes, jeunes, enfants, bebes } = await request.json();
     const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
@@ -22,21 +22,19 @@ export async function POST(request: NextRequest) {
         subject: `Demande d'achat de billet d'avion ${name} ${prenom}`,
         html: `
     <div>
-    <h1>${salutation} ${name} viens d'envoyer un formulaire pour l'évaluation de son dossier</h1>
-      <h2>Voici les informations relatives</h2>
-      <br>
-      <h2>Nom et prenom: <b>${name} ${prenom}</b></h2>
-      <p>Etat civil: <b>${etatcivil}</b></p>
-      <p>Date de naissance: <b>${dateDeNaissance}</b></p>
-      <p>Pays de citoyenneté: <b>${country}</b></p>
-      <p>Pays de résidence actuel: <b>${currentCountry}</b></p>
-      <p>Email: <b>${email}</b></p>
-      <p>Telephone: <b>${telephone}</b></p>
-      <p>Programme: <b>${programme}</b></p>
-      <p>Détails: <b>${details}</b></p>
-      <p>Niveau d'étude: <b>${etude}</b></p>
-      <p>Profession: <b>${profession}</b></p>
-      <p>Cv: ${file}</p>
+    <h1>Reservation de billet pour Mr/Mme ${nom}</h1>
+      
+      <pNom et prenom: <b>${nom} ${prenom}</b></p>
+      <p>Type de voyage: <b>${typeVoyage}</b></p>
+      <p>Ville départ: <b>${villeDepart}</b></p>
+      <p>Ville d'arrivé: <b>${villeArrivee}</b></p>
+      <p>Type de billet: <b>${typeBillet}</b></p>
+      <p>Date de départ: <b>${dateDepart}</b></p>
+      <p>Date de retour: <b>${dateRetour}</b></p>
+      <p>Nombre d'adulte: <b>${adultes}</b></p>
+      <p>Nombre de jeune: <b>${jeunes}</b></p>
+      <p>Nombre d'enfant: <b>${enfants}</b></p>
+      <p>Nombre de bébés: ${bebes}</p>
     </div>
     `,
     };

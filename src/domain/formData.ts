@@ -20,7 +20,7 @@ export type FormDatatwo = {
   emploi: string,
   function: string,
   experience: string,
-  marié: string,
+  // marié: string,
   age: string,
   niveau: string,
   emplois: string,
