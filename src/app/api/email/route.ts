@@ -4,7 +4,8 @@ import nodemailer from 'nodemailer'
 import Mail from 'nodemailer/lib/mailer';
 
 export async function POST(request: NextRequest) {
-  const { email, name, file, niveauEtude, details, profession, salutation, programme, telephone, prenom, etatcivil, currentCountry, dateDeNaissance, country, emploi, fonction, emplois, experience, age, niveau, sonexperience, enfant } = await request.json();
+  const { email, name, file, niveauEtude, details, profession, salutation, programme, telephone, prenom, etatcivil, currentCountry, dateDeNaissance, country, emploi, fonction, experience, age, emplois, niveau, sonexperience, enfant, dataObject } = await request.json();
+  console.log('formData ObJ=>', dataObject)
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
@@ -39,8 +40,8 @@ export async function POST(request: NextRequest) {
       <p>Niveau d'étude: <b>${niveauEtude}</b></p>
       <p>Profession: <b>${profession}</b></p>
       <p>Cv: ${file}</p>
-      <h2>Information sur le/la conjoiint(e)</h2>
-      <p>NOmbre d'enfant: <b>${enfant}</b></p>
+      <h2>Information sur le/la conjoint(e)</h2>
+      <p>Nombre d'enfant: <b>${enfant}</b></p>
       <p>Sa fonction: <b>${fonction}</b></p>
       <p>Son emploi: <b>${emplois}</b></p>
       <p>Son niveau d'étude: <b>${niveau}</b></p>

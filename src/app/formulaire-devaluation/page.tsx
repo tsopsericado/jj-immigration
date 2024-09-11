@@ -50,7 +50,7 @@ export default function FormulaireEvaluation({}: Props) {
   let formDatatwo: FormDatatwo = {
     niveauEtude: "",
     emploi: "",
-    function: "",
+    fonction: "",
     experience: "",
     age: "",
     niveau: "",
@@ -59,19 +59,13 @@ export default function FormulaireEvaluation({}: Props) {
     enfant: "",
   };
 
-  let salutation: Salutation = {
-    value: "",
-    label: "",
-  };
   let profession: string = "";
   // let niveauetude: string = "";
 
   useEffect(() => {
     formData = JSON.parse((localStorage.getItem("formData") as string) || "{}");
     profession = (localStorage.getItem("profession") as string) || "";
-    formDatatwo =
-      JSON.parse(localStorage.getItem("secondFormData") as string) || "";
-    // console.log(currentStep);
+    
   }, []);
 
   const handleSubmit = async (
@@ -85,9 +79,7 @@ export default function FormulaireEvaluation({}: Props) {
         (localStorage.getItem("formData") as string) || "{}"
       );
       formDatatwo =
-        JSON.parse(localStorage.getItem("formDatatwo") as string) || "{}";
-      salutation =
-        JSON.parse(localStorage.getItem("salutation") as string) || "{}";
+        JSON.parse(localStorage.getItem("secondFormData") as string) || "{}";
       profession = (localStorage.getItem("profession") as string) || "";
       // formDatatwo = (localStorage.getItem("formDatatwo") as string) || "";
     }
@@ -124,19 +116,18 @@ export default function FormulaireEvaluation({}: Props) {
       // etude: niveaudetude,
       details: formData.detail,
       dateDeNaissance: formData.dateDeNaissance,
-      salutation: salutation.value,
+      salutation: formData.salutation,
       email: formData.email,
       file: uploadedCv,
-
       niveauEtude: formDatatwo.niveauEtude,
       emploi: formDatatwo.emploi,
-      fonction: formDatatwo.function,
+      fonction: formDatatwo.fonction,
       experience: formDatatwo.experience,
       age: formDatatwo.age,
       niveau: formDatatwo.niveau,
       emplois: formDatatwo.emplois,
       sonexperience: formDatatwo.sonexperience,
-      enfant: formDatatwo.enfant,
+      enfant: formDatatwo.enfant
     })
       .then((res) => {
         console.log("response from email sent", res);
@@ -173,8 +164,6 @@ export default function FormulaireEvaluation({}: Props) {
         (localStorage.getItem("secondFormData") as string) || "{}"
       );
     }
-    console.log("formData => ", formData);
-    console.log("formDatatwo => ", formDatatwo);
 
     if (
       formData.nom !== undefined &&

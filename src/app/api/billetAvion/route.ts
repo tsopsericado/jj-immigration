@@ -19,7 +19,7 @@ export async function POST(request: NextRequest) {
     const mailOptions: Mail.Options = {
         from: email,
         to: "info@jj-immigrations.com",
-        subject: `Demande d'achat de billet d'avion ${name} ${prenom}`,
+        subject: `Demande d'achat de billet d'avion ${nom} ${prenom}`,
         html: `
     <div>
     <h1>Reservation de billet pour Mr/Mme ${nom}</h1>

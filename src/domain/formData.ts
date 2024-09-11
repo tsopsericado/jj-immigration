@@ -18,7 +18,7 @@ export type FormData = {
 export type FormDatatwo = {
   niveauEtude: string,
   emploi: string,
-  function: string,
+  fonction: string,
   experience: string,
   // marié: string,
   age: string,
