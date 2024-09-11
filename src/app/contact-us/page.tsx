@@ -238,11 +238,7 @@ export default function ContactUs({ }: Props) {
                 <div className="flex pl-3 pt-4 gap-2">
                   <FaRegEnvelope className="text-primary-color" size={20} />
                   <Link
-<<<<<<< HEAD
-                    href="mailto:petitbao@yahoo.fr"
-=======
                     href="mailto:info@jj-immigrations.com"
->>>>>>> d5fec49eb8d7157a1488c18cfff386955e64de98
                     className="my-auto hover:underline"
                   >
                     info@jj-immigrations.com
