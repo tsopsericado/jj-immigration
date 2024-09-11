@@ -1,11 +1,9 @@
 import { type NextRequest, NextResponse } from 'next/server';
-// import nodemailer from 'nodemailer';
 import nodemailer from 'nodemailer'
 import Mail from 'nodemailer/lib/mailer';
 
 export async function POST(request: NextRequest) {
-  const { email, name, file, niveauEtude, details, profession, salutation, programme, telephone, prenom, etatcivil, currentCountry, dateDeNaissance, country, emploi, fonction, experience, age, emplois, niveau, sonexperience, enfant, dataObject } = await request.json();
-  console.log('formData ObJ=>', dataObject)
+  const { email, name, file, niveauEtude, details, profession, salutation, programme, telephone, prenom, etatcivil, currentCountry, dateDeNaissance, country, emploi, fonction, experience, age, emplois, niveau, sonexperience, enfant } = await request.json();
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {

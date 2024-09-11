@@ -60,7 +60,6 @@ export default function FormulaireEvaluation({}: Props) {
   };
 
   let profession: string = "";
-  // let niveauetude: string = "";
 
   useEffect(() => {
     formData = JSON.parse((localStorage.getItem("formData") as string) || "{}");
