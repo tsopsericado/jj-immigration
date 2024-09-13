@@ -48,7 +48,7 @@ export default function Menu({ }: Props) {
                 : "nav-link"
             }
           >
-            Billets
+            Reservation Billets
           </li>
         </Link>
 
